@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Implementation and parameter provenance. Every population-based method uses a population of 50 in the main comparison; alternative population policies are examined in Table~\ref{tab:robustness}. The last column records the box-handling policy of each optimiser.}
+\label{tab:configuration}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lllll}
+\toprule
+Method & Implementation & Parameters & Values from & Box handling \\
+\midrule
+CP-SAT & OR-Tools 9.14.6206, PyJobShop 0.0.9 & one search worker & library values & not applicable \\
+PDR & this study & three priority rules & source & not applicable \\
+GT & this study & no parameters & source & not applicable \\
+TS & this study & tenure $\sim U[8,16]$, restart after $\max(200,2N)$ & moves from source, tenure set here & not applicable \\
+SA & this study & $\delta_c=0.1$, $\chi_0=0.9$, chain $\max(100,N)$ & source & moves keep feasibility \\
+BRKGA & this study & elite $0.20$, mutant $0.15$, $\rho_e=0.70$ & source intervals & keys drawn inside the box \\
+GA & mealpy 3.0.3 & $p_c=0.95$, $p_m=0.025$ & library & clipped to the box \\
+DE & mealpy 3.0.3 & rand/1/bin, $F=0.1$, $CR=0.9$ & library & clipped to the box \\
+PSO & mealpy 3.0.3 & $w=0.4$, $c_1=c_2=2.05$ & library & clipped to the box \\
+ABC & mealpy 3.0.3 & abandonment limit 25 & library & clipped to the box \\
+L-SHADE & mealpy 3.0.3 & $\mu_F=\mu_{CR}=0.5$, linear reduction & library values & clipped to the box \\
+IMODE & mealpy 3.0.3 & memory 5, archive 20 & library & clipped to the box \\
+CMA-ES & cma 4.4.4 & $\sigma_0=0.3$, diagonal covariance & library & library transform, then clipping \\
+GWO & mealpy 3.0.3 & no free parameters & library & clipped to the box \\
+RIME & mealpy 3.0.3 & soft-rime parameter 5 & library & clipped to the box \\
+MDE & port of the author code & three subpopulations & author code & resample towards the bound \\
+CSA & port of the author code & clan drawn from the colony & author code & resample towards the bound \\
+\bottomrule
+\end{tabular}}
+\end{table}

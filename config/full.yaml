@@ -1,0 +1,165 @@
+# =============================================================================
+# v2 FULL EXPERIMENTAL CONFIGURATION  (redesigned study after the SWEVO review)
+#
+# This file is the locked experimental design for v2. The thresholds, panel, seeds
+# and budgets below are fixed before any v2 run, as recorded in REVISION_PLAN.md,
+# and the confirmatory/exploratory split is declared there in advance.
+#
+# Changes from v1 and why (review point numbers in brackets):
+#   - the FJSP machine key indexes the eligible set instead of the global machine
+#     index, so the decoder is label-invariant and repair-free                 [4, 5]
+#   - the exact solver runs with the full seed list, like every other method     [11]
+#   - three methods added: BRKGA, CMA-ES, simulated annealing                [14, 15]
+#   - the parameter policy is named for what it is, a common-setting choice   [7, 8]
+#   - anytime traces carry a decoder-evaluation index as well as wall-clock      [12]
+#   - the hybrid is budgeted end to end with rule-fixed seeders             [1, 2, 3]
+# =============================================================================
+
+meta:
+  name: "solver-aware-evidence-standards-v2-full"
+  version: 2
+  supersedes: "v1 full run (rejected; see Swarm_and_Evolutionary_Computation_Hakem_Degerlendirmesi.md)"
+  problem_objective: "makespan"          # Cmax, single-objective
+  problem_families: ["JSSP", "FJSP"]
+  design_lock:
+    thresholds_fixed_before_run: true
+    plan_document: "REVISION_PLAN.md"
+    integrity_rule: "Report what the experiments show; never tune/filter/re-run to confirm a hypothesis."
+
+# ---- Budget: single anytime run; short-budget values are extracted post hoc -----
+budget:
+  t_max_seconds: 300
+  checkpoints_seconds: [1, 10, 60, 300]   # read from each run's anytime trace
+  checkpoints_evaluations: [1000, 10000, 100000]  # equal-effort read of the same traces
+  exact_reference:
+    enabled: true
+    t_max_seconds: 900                    # CP-SAT only, hardest subset; bounds/near-optima
+    note: "Separate reference, NOT part of the fair comparison."
+
+# ---- Threads / parallelism / wall-clock fairness --------------------------------
+execution:
+  fair_comparison_single_thread: true
+  cpsat_search_workers_fair: 1
+  blas_threads_per_worker: 1
+  timed_affinity:
+    policy: "performance_cores_only"
+    detected_machine: "Intel i9-13900HX (8 P-cores + 16 E-cores, hybrid)"
+    logical_processors: [0, 2, 4, 6, 8, 10, 12, 14]
+    workers: 8
+    efficiency_cores_idle_during_timed_runs: true
+  multithread_reference:
+    cpsat_all_cores: true
+    runs_alone: true
+
+# ---- Seeds ----------------------------------------------------------------------
+seeds:
+  stochastic: [11, 23, 37, 41, 53, 67, 79, 83, 97, 101, 113, 127, 131, 149, 157, 167, 173, 181, 191, 199]
+  deterministic_runs_once: true
+  deterministic_methods: ["dispatching", "greedy"]   # the exact solver is NOT in this set
+
+# ---- Decoder --------------------------------------------------------------------
+decoder:
+  machine_key_mapping: "eligible"        # index into the sorted eligible set; repair-free
+  ablation_mapping: "legacy"             # v1 mapping, run only in the decoder ablation
+  priority_decoding: "giffler_thompson_active"
+
+# ---- Parameter policy -----------------------------------------------------------
+# Named honestly: a common-setting configuration, not a "default" configuration.
+parameters:
+  policy: "common_setting"
+  population_size: 50                    # identical across all population-based methods
+  other_parameters: "library or source defaults, unchanged"
+  per_instance_tuning: "none"
+  equal_time_limit: true
+  alternative_policy: "self_configured"  # each method's own recommended rule; sensitivity only
+
+# ---- Necessity-classification thresholds ----------------------------------------
+necessity_thresholds:
+  delta_obj_relative: 0.01
+  delta_obj_relative_strict: 0.02
+  tau_time_factor: 10
+  tau_sensitivity: [5, 20]
+  alpha: 0.05
+  effect_size_floor_rank_biserial: 0.30
+  bks_tolerance_epsilon: 0.02            # the epsilon of the strong heuristic-necessary case
+
+# ---- Method panel (17: 2 deterministic + 15 stochastic) -------------------------
+methods:
+  - id: cpsat
+    family: exact
+    deterministic: false                 # random seed changes the search; 20 seeds
+    source: "OR-Tools CP-SAT via PyJobShop"
+    roles: ["fair_single_thread", "multi_thread_reference", "warm_start_hybrid"]
+  - id: dispatching
+    family: problem_specific_constructive
+    deterministic: true
+    rules: ["SPT", "MWKR", "MOPNR"]
+  - id: greedy
+    family: problem_specific_constructive
+    deterministic: true
+  - id: tabu
+    family: problem_specific_trajectory
+    deterministic: false
+    source: "critical-block N5 neighbourhood (Nowicki and Smutnicki)"
+  - id: sa
+    family: problem_specific_trajectory
+    deterministic: false
+    source: "disjunctive-graph annealing (van Laarhoven, Aarts and Lenstra)"
+    added_in_v2: true
+  - id: ga
+    family: general_metaheuristic
+  - id: brkga
+    family: random_key
+    source: "biased random-key genetic algorithm (Goncalves and Resende)"
+    added_in_v2: true
+  - id: de
+    family: general_metaheuristic
+  - id: pso
+    family: general_metaheuristic
+  - id: abc
+    family: general_metaheuristic
+  - id: lshade
+    family: adaptive_high_bar
+  - id: imode
+    family: adaptive_high_bar
+  - id: cmaes
+    family: adaptive_high_bar
+    source: "reference CMA-ES implementation (Hansen)"
+    added_in_v2: true
+  - id: gwo
+    family: recent_under_test
+  - id: rime
+    family: recent_under_test
+  - id: mde
+    family: recent_under_test
+    citation: "Karkinli 2023, Neural Comput. Appl. 35(7):5193-5206"
+  - id: csa
+    family: recent_under_test
+    citation: "Civicioglu and Besdok 2024, Appl. Soft Comput. 151:111162"
+
+# ---- Instances (67, unchanged from v1 and fixed before either run) ---------------
+instances: "all"
+
+# ---- Hybrid protocol (end to end, seeding cost charged) --------------------------
+hybrid:
+  budgets_seconds: [1, 10, 60, 300]
+  seeds: 20
+  variants:
+    - id: hyb_cheap
+      seeder: dispatching
+      seed_budget: "measured"            # the constructive bank costs milliseconds
+      oracle_free: true
+    - id: hyb_tabu
+      seeder: tabu
+      seed_budget_fraction: 0.2
+      oracle_free: true
+    - id: hyb_oracle
+      seeder: "ex-post best heuristic schedule"
+      seed_budget: "charged at that run's time to best"
+      oracle_free: false
+      note: "Reported as an unattainable upper bound; never used to assign a necessity class."
+
+# ---- Three gaps reported separately, never mixed ---------------------------------
+reference_values:
+  gaps: ["gap_to_proven_optimum", "gap_to_bks", "gap_to_lower_bound"]
+  source_file: "data/reference_values.csv"

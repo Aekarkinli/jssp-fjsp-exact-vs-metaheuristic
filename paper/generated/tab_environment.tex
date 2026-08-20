@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Execution environment for the timed experiments.}
+\label{tab:environment}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{ll}
+\toprule
+Item & Value \\
+\midrule
+Processor & Intel i9-13900HX (8 P-cores + 16 E-cores, hybrid) \\
+Timed workers & 8 performance cores, one job per core, no simultaneous-multithreading sibling in use \\
+Operating system & Windows-10-10.0.19045-SP0 \\
+Python & 3.11.15 \\
+Exact solver & OR-Tools CP-SAT 9.14.6206 through PyJobShop 0.0.9 \\
+Metaheuristic library & mealpy 3.0.3 \\
+Evolution strategy library & cma 4.4.4 \\
+Benchmark function library & opfunu 1.0.4 \\
+Numerical libraries & numpy 1.26.0, scipy 1.16.3, statsmodels 0.14.6 \\
+Code revision & 532fe93a83 \\
+\bottomrule
+\end{tabular}}
+\end{table}

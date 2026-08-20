@@ -1,0 +1,42 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Warm-started exact search under one end-to-end budget, so the seeding phase is charged to the same clock. Each variant is compared with pure exact search and with the tabu search at the same total budget, paired over instances and Holm-corrected. The oracle variant is seeded with the best heuristic schedule found anywhere in the study and is an unattainable bound rather than a usable method.}
+\label{tab:hybrid}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{llrrrrrl}
+\toprule
+Variant & Budget & Seeding (s) & Median (\%) & Reference & Median paired & $r_{rb}$ & $p_{\text{Holm}}$ \\
+ & & & & & difference & & \\
+\midrule
+CP-SAT+PDR & 1\,s & 0.006 & 6.17 & CP-SAT & 0.00 & -0.11 & 1 \\
+ &  &  &  & TS & 1.38 & 0.56 & 0.0077 \\
+ & 10\,s & 0.006 & 1.69 & CP-SAT & 0.00 & 0.07 & 1 \\
+ &  &  &  & TS & 0.00 & -0.13 & 1 \\
+ & 60\,s & 0.006 & 0.00 & CP-SAT & 0.00 & 0.21 & 1 \\
+ &  &  &  & TS & -0.56 & -0.52 & 0.0264 \\
+ & 300\,s & 0.006 & 0.00 & CP-SAT & 0.00 & 0.26 & 1 \\
+ &  &  &  & TS & -0.68 & -0.56 & 0.0094 \\
+\addlinespace
+CP-SAT+TS & 1\,s & 0.206 & 4.70 & CP-SAT & -1.80 & -0.70 & 0.0002 \\
+ &  &  &  & TS & 0.00 & 0.10 & 1 \\
+ & 10\,s & 2.007 & 1.56 & CP-SAT & 0.00 & -0.23 & 1 \\
+ &  &  &  & TS & 0.00 & -0.25 & 1 \\
+ & 60\,s & 12.006 & 0.00 & CP-SAT & 0.00 & 0.09 & 1 \\
+ &  &  &  & TS & 0.00 & -0.45 & 0.0896 \\
+ & 300\,s & 60.006 & 0.00 & CP-SAT & 0.00 & 0.03 & 1 \\
+ &  &  &  & TS & -0.19 & -0.75 & $<10^{-4}$ \\
+\addlinespace
+CP-SAT+oracle & 1\,s & 0.058 & 4.77 & CP-SAT & 0.00 & -0.29 & 0.903 \\
+ &  &  &  & TS & 0.00 & 0.31 & 0.7179 \\
+ & 10\,s & 4.925 & 1.06 & CP-SAT & 0.00 & -0.28 & 1 \\
+ &  &  &  & TS & -0.66 & -0.46 & 0.0681 \\
+ & 60\,s & 19.687 & 0.00 & CP-SAT & 0.00 & 0.20 & 1 \\
+ &  &  &  & TS & -0.56 & -0.77 & 0.0001 \\
+ & 300\,s & 90.131 & 0.00 & CP-SAT & 0.00 & 0.05 & 1 \\
+ &  &  &  & TS & -1.04 & -1.00 & $<10^{-4}$ \\
+\addlinespace
+\bottomrule
+\end{tabular}}
+\end{table}

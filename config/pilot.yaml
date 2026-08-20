@@ -1,0 +1,62 @@
+# =============================================================================
+# PILOT CONFIGURATION  (Phase 5 end-to-end validation)
+# A small balanced subset at a short budget across all methods and a few seeds.
+# Purpose: crash-free run, every log field populated, feasibility checker active,
+# seed-repeatability, calibration held. Passing the pilot gate LOCKS the design.
+# Methods, thresholds, seeds list, and parallelism inherit the full-run semantics;
+# only the instance subset, budget, and seed count differ.
+# =============================================================================
+
+meta:
+  name: "solver-aware-evidence-standards-pilot"
+  problem_objective: "makespan"
+  problem_families: ["JSSP", "FJSP"]
+  inherits_design_from: "config/full.yaml"
+
+budget:
+  t_max_seconds: 30
+  checkpoints_seconds: [1, 10, 30]
+  exact_reference:
+    enabled: false
+
+execution:
+  fair_comparison_single_thread: true
+  cpsat_search_workers_fair: 1
+  blas_threads_per_worker: 1
+  timed_affinity:
+    policy: "performance_cores_only"
+    logical_processors: [0, 2, 4, 6, 8, 10, 12, 14]
+    workers: 8
+    efficiency_cores_idle_during_timed_runs: true
+  multithread_reference:
+    cpsat_all_cores: true
+    runs_alone: true
+
+seeds:
+  stochastic: [11, 23, 37]                 # few seeds; repeatability is the check
+  deterministic_runs_once: true
+
+parameters:
+  tuning: "none"
+  population_size: 50
+  equal_time_limit: true
+  source: "library or literature defaults"
+
+# Thresholds are not exercised by the pilot (no classification on the pilot), but are
+# carried so the same loader validates both configs against one schema.
+necessity_thresholds:
+  delta_obj_relative: 0.01
+  delta_obj_relative_strict: 0.02
+  tau_time_factor: 10
+  alpha: 0.05
+  effect_size_floor_rank_biserial: 0.30
+  effect_size_floor_a12: 0.64
+  bks_tolerance_epsilon: 0.02
+
+# Full implemented panel exercised so every code path runs.
+methods: ["cpsat", "dispatching", "greedy", "tabu", "ga", "de", "pso", "abc",
+          "gwo", "lshade", "imode", "rime", "mde", "csa"]
+
+# Small balanced subset (instance ids match data/instance_manifest.csv): tiny
+# exact-solvable to mid-size, both families.
+instances: ["ft06", "ft10", "la01", "abz5", "mk01", "mk02"]

@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Bayesian signed-rank comparison against the tabu search on per-instance median deviation, with a region of practical equivalence of one deviation point. Entries are posterior probabilities that the tabu search is practically better, that the two are practically equivalent, and that the other method is practically better.}
+\label{tab:bayes}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrr}
+\toprule
+Comparison & P(tabu better) & P(equivalent) & P(other better) \\
+\midrule
+Tabu vs CP-SAT & 0.000 & 0.007 & 0.992 \\
+Tabu vs SA & 1.000 & 0.000 & 0.000 \\
+Tabu vs CMA-ES & 1.000 & 0.000 & 0.000 \\
+Tabu vs GA & 1.000 & 0.000 & 0.000 \\
+Tabu vs MDE & 1.000 & 0.000 & 0.000 \\
+Tabu vs L-SHADE & 1.000 & 0.000 & 0.000 \\
+Tabu vs IMODE & 1.000 & 0.000 & 0.000 \\
+Tabu vs GWO & 1.000 & 0.000 & 0.000 \\
+Tabu vs CSA & 1.000 & 0.000 & 0.000 \\
+Tabu vs RIME & 1.000 & 0.000 & 0.000 \\
+Tabu vs BRKGA & 1.000 & 0.000 & 0.000 \\
+\bottomrule
+\end{tabular}}
+\end{table}

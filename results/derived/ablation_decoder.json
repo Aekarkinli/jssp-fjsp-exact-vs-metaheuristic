@@ -1,0 +1,15 @@
+{
+ "n_cells": 80,
+ "n_instances": 10,
+ "n_methods": 8,
+ "median_legacy": 8.558509610740849,
+ "median_eligible": 8.31160114718014,
+ "median_difference": 0.1366531975749355,
+ "p_value": 0.0010367960953417748,
+ "rank_biserial": 0.46449570330167345,
+ "n_effective": 66,
+ "n_legacy_worse": 43,
+ "legacy_repairs_per_flexible_operation": 0.6935863789354536,
+ "legacy_repairs_iqr": 0.2602474069095161,
+ "eligible_repairs_per_flexible_operation": 0.0
+}
