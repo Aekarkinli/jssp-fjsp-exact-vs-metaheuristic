@@ -1,0 +1,47 @@
+[project]
+name = "solver-aware-evidence-standards"
+version = "0.1.0"
+description = "Solver-aware, reproducible evaluation of exact and (meta)heuristic methods for JSSP and FJSP makespan minimisation."
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+license = { text = "MIT" }
+authors = [{ name = "Geomatics Research" }]
+
+# Minimum constraints only; EXACT versions are pinned in uv.lock (committed) for
+# bit-for-bit reproducibility. Resolved versions are also echoed into every
+# result file's metadata at run time.
+dependencies = [
+  "ortools>=9.8",        # CP-SAT exact solver
+  "pyjobshop",           # CP modelling + JSSP/FJSP instance loaders (built on OR-Tools)
+  "mealpy>=3.0.0",       # metaheuristic library (GA/DE/PSO/ABC/GWO/L-SHADE/IMODE/...)
+  "cma>=3.3",            # reference CMA-ES implementation (Hansen), added in v2
+  "statsmodels>=0.14",   # logistic regression and mixed models for the v2 analyses
+  "numpy>=1.26",
+  "scipy>=1.11",         # Wilcoxon signed-rank, stats
+  "pandas>=2.1",
+  "pyarrow>=14",         # parquet derived tables
+  "matplotlib>=3.8",     # vector PDF figures
+  "autorank>=1.2.1",     # Friedman + post-hoc + critical-difference diagrams
+  "baycomp>=1.0.2",      # Bayesian comparison with ROPE
+  "joblib>=1.3",         # cross-job process pool
+  "tqdm>=4.66",
+  "PyYAML>=6.0",         # config files
+  "pymupdf>=1.24",       # read provided PDFs (text extraction)
+  "psutil>=5.9",         # peak memory + CPU affinity support
+  "setuptools>=70,<81",  # provides pkg_resources (removed in 81+), required by opfunu
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.0",
+]
+
+[tool.uv]
+# uv.lock is the single source of truth for pinned versions and is committed.
+# This is a research application, not a distributable library: uv manages the
+# environment and dependencies but does not build or install the project itself.
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests", "src"]

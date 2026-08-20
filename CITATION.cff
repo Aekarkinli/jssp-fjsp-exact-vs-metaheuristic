@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this material, please cite the article below."
+title: "Exact and metaheuristic search in job-shop and flexible job-shop scheduling under fixed time budgets: data and code"
+authors:
+  - family-names: Karkinli
+    given-names: Ahmet Emin
+    orcid: "https://orcid.org/0000-0001-7216-6251"
+    affiliation: "Department of Geomatics Engineering, Nigde Omer Halisdemir University"
+version: "1.0.0"
+date-released: "2026-08-21"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Exact and metaheuristic search in job-shop and flexible job-shop scheduling under fixed time budgets"
+  authors:
+    - family-names: Karkinli
+      given-names: Ahmet Emin
+      orcid: "https://orcid.org/0000-0001-7216-6251"
+  journal: "Swarm and Evolutionary Computation"
+  year: 2026
