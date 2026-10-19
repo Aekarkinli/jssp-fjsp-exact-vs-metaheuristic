@@ -41,7 +41,7 @@ def solve_brkga(
     mapping: str = DEFAULT_MAPPING,
 ) -> MethodResult:
     rng = np.random.default_rng(seed)
-    dim = vector_length(instance)
+    dim = vector_length(instance, mapping)
     recorder = RunRecorder()
 
     n_elite = max(1, int(round(ELITE_FRACTION * pop_size)))

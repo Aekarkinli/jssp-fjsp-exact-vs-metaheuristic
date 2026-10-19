@@ -5,7 +5,7 @@ description = "Solver-aware, reproducible evaluation of exact and (meta)heuristi
 readme = "README.md"
 requires-python = ">=3.11,<3.12"
 license = { text = "MIT" }
-authors = [{ name = "Geomatics Research" }]
+authors = [{ name = "Ahmet Emin Karkinli" }]
 
 # Minimum constraints only; EXACT versions are pinned in uv.lock (committed) for
 # bit-for-bit reproducibility. Resolved versions are also echoed into every

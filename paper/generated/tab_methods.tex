@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Method panel. Every population-based method uses the same population size and the same wall-clock budget, and no parameter is tuned per instance.}
+\label{tab:methods}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{llp{6.6cm}l}
+\toprule
+Method & Role & Configuration & Source \\
+\midrule
+CP-SAT & Exact & Lazy clause generation over an integer constraint model, one search worker & \cite{perron2023cpsat,lan2025pyjobshop} \\
+PDR & Problem-specific & Priority rules, shortest processing time, most work remaining and most operations remaining & \cite{panwalkar1977survey} \\
+GT &  & Active-schedule construction & \cite{giffler1960algorithms} \\
+TS &  & Critical-block neighbourhood, randomised tenure, aspiration, restarts & \cite{glover1986future,nowicki1996fast} \\
+SA &  & Disjunctive-graph annealing, instance-calibrated cooling & \cite{vanlaarhoven1992job} \\
+BRKGA & Random-key & Biased random-key genetic algorithm, elite-biased uniform crossover & \cite{bean1994genetic,goncalves2011biased} \\
+GA & Classical general-purpose & Real-coded genetic algorithm & \cite{holland1975adaptation} \\
+DE &  & Differential evolution, rand/1/bin & \cite{storn1997differential} \\
+PSO &  & Particle swarm optimisation with inertia weight & \cite{kennedy1995particle} \\
+ABC &  & Artificial bee colony, employed, onlooker and scout phases & \cite{karaboga2007powerful} \\
+L-SHADE & Competition-grade adaptive & Success-history adaptive DE with linear population reduction & \cite{tanabe2014improving} \\
+IMODE &  & Improved multi-operator DE, CEC 2020 competition entry & \cite{sallam2020improved} \\
+CMA-ES &  & Covariance matrix adaptation evolution strategy, separable mode & \cite{hansen2001completely} \\
+GWO & Recent metaphor-based & Grey wolf optimiser & \cite{mirjalili2014grey} \\
+RIME &  & RIME optimisation algorithm & \cite{su2023rime} \\
+MDE &  & Multi-population differential evolution & \cite{karkinli2023detection} \\
+CSA &  & Colony-based search algorithm & \cite{civicioglu2024colony} \\
+\bottomrule
+\end{tabular}}
+\end{table}

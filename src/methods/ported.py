@@ -215,7 +215,7 @@ def solve_ported(
     if method not in _PORTS:
         raise ValueError(f"unknown ported method {method!r}; options: {sorted(_PORTS)}")
     recorder = RunRecorder()
-    dim = vector_length(instance)
+    dim = vector_length(instance, mapping)
 
     def batch_obj(pop):
         out = np.empty(len(pop))

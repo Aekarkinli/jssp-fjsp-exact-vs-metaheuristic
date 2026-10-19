@@ -1,0 +1,81 @@
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{llrrrrcrrl}
+\caption{Per-instance results at the 300\,s budget. Exact, tabu (TS) and decoded entries are medians over 20 seeds, and the decoded column gives the best of the twelve decoded optimisers with the method attaining it. T is the problem class, J for job shop and F for flexible, and Pr states whether the exact solver proved optimality. Classes are ES for exact-sufficient, HN for heuristic-necessary, HU for heuristic-useful, HY for hybrid-recommended and IN for inconclusive.}\label{tab:instance-detail}\\
+\toprule
+Instance & T & $n\times m$ & Ops & BKS & Exact & Pr & TS & Decoded & Class \\
+\midrule
+\endfirsthead
+\toprule
+Instance & T & $n\times m$ & Ops & BKS & Exact & Pr & TS & Decoded & Class \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+mk01 & F & 10$\times$6 & 55 & 40 & 40 & y & 40 & 40\,GA & ES \\
+mk02 & F & 10$\times$6 & 58 & 26 & 26 & n & 29 & 28\,MDE & IN \\
+mk04 & F & 15$\times$8 & 90 & 60 & 60 & y & 66 & 62\,MDE & ES \\
+mk07 & F & 20$\times$5 & 100 & 139 & 141 & n & 150 & 144\,GA & IN \\
+mk05 & F & 15$\times$4 & 106 & 172 & 172 & n & 180 & 177\,MDE & IN \\
+mk03 & F & 15$\times$8 & 150 & 204 & 204 & y & 204 & 204\,CMA-ES & ES \\
+mk06 & F & 10$\times$15 & 150 & 57 & 58 & n & 65 & 70\,MDE & IN \\
+mk08 & F & 20$\times$10 & 225 & 523 & 523 & y & 523 & 523\,CMA-ES & ES \\
+mk09 & F & 20$\times$10 & 240 & 307 & 307 & y & 307 & 339\,CMA-ES & ES \\
+mk10 & F & 20$\times$15 & 240 & 193 & 226 & n & 218 & 278\,CMA-ES & HN \\
+fattahi01 & F & 2$\times$2 & 4 & 66 & 66 & y & 66 & 66\,ABC & ES \\
+fattahi05 & F & 3$\times$2 & 6 & 119 & 119 & y & 119 & 119\,ABC & ES \\
+fattahi10 & F & 4$\times$5 & 12 & 516 & 516 & y & 516 & 516\,ABC & ES \\
+fattahi15 & F & 7$\times$7 & 21 & 514 & 514 & y & 515 & 539\,BRKGA & ES \\
+fattahi20 & F & 12$\times$8 & 48 & 1196 & 1196 & n & 1258 & 1272\,MDE & IN \\
+edata\_la01 & F & 10$\times$5 & 50 & 609 & 609 & y & 609 & 618\,RIME & ES \\
+edata\_la06 & F & 15$\times$5 & 75 & 833 & 833 & y & 833 & 833\,MDE & ES \\
+edata\_la16 & F & 10$\times$10 & 100 & 892 & 892 & y & 892 & 915\,MDE & ES \\
+edata\_la21 & F & 15$\times$10 & 150 & 1009 & 1009 & n & 1056 & 1119\,GA & IN \\
+edata\_la26 & F & 20$\times$10 & 200 & 1106 & 1126 & n & 1192 & 1326\,CMA-ES & IN \\
+rdata\_la01 & F & 10$\times$5 & 50 & 570 & 570 & y & 580 & 590\,MDE & ES \\
+rdata\_la06 & F & 15$\times$5 & 75 & 799 & 799 & n & 800 & 810\,GA & IN \\
+rdata\_la16 & F & 10$\times$10 & 100 & 717 & 717 & y & 759 & 776\,GA & ES \\
+rdata\_la21 & F & 15$\times$10 & 150 & 825 & 848 & n & 924 & 1070\,CMA-ES & IN \\
+rdata\_la26 & F & 20$\times$10 & 200 & 1057 & 1090 & n & 1127 & 1298\,CMA-ES & IN \\
+vdata\_la01 & F & 10$\times$5 & 50 & 570 & 570 & n & 573 & 588\,GA & IN \\
+vdata\_la06 & F & 15$\times$5 & 75 & 799 & 799 & n & 800 & 807\,GA & IN \\
+vdata\_la16 & F & 10$\times$10 & 100 & 717 & 717 & y & 717 & 740\,CMA-ES & ES \\
+vdata\_la21 & F & 15$\times$10 & 150 & 800 & 814 & n & 840 & 1048\,CMA-ES & IN \\
+vdata\_la26 & F & 20$\times$10 & 200 & 1052 & 1070 & n & 1070 & 1272\,CMA-ES & IN \\
+abz5 & J & 10$\times$10 & 100 & 1234 & 1234 & y & 1236 & 1287\,RIME & ES \\
+abz6 & J & 10$\times$10 & 100 & 943 & 943 & y & 943 & 979\,RIME & ES \\
+abz7 & J & 20$\times$15 & 300 & 656 & 670 & n & 684 & 770\,CMA-ES & IN \\
+abz8 & J & 20$\times$15 & 300 & 667 & 692 & n & 704 & 794\,CMA-ES & IN \\
+abz9 & J & 20$\times$15 & 300 & 678 & 691 & n & 720 & 795\,CMA-ES & IN \\
+orb01 & J & 10$\times$10 & 100 & 1059 & 1059 & y & 1096 & 1114\,MDE & ES \\
+orb02 & J & 10$\times$10 & 100 & 888 & 888 & y & 890 & 927\,RIME & ES \\
+orb03 & J & 10$\times$10 & 100 & 1005 & 1005 & y & 1034 & 1072\,MDE & ES \\
+orb04 & J & 10$\times$10 & 100 & 1005 & 1005 & y & 1019 & 1042\,MDE & ES \\
+orb05 & J & 10$\times$10 & 100 & 887 & 887 & y & 893 & 917\,MDE & ES \\
+ft06 & J & 6$\times$6 & 36 & 55 & 55 & y & 55 & 55\,ABC & ES \\
+ft10 & J & 10$\times$10 & 100 & 930 & 930 & y & 946 & 974\,MDE & ES \\
+ft20 & J & 20$\times$5 & 100 & 1165 & 1165 & y & 1173 & 1185\,MDE & ES \\
+la01 & J & 10$\times$5 & 50 & 666 & 666 & y & 666 & 666\,BRKGA & ES \\
+la06 & J & 15$\times$5 & 75 & 926 & 926 & y & 926 & 926\,ABC & ES \\
+la11 & J & 20$\times$5 & 100 & 1222 & 1222 & y & 1222 & 1222\,BRKGA & ES \\
+la16 & J & 10$\times$10 & 100 & 945 & 945 & y & 946 & 982\,L-SHADE & ES \\
+la19 & J & 10$\times$10 & 100 & 842 & 842 & y & 849 & 877\,MDE & ES \\
+la21 & J & 15$\times$10 & 150 & 1046 & 1046 & n & 1060 & 1144\,MDE & IN \\
+la24 & J & 15$\times$10 & 150 & 935 & 935 & y & 957 & 1036\,GA & ES \\
+la26 & J & 20$\times$10 & 200 & 1218 & 1218 & y & 1218 & 1319\,CMA-ES & ES \\
+la29 & J & 20$\times$10 & 200 & 1152 & 1167 & n & 1192 & 1272\,CMA-ES & IN \\
+la36 & J & 15$\times$15 & 225 & 1268 & 1268 & y & 1305 & 1385\,CMA-ES & ES \\
+la38 & J & 15$\times$15 & 225 & 1196 & 1196 & n & 1235 & 1322\,CMA-ES & IN \\
+la40 & J & 15$\times$15 & 225 & 1222 & 1222 & y & 1256 & 1343\,CMA-ES & ES \\
+la31 & J & 30$\times$10 & 300 & 1784 & 1784 & y & 1784 & 1814\,CMA-ES & ES \\
+swv01 & J & 20$\times$10 & 200 & 1407 & 1432 & n & 1513 & 1548\,CMA-ES & IN \\
+swv06 & J & 20$\times$15 & 300 & 1667 & 1790 & n & 1840 & 1973\,CMA-ES & IN \\
+swv11 & J & 50$\times$10 & 500 & 2983 & 3340 & n & 3256 & 3286\,CMA-ES & HN \\
+ta01 & J & 15$\times$15 & 225 & 1231 & 1231 & y & 1264 & 1366\,CMA-ES & ES \\
+ta11 & J & 20$\times$15 & 300 & 1357 & 1394 & n & 1432 & 1606\,CMA-ES & IN \\
+ta21 & J & 20$\times$20 & 400 & 1642 & 1683 & n & 1746 & 1940\,CMA-ES & IN \\
+ta31 & J & 30$\times$15 & 450 & 1764 & 1903 & n & 1805 & 2097\,CMA-ES & HN \\
+ta41 & J & 30$\times$20 & 600 & 2005 & 2253 & n & 2182 & 2522\,CMA-ES & HN \\
+ta51 & J & 50$\times$15 & 750 & 2760 & 3027 & n & 2760 & 3214\,CMA-ES & HN \\
+ta61 & J & 50$\times$20 & 1000 & 2868 & 3350 & n & 2888 & 3658\,CMA-ES & HN \\
+ta71 & J & 100$\times$20 & 2000 & 5464 & 5977 & n & 5464 & 6410\,GA & HN \\
+\end{longtable}}

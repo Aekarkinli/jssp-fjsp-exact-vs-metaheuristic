@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Logistic model of proof of optimality within 300\,s, fitted on one binary response per instance ($n=67$, 36 proved). McFadden $R^2=0.38$, likelihood-ratio $p<10^{-4}$. \Rthree{The flexibility ratio is the mean share of the machines on which an operation may be processed, which is $1/m$ for a job-shop instance.}}
+\label{tab:proof}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrr}
+\toprule
+Term & Coefficient & 95\,\% CI & $p$ \\
+\midrule
+Intercept & 16.72 & [7.70, 25.74] & 0.0003 \\
+log operations & -2.80 & [-4.45, -1.15] & 0.0009 \\
+Machines & -0.10 & [-0.38, 0.18] & 0.4794 \\
+Flexibility ratio & -10.06 & [-15.97, -4.16] & 0.0008 \\
+Duration dispersion & 0.57 & [-7.34, 8.47] & 0.8886 \\
+\bottomrule
+\end{tabular}}
+\end{table}

@@ -1,0 +1,16 @@
+{
+ "n_pairs": 9,
+ "n_cec_improves": 6,
+ "n_sched_improves": 5,
+ "n_agree": 6,
+ "n_sched_sig_holm": 2,
+ "n_cec_sig_holm": 7,
+ "one_second": {
+  "n_pairs": 8,
+  "n_variant_worse_median": 8,
+  "n_variant_worse_holm": 3,
+  "throughput_ratio_min": 0.7412980864417575,
+  "throughput_ratio_max": 1.2535183695070449,
+  "n_variant_worse_at_1000_evaluations": 7
+ }
+}

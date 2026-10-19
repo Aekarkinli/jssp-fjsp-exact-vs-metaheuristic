@@ -75,8 +75,47 @@ def fetch(force: bool = False) -> dict:
     return provenance
 
 
+EXT_DIR = INSTANCES_DIR / "ext"
+
+
+def fetch_extension(force: bool = False) -> dict:
+    """Download the revision-round instance sets into ``data/instances/ext/``.
+
+    They are kept apart from the main panel's files and provenance so that nothing about the
+    locked main comparison changes. Provenance goes to ``SOURCES_rev1.json``.
+    """
+    from src.io.instance_sources import extension_specs
+
+    provenance: dict = {
+        "sources": SOURCES,
+        "retrieved_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "files": {},
+    }
+    n_downloaded = 0
+    for spec in extension_specs():
+        dest = EXT_DIR / spec.local
+        if dest.exists() and not force:
+            data = dest.read_bytes()
+        else:
+            data = _download(spec.url)
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_bytes(data)
+            n_downloaded += 1
+        provenance["files"]["ext/" + spec.local] = {
+            "url": spec.url, "sha256": _sha256(data), "bytes": len(data)}
+    (INSTANCES_DIR / "SOURCES_rev1.json").write_text(
+        json.dumps(provenance, indent=2), encoding="utf-8")
+    provenance["_n_downloaded"] = n_downloaded
+    return provenance
+
+
 def main() -> None:
     force = "--force" in sys.argv
+    if "--extension" in sys.argv:
+        prov = fetch_extension(force=force)
+        print(f"{len(prov['files'])} extension files recorded "
+              f"({prov['_n_downloaded']} newly downloaded) -> {EXT_DIR}")
+        return
     prov = fetch(force=force)
     print(
         f"{len(prov['files'])} files recorded "

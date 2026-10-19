@@ -16,11 +16,18 @@ STAGES = [
     ("comparative statistics", ["-m", "src.analysis.stats"]),
     ("necessity classification", ["-m", "src.analysis.necessity"]),
     ("supporting analyses", ["-m", "src.analysis.extras"]),
+    ("collect further experiments", ["-m", "src.analysis.collect", "--stages",
+                                     "rev_hurink,rev_memetic,rev_variants,rev_opperm,rev_large"]),
+    ("analyses of the main records", ["-m", "src.analysis.revision"]),
+    ("further experiments", ["-m", "src.analysis.revision_runs"]),
 ]
 OUTPUTS = [
     ("figures", ["-m", "src.figtab.figures"]),
     ("tables", ["-m", "src.figtab.tables"]),
     ("macros", ["-m", "src.figtab.numbers"]),
+    ("figures, further experiments", ["-m", "src.figtab.figures_rev1"]),
+    ("macros, further experiments", ["-m", "src.figtab.numbers_rev1"]),
+    ("tables, further experiments", ["-m", "src.figtab.tables_rev1"]),
 ]
 
 

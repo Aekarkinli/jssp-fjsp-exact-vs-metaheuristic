@@ -1,29 +1,26 @@
 # =============================================================================
-# v2 FULL EXPERIMENTAL CONFIGURATION  (redesigned study after the SWEVO review)
+# FULL EXPERIMENTAL CONFIGURATION
 #
-# This file is the locked experimental design for v2. The thresholds, panel, seeds
-# and budgets below are fixed before any v2 run, as recorded in REVISION_PLAN.md,
-# and the confirmatory/exploratory split is declared there in advance.
+# The thresholds, panel, seeds and budgets below were fixed before the main run,
+# and the confirmatory/exploratory split of the analyses was declared in advance.
 #
-# Changes from v1 and why (review point numbers in brackets):
-#   - the FJSP machine key indexes the eligible set instead of the global machine
-#     index, so the decoder is label-invariant and repair-free                 [4, 5]
-#   - the exact solver runs with the full seed list, like every other method     [11]
-#   - three methods added: BRKGA, CMA-ES, simulated annealing                [14, 15]
-#   - the parameter policy is named for what it is, a common-setting choice   [7, 8]
-#   - anytime traces carry a decoder-evaluation index as well as wall-clock      [12]
-#   - the hybrid is budgeted end to end with rule-fixed seeders             [1, 2, 3]
+# Design features:
+#   - the FJSP machine key indexes the eligible set of each operation, so the
+#     decoder is repair-free
+#   - the exact solver runs with the full seed list, like every other method
+#   - the panel includes BRKGA, CMA-ES and simulated annealing
+#   - every population-based method uses the same population size
+#   - anytime traces carry a decoder-evaluation index as well as wall-clock time
+#   - the hybrid is budgeted end to end with rule-fixed seeders
 # =============================================================================
 
 meta:
   name: "solver-aware-evidence-standards-v2-full"
   version: 2
-  supersedes: "v1 full run (rejected; see Swarm_and_Evolutionary_Computation_Hakem_Degerlendirmesi.md)"
   problem_objective: "makespan"          # Cmax, single-objective
   problem_families: ["JSSP", "FJSP"]
   design_lock:
     thresholds_fixed_before_run: true
-    plan_document: "REVISION_PLAN.md"
     integrity_rule: "Report what the experiments show; never tune/filter/re-run to confirm a hypothesis."
 
 # ---- Budget: single anytime run; short-budget values are extracted post hoc -----

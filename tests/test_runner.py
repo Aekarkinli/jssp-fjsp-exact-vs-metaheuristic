@@ -12,7 +12,8 @@ def test_index_covers_all_67_instances():
 
 
 def test_all_methods_and_determinism_partition():
-    assert len(runner.ALL_METHODS) == 17
+    # the locked panel of 17 plus the four improved variants of the targeted experiments
+    assert len(runner.ALL_METHODS) == 17 + 4
     assert runner.DETERMINISTIC <= set(runner.ALL_METHODS)
     # only the two constructive methods are deterministic; the exact solver takes a seed
     assert runner.DETERMINISTIC == {"dispatching", "greedy"}

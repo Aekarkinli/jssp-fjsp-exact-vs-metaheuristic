@@ -1,0 +1,28 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{The twelve decoded optimisers under the random-key active-schedule configuration (RK) and the operation-based configuration (OB) on the evaluation subset, ten seeds. Medians are over instances of the per-instance median deviation from the best-known value. The paired difference is OB minus RK, Better counts the instances on which OB is lower, and $p$ is the Wilcoxon signed-rank test, unadjusted and Holm-adjusted over the twelve optimisers at the same budget.}
+\label{tab:rev-representation}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+ & \multicolumn{5}{c}{1 s} & \multicolumn{5}{c}{300 s} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-11}
+Optimiser & RK & OB & Diff. & $p$ & $p_{\mathrm{Holm}}$ & RK & OB & Diff. & Better & $p_{\mathrm{Holm}}$ \\
+\midrule
+CMA-ES & 27.25 & 11.04 & -13.55 & $<10^{-4}$ & $<10^{-4}$ & 11.44 & 3.56 & -6.18 & 18/20 & $<10^{-4}$ \\
+MDE & 30.94 & 12.05 & -15.07 & $<10^{-4}$ & $<10^{-4}$ & 10.53 & 3.73 & -6.26 & 16/20 & $<10^{-4}$ \\
+CSA & 33.15 & 11.96 & -15.82 & $<10^{-4}$ & $<10^{-4}$ & 15.25 & 3.84 & -8.70 & 18/20 & $<10^{-4}$ \\
+GA & 25.85 & 8.33 & -13.92 & $<10^{-4}$ & $<10^{-4}$ & 9.91 & 4.07 & -4.64 & 18/20 & $<10^{-4}$ \\
+L-SHADE & 29.76 & 11.77 & -13.83 & $<10^{-4}$ & $<10^{-4}$ & 14.48 & 4.54 & -6.96 & 18/20 & $<10^{-4}$ \\
+RIME & 30.68 & 11.33 & -14.21 & $<10^{-4}$ & $<10^{-4}$ & 14.64 & 4.84 & -7.86 & 18/20 & $<10^{-4}$ \\
+DE & 28.72 & 10.55 & -15.29 & $<10^{-4}$ & $<10^{-4}$ & 19.65 & 4.86 & -12.15 & 18/20 & $<10^{-4}$ \\
+IMODE & 30.36 & 11.58 & -14.82 & $<10^{-4}$ & $<10^{-4}$ & 16.28 & 5.04 & -9.50 & 18/20 & $<10^{-4}$ \\
+BRKGA & 26.18 & 9.86 & -13.45 & $<10^{-4}$ & $<10^{-4}$ & 17.90 & 5.60 & -9.02 & 17/20 & $<10^{-4}$ \\
+GWO & 29.43 & 11.96 & -14.14 & $<10^{-4}$ & $<10^{-4}$ & 18.60 & 6.10 & -10.22 & 18/20 & $<10^{-4}$ \\
+PSO & 31.44 & 11.46 & -15.31 & $<10^{-4}$ & $<10^{-4}$ & 20.18 & 7.03 & -10.55 & 17/20 & $<10^{-4}$ \\
+ABC & 31.37 & 12.16 & -15.28 & $<10^{-4}$ & $<10^{-4}$ & 22.45 & 10.06 & -11.24 & 17/20 & $<10^{-4}$ \\
+\bottomrule
+\end{tabular}}
+\end{table}

@@ -1,0 +1,12 @@
+left,right,rope,p_left,p_rope,p_right
+tabu,cpsat,1.0,0.00044,0.0072,0.99236
+tabu,sa,1.0,1.0,0.0,0.0
+tabu,cmaes,1.0,1.0,0.0,0.0
+tabu,ga,1.0,1.0,0.0,0.0
+tabu,mde,1.0,1.0,0.0,0.0
+tabu,lshade,1.0,1.0,0.0,0.0
+tabu,imode,1.0,1.0,0.0,0.0
+tabu,gwo,1.0,1.0,0.0,0.0
+tabu,csa,1.0,1.0,0.0,0.0
+tabu,rime,1.0,1.0,0.0,0.0
+tabu,brkga,1.0,1.0,0.0,0.0

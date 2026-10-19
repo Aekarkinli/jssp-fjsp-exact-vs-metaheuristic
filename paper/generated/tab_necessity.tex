@@ -1,0 +1,29 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Necessity classification of the 67 instances at four budgets, and its dependence on the decision rule. The main panel uses the pre-specified thresholds $\delta=0.01$, $\tau=10$ and $\varepsilon=0.02$, the tabu search as the reference heuristic, the tabu-seeded warm start as the reference hybrid, and false-discovery control across the instances tested within each budget. The lower panel counts the cells whose class changes when one element of that rule is replaced.}
+\label{tab:necessity}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrr}
+\toprule
+Budget & Exact-sufficient & Heuristic-useful & Heuristic-necessary & Hybrid-recommended & Inconclusive \\
+\midrule
+1\,s & 13 & 2 & 34 & 8 & 10 \\
+10\,s & 25 & 4 & 17 & 3 & 18 \\
+60\,s & 31 & 1 & 8 & 1 & 26 \\
+300\,s & 36 & 0 & 7 & 0 & 24 \\
+\midrule
+\multicolumn{6}{l}{\emph{Cells whose class changes under an alternative decision rule}} \\
+Variation & 1\,s & 10\,s & 60\,s & 300\,s & Total \\
+\midrule
+$\delta=0.02$ & 4 & 9 & 3 & 0 & 16 \\
+$\tau=5$ & 0 & 0 & 0 & 0 & 0 \\
+$\tau=20$ & 0 & 2 & 0 & 0 & 2 \\
+best heuristic of the panel as reference & 2 & 0 & 0 & 0 & 2 \\
+rule-seeded cheap hybrid as reference & 4 & 2 & 1 & 0 & 7 \\
+hybrid excluded & 8 & 3 & 1 & 0 & 12 \\
+no false-discovery control & 0 & 0 & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular}}
+\end{table}

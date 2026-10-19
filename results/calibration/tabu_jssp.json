@@ -1,0 +1,59 @@
+[
+  {
+    "instance": "ft10",
+    "published": 930,
+    "tabu_best": 951,
+    "tabu_per_seed": [
+      954,
+      951,
+      962
+    ],
+    "tabu_gap_pct": 2.26,
+    "dispatching": 1178,
+    "dispatching_gap_pct": 26.67,
+    "seeds": [
+      11,
+      23,
+      37
+    ],
+    "budget_s": 30.0
+  },
+  {
+    "instance": "la36",
+    "published": 1268,
+    "tabu_best": 1297,
+    "tabu_per_seed": [
+      1310,
+      1297,
+      1325
+    ],
+    "tabu_gap_pct": 2.29,
+    "dispatching": 1513,
+    "dispatching_gap_pct": 19.32,
+    "seeds": [
+      11,
+      23,
+      37
+    ],
+    "budget_s": 30.0
+  },
+  {
+    "instance": "abz7",
+    "published": 656,
+    "tabu_best": 689,
+    "tabu_per_seed": [
+      700,
+      689,
+      697
+    ],
+    "tabu_gap_pct": 5.03,
+    "dispatching": 808,
+    "dispatching_gap_pct": 23.17,
+    "seeds": [
+      11,
+      23,
+      37
+    ],
+    "budget_s": 30.0
+  }
+]

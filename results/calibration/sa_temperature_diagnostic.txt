@@ -1,0 +1,29 @@
+behnke11: n_op=250 chain=250 evals_30s=74255 chains~297.0 t0=595.2 start=296 best=296 improvements=0
+dp15a: n_op=387 chain=387 evals_30s=33647 chains~86.9 t0=631.0 start=2233 best=2233 improvements=0
+mk10: n_op=240 chain=240 evals_30s=71905 chains~299.6 t0=191.7 start=228 best=228 improvements=0
+vdata_la21: n_op=150 chain=150 evals_30s=108525 chains~723.5 t0=626.8 start=861 best=861 improvements=0
+ta42: n_op=600 chain=600 evals_30s=58460 chains~97.4 t0=313.0 start=2607 best=2336 improvements=38
+la21: n_op=150 chain=150 evals_30s=205147 chains~1367.6 t0=433.7 start=1267 best=1079 improvements=48
+# Annealing temperature trajectory, 60 s, seed 11 (tools/diag_sa_temperature.py, trace variant)
+# columns: elapsed s, temperature, current makespan, best makespan, chain sigma, accepted moves in chain
+dp15a t0 631.0 chains 141
+   t=0.4 T=573.7 cur=3024 best=2233 sigma=200.6 acc=215
+   t=5.0 T=175.2 cur=2928 best=2233 sigma=153.6 acc=202
+   t=14.5 T=72.6 cur=2872 best=2233 sigma=96.6 acc=158
+   t=31.1 T=28.1 cur=2515 best=2233 sigma=33.5 acc=150
+   t=46.0 T=12.4 cur=2451 best=2233 sigma=18.7 acc=80
+   t=60.0 T=4.1 cur=2351 best=2233 sigma=1.5 acc=29
+behnke11 t0 595.2 chains 394
+   t=0.3 T=522.5 cur=833 best=296 sigma=136.0 acc=216
+   t=9.0 T=39.4 cur=607 best=296 sigma=41.2 acc=182
+   t=19.4 T=5.2 cur=448 best=296 sigma=4.8 acc=104
+   t=33.3 T=0.0 cur=381 best=296 sigma=0.0 acc=54
+   t=46.7 T=0.0 cur=381 best=296 sigma=0.0 acc=39
+   t=60.0 T=0.0 cur=381 best=296 sigma=0.0 acc=49
+la21 t0 433.7 chains 2542
+   t=0.1 T=356.0 cur=1284 best=1259 sigma=63.2 acc=145
+   t=7.0 T=0.0 cur=1079 best=1079 sigma=0.0 acc=11
+   t=15.9 T=0.0 cur=1079 best=1079 sigma=0.0 acc=11
+   t=30.6 T=0.0 cur=1079 best=1079 sigma=0.0 acc=8
+   t=45.3 T=0.0 cur=1079 best=1079 sigma=0.0 acc=6
+   t=60.0 T=0.0 cur=1079 best=1079 sigma=0.0 acc=0

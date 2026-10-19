@@ -39,7 +39,13 @@ import yaml  # noqa: E402
 
 from src.core.decoder import DEFAULT_MAPPING  # noqa: E402
 from src.core.feasibility import check_feasibility  # noqa: E402
-from src.io.instance_sources import FJSP_INSTANCES, JSSP_INSTANCES  # noqa: E402
+from src.io.instance_sources import (  # noqa: E402
+    FJSP_INSTANCES,
+    HURINK_STUDY,
+    JSSP_INSTANCES,
+    LARGE_FJSP,
+    LARGE_JSSP,
+)
 from src.io.loaders import load_fjsp_file, load_jssp_file  # noqa: E402
 from src.methods.anneal import solve_anneal  # noqa: E402
 from src.methods.brkga import solve_brkga  # noqa: E402
@@ -48,6 +54,7 @@ from src.methods.constructive import solve_dispatching, solve_greedy  # noqa: E4
 from src.methods.exact_cpsat import solve_cpsat  # noqa: E402
 from src.methods.metaheuristic import (  # noqa: E402
     OPTIMIZERS,
+    VARIANTS,
     recommended_pop_size,
     solve_metaheuristic,
 )
@@ -55,13 +62,13 @@ from src.methods.ported import solve_ported  # noqa: E402
 from src.methods.tabu import solve_tabu  # noqa: E402
 
 ALL_METHODS = ["cpsat", "dispatching", "greedy", "tabu", "sa", "ga", "brkga", "de", "pso",
-               "abc", "gwo", "lshade", "imode", "cmaes", "rime", "mde", "csa"]
+               "abc", "gwo", "lshade", "imode", "cmaes", "rime", "mde", "csa"] + VARIANTS
 # Only the two constructive methods are genuinely deterministic. The exact solver's random
 # seed changes its search, so it runs with the full seed list like every other method;
 # representing it by a single run would make the treatment of uncertainty asymmetric.
 DETERMINISTIC = {"dispatching", "greedy"}
 DECODED = {"ga", "brkga", "de", "pso", "abc", "gwo", "lshade", "imode", "cmaes", "rime",
-           "mde", "csa"}
+           "mde", "csa", *VARIANTS}
 ALIAS = {"recent_extra": "rime", "greedy_gt": "greedy"}
 RAW = Path("results/raw")
 DATA = Path("data/instances")
@@ -72,12 +79,19 @@ for _s in JSSP_INSTANCES:
     INDEX[_s.id] = ("jssp", _s.local, _s.family)
 for _s in FJSP_INSTANCES:
     INDEX[_s.id] = ("fjsp", _s.local, _s.family)
+# Revision-round instance sets. They are reachable only by naming them explicitly, so the
+# "all" selection of the locked main configuration is unchanged.
+EXT_INDEX: dict[str, tuple[str, str, str]] = {}
+for _s in LARGE_JSSP:
+    EXT_INDEX[_s.id] = ("jssp", "ext/" + _s.local, _s.family)
+for _s in list(LARGE_FJSP) + list(HURINK_STUDY):
+    EXT_INDEX[_s.id] = ("fjsp", "ext/" + _s.local, _s.family)
 
 _META: dict = {}  # set per worker by the pool initializer
 
 
 def _load(instance_id: str):
-    kind, local, family = INDEX[instance_id]
+    kind, local, family = INDEX.get(instance_id) or EXT_INDEX[instance_id]
     loader = load_jssp_file if kind == "jssp" else load_fjsp_file
     return loader(DATA / local, instance_id, family)
 
@@ -96,7 +110,7 @@ def _run_method(method, instance, budget, seed, pop_size, mapping=DEFAULT_MAPPIN
         return solve_anneal(instance, budget, seed=seed, mapping=mapping)
     if pop_policy == "recommended":
         from src.core.decoder import vector_length
-        pop_size = recommended_pop_size(method, vector_length(instance))
+        pop_size = recommended_pop_size(method, vector_length(instance, mapping))
     if method == "brkga":
         return solve_brkga(instance, budget, seed=seed, pop_size=pop_size, mapping=mapping)
     if method == "cmaes":
@@ -225,7 +239,10 @@ def _method_ids(config, override) -> list[str]:
 
 def _instance_ids(config, override) -> list[str]:
     if override:
-        return [i for i in override if i in INDEX]
+        unknown = [i for i in override if i not in INDEX and i not in EXT_INDEX]
+        if unknown:
+            raise SystemExit(f"unknown instance ids: {unknown}")
+        return list(override)
     inst = config.get("instances", "all")
     if isinstance(inst, list):
         return [i for i in inst if i in INDEX]
@@ -242,7 +259,8 @@ def main() -> None:
     ap.add_argument("--workers", type=int, default=None)
     ap.add_argument("--run-name", default=None, help="output subdir (default: config stem)")
     ap.add_argument("--mapping", default=DEFAULT_MAPPING,
-                    help="FJSP machine-key mapping: eligible (primary) or legacy (ablation)")
+                    help="representation: eligible (primary), legacy (ablation), opperm "
+                         "(alternative representation) or eligible_ls (memetic)")
     ap.add_argument("--pop-policy", default="common", choices=["common", "recommended"],
                     help="common: one population size for all; recommended: each method's rule")
     ap.add_argument("--pop-size", type=int, default=None, help="override the common population")

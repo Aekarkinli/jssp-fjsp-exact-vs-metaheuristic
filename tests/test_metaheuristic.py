@@ -15,7 +15,9 @@ DATA = Path("data/instances")
 
 
 def test_methods_registered():
-    assert set(OPTIMIZERS) == {"ga", "de", "pso", "abc", "gwo", "lshade", "imode", "rime"}
+    panel = {"ga", "de", "pso", "abc", "gwo", "lshade", "imode", "rime"}
+    revision = {"jade", "shade", "clpso", "igwo"}  # improved variants of the targeted experiments
+    assert set(OPTIMIZERS) == panel | revision
 
 
 @pytest.mark.parametrize("method", list(OPTIMIZERS))

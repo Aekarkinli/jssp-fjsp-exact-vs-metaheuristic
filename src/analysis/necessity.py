@@ -224,16 +224,16 @@ def _assign_classes(cells: pd.DataFrame, thr=THRESHOLDS, q: float = FDR_Q) -> pd
             sub = "1b_heuristic_faster" if fast else "1a_redundant"
         elif r["sig_hybrid"]:
             label, sub = "HYBRID_RECOMMENDED", "4_warm_start"
-        elif (r["z_exact"] - r["z_heuristic"] >= r["z_exact"] * 0.01) and r["sig_heuristic"]:
+        elif (r["z_exact"] - r["z_heuristic"] >= r["z_exact"] * delta) and r["sig_heuristic"]:
             label = "HEURISTIC_NECESSARY"
             sub = ("3_strong_near_bks" if r["z_heuristic"] <= r["bks"] * (1 + eps)
                    else "3_advantage_only")
-        elif abs(r["z_heuristic"] - r["z_exact"]) <= 0.01 * r["z_exact"]:
+        elif abs(r["z_heuristic"] - r["z_exact"]) <= delta * r["z_exact"]:
             if np.isfinite(r["t_heuristic"]) and r["t_heuristic"] * tau <= r["t_exact"]:
                 label, sub = "HEURISTIC_USEFUL", "2_faster_to_same_quality"
             else:
                 reason = "matched_but_not_faster"
-        elif r["z_exact"] - r["z_heuristic"] >= r["z_exact"] * 0.01:
+        elif r["z_exact"] - r["z_heuristic"] >= r["z_exact"] * delta:
             reason = "advantage_not_significant"
         else:
             reason = "exact_incumbent_better"

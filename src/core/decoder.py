@@ -21,8 +21,9 @@ sorted eligible set,
 
     j = min(|E(o)| - 1, floor(k * |E(o)|)),   machine = E(o)[j],
 
-so the mapping is uniform over the eligible machines, invariant to how the machines happen
-to be numbered, and structurally incapable of producing an ineligible choice. No repair
+so the mapping is uniform over the eligible machines for a uniformly distributed key and
+structurally incapable of producing an ineligible choice. For a fixed key the choice still
+depends on the order of the eligible set, so it is not invariant to machine relabelling. No repair
 step is needed and the repair count is zero by construction.
 
 A second mapping is retained for a controlled ablation only. The `legacy` mapping sends the
@@ -32,9 +33,25 @@ move as a repair. Arithmetic distance between machine numbers carries no operati
 meaning, so this mapping is biased by the labelling and manufactures repair work. It is
 never used for the main comparison; running it against the primary mapping measures what
 the naive choice costs.
+
+Two further representations are used in the targeted experiments as controlled
+alternatives, and neither is used by the main comparison.
+
+- ``opperm``: an operation-based permutation with repetition (Bierwirth, 1995). The vector
+  has one key per operation for both problem classes. Sorting the keys gives a sequence of
+  job indices, and the k-th occurrence of a job stands for its k-th operation. Operations are
+  placed in that order at the earliest time their job and machine allow, including idle gaps
+  left earlier on the machine. In the flexible case the decoder, not the vector, chooses the
+  machine: the eligible machine that gives the earliest completion, ties to the lower index.
+- ``eligible_ls``: the primary decoder followed by a deterministic steepest descent in the
+  critical-block neighbourhood of the tabu search (with machine reassignment of critical
+  operations in the flexible case) until no move improves the makespan. The objective is the
+  makespan after the descent and the vector itself is left unchanged, which is the
+  Baldwinian form of a memetic algorithm.
 """
 from __future__ import annotations
 
+import bisect
 from dataclasses import dataclass
 
 import numpy as np
@@ -44,6 +61,8 @@ from src.core.schedule import Assignment, Schedule
 
 ELIGIBLE = "eligible"  # primary mapping: index into the sorted eligible set, repair-free
 LEGACY = "legacy"      # ablation only: global machine index + nearest-eligible repair
+OPPERM = "opperm"      # revision: operation-based permutation, decoder-chosen machine
+MEMETIC = "eligible_ls"  # revision: primary decoding + critical-block steepest descent
 DEFAULT_MAPPING = ELIGIBLE
 
 
@@ -54,9 +73,11 @@ class DecodeResult:
     chosen_machines: tuple[int, ...]
 
 
-def vector_length(instance: Instance) -> int:
-    """Length of the continuous vector this instance expects."""
+def vector_length(instance: Instance, mapping: str = DEFAULT_MAPPING) -> int:
+    """Length of the continuous vector this instance expects under a representation."""
     n = instance.num_operations
+    if mapping == OPPERM:
+        return n
     return 2 * n if instance.is_flexible else n
 
 
@@ -169,10 +190,81 @@ def decode(
     return DecodeResult(schedule, n_repairs, tuple(chosen_machine))
 
 
+def decode_operation_permutation(instance: Instance, keys) -> DecodeResult:
+    """Operation-based permutation with repetition, decoded with gap insertion.
+
+    Sorting the keys (ties by position) yields a job sequence in which the k-th occurrence
+    of a job denotes its k-th operation. Each operation starts at the earliest time at which
+    its job predecessor has finished and an idle interval of sufficient length exists on the
+    machine, so later operations may be inserted before earlier ones on a machine. In the
+    flexible case every eligible machine is tried and the one with the earliest completion
+    is taken, ties to the lower machine index. The schedule is feasible by construction.
+    """
+    inst = instance
+    n_op = inst.num_operations
+    keys = np.asarray(keys, dtype=float)
+    if keys.size < n_op:
+        raise ValueError(f"need {n_op} keys, got {keys.size}")
+    job_of = [op.job for op in inst.operations]
+    order = np.argsort(keys[:n_op], kind="stable")
+
+    starts: list[list[int]] = [[] for _ in range(inst.num_machines)]
+    ends: list[list[int]] = [[] for _ in range(inst.num_machines)]
+    job_ready = [0] * inst.num_jobs
+    job_next = [0] * inst.num_jobs
+    assignments: list[Assignment | None] = [None] * n_op
+    chosen = [0] * n_op
+
+    def earliest(m: int, ready: int, p: int) -> int:
+        s, e = starts[m], ends[m]
+        i = bisect.bisect_right(e, ready)  # first interval that ends after `ready`
+        t = ready
+        while i < len(s):
+            if t + p <= s[i]:
+                return t
+            if e[i] > t:
+                t = e[i]
+            i += 1
+        return t
+
+    for g_pos in order:
+        j = job_of[int(g_pos)]
+        op = inst.jobs[j][job_next[j]]
+        g = op.global_index
+        ready = job_ready[j]
+        best = None
+        for m, p in op.modes:
+            t = earliest(m, ready, p)
+            cand = (t + p, m, t, p)
+            if best is None or cand < best:
+                best = cand
+        end, m, t, p = best
+        k = bisect.bisect_left(starts[m], t)
+        starts[m].insert(k, t)
+        ends[m].insert(k, end)
+        assignments[g] = Assignment(operation=g, job=j, machine=m, start=t, duration=p)
+        chosen[g] = m
+        job_ready[j] = end
+        job_next[j] += 1
+
+    schedule = Schedule(inst, tuple(a for a in assignments))  # type: ignore[arg-type]
+    return DecodeResult(schedule, 0, tuple(chosen))
+
+
 def decode_vector(
     instance: Instance, vector, mapping: str = DEFAULT_MAPPING
 ) -> DecodeResult:
-    """Convenience: decode a single flat continuous vector."""
+    """Convenience: decode a single flat continuous vector under a representation."""
+    if mapping == OPPERM:
+        return decode_operation_permutation(instance, vector)
+    if mapping == MEMETIC:
+        from src.methods.memetic import steepest_descent  # local import: no cycle
+
+        priorities, machine_keys = split_vector(instance, vector)
+        base = decode(instance, priorities, machine_keys, mapping=ELIGIBLE)
+        improved = steepest_descent(instance, base.schedule)
+        machines = tuple(a.machine for a in improved.assignments)
+        return DecodeResult(improved, 0, machines)
     priorities, machine_keys = split_vector(instance, vector)
     return decode(instance, priorities, machine_keys, mapping=mapping)
 

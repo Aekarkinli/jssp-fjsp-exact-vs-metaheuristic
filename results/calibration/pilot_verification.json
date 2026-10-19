@@ -1,0 +1,91 @@
+{
+  "n_results_checked": 216,
+  "instances": [
+    "ft06",
+    "ft10",
+    "la01",
+    "abz5",
+    "mk01",
+    "mk02"
+  ],
+  "methods": [
+    "cpsat",
+    "dispatching",
+    "greedy",
+    "tabu",
+    "ga",
+    "de",
+    "pso",
+    "abc",
+    "gwo",
+    "lshade",
+    "imode",
+    "rime",
+    "mde",
+    "csa"
+  ],
+  "seeds": [
+    11,
+    23,
+    37
+  ],
+  "repeatability": {
+    "cpsat_ft06": [
+      55.0,
+      55.0
+    ],
+    "dispatching_mk01": [
+      43.0,
+      43.0
+    ],
+    "ga_ft06_initial": [
+      79.0,
+      79.0
+    ]
+  },
+  "calibration": {
+    "ft06": {
+      "cpsat": 55.0,
+      "bks": 55,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "ft10": {
+      "cpsat": 930.0,
+      "bks": 930,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "la01": {
+      "cpsat": 666.0,
+      "bks": 666,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "abz5": {
+      "cpsat": 1234.0,
+      "bks": 1234,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "mk01": {
+      "cpsat": 40.0,
+      "bks": 40,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "mk02": {
+      "cpsat": 27.0,
+      "bks": 26,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    }
+  },
+  "example_checkpoints": {
+    "1": 59.0,
+    "10": 58.0,
+    "30": 58.0
+  },
+  "n_errors": 0,
+  "errors": []
+}

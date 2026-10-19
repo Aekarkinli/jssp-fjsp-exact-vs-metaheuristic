@@ -227,13 +227,16 @@ def main() -> None:
     ap.add_argument("--dim", type=int, default=30)
     ap.add_argument("--workers", type=int, default=16)
     ap.add_argument("--pop-size", type=int, default=DEFAULT_POP_SIZE)
+    ap.add_argument("--methods", default=None,
+                    help="comma-separated subset (default: the twelve panel optimisers)")
     args = ap.parse_args()
+    methods = args.methods.split(",") if args.methods else METHODS
 
     budget = 10_000 * args.dim
     seeds = [11, 23, 37, 41, 53, 67, 79, 83, 97, 101, 113, 127, 131, 149, 157, 167, 173,
              181, 191, 199]
     jobs = [(m, f, args.dim, args.runs, budget, args.pop_size, seeds)
-            for m in METHODS for f in FUNCTION_IDS]
+            for m in methods for f in FUNCTION_IDS]
     OUT.mkdir(parents=True, exist_ok=True)
     pending = [j for j in jobs
                if not (OUT / f"cec2017_F{j[1]}_d{j[2]}__{j[0]}.json").exists()]

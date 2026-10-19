@@ -1,0 +1,16 @@
+{
+ "changed_cells": 0,
+ "changed_by_budget": {},
+ "changed_list": [],
+ "construction_median_s": 0.0066131999919889495,
+ "construction_max_s": 0.8557238999928813,
+ "construction_max_instance": "ta71",
+ "tabu_median_rpd_1s_raw": 5.75,
+ "tabu_median_rpd_1s_charged": 5.75,
+ "tabu_median_rpd_10s_raw": 4.346060113728676,
+ "tabu_median_rpd_10s_charged": 4.346060113728676,
+ "tabu_median_rpd_60s_raw": 2.0223152022315203,
+ "tabu_median_rpd_60s_charged": 2.0223152022315203,
+ "tabu_median_rpd_300s_raw": 1.6634980988593155,
+ "tabu_median_rpd_300s_charged": 1.6634980988593155
+}

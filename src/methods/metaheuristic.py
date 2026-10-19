@@ -26,14 +26,14 @@ import math
 import time
 
 from mealpy import FloatVar, Problem, Termination
-from mealpy.evolutionary_based.DE import OriginalDE
+from mealpy.evolutionary_based.DE import JADE, OriginalDE
 from mealpy.evolutionary_based.GA import BaseGA
-from mealpy.evolutionary_based.SHADE import L_SHADE
+from mealpy.evolutionary_based.SHADE import L_SHADE, OriginalSHADE
 from mealpy.physics_based.RIME import OriginalRIME
 from mealpy.sota_based.IMODE import OriginalIMODE
 from mealpy.swarm_based.ABC import OriginalABC
-from mealpy.swarm_based.GWO import OriginalGWO
-from mealpy.swarm_based.PSO import OriginalPSO
+from mealpy.swarm_based.GWO import IGWO, OriginalGWO
+from mealpy.swarm_based.PSO import CL_PSO, OriginalPSO
 
 from src.core.decoder import DEFAULT_MAPPING, decode_vector, vector_length
 from src.core.instance import Instance
@@ -52,7 +52,15 @@ OPTIMIZERS = {
     "lshade": lambda ps: L_SHADE(epoch=EPOCH_CAP, pop_size=ps),
     "imode": lambda ps: OriginalIMODE(epoch=EPOCH_CAP, pop_size=ps),
     "rime": lambda ps: OriginalRIME(epoch=EPOCH_CAP, pop_size=ps),
+    # Improved variants of the targeted experiments. They complete the lineages of the
+    # panel members (DE -> JADE -> SHADE -> L-SHADE, PSO -> CL-PSO, GWO -> I-GWO) and are
+    # reported separately from the locked seventeen-method panel.
+    "jade": lambda ps: JADE(epoch=EPOCH_CAP, pop_size=ps),
+    "shade": lambda ps: OriginalSHADE(epoch=EPOCH_CAP, pop_size=ps),
+    "clpso": lambda ps: CL_PSO(epoch=EPOCH_CAP, pop_size=ps),
+    "igwo": lambda ps: IGWO(epoch=EPOCH_CAP, pop_size=ps),
 }
+VARIANTS = ["jade", "shade", "clpso", "igwo"]
 
 # Population-size rules recommended by each method's own source, used only in the
 # sensitivity study. A cap keeps the largest instances runnable: the scheduling vectors
@@ -81,7 +89,7 @@ class _SchedulingProblem(Problem):
         self.instance = instance
         self.recorder = recorder
         self.mapping = mapping
-        dim = vector_length(instance)
+        dim = vector_length(instance, mapping)
         super().__init__(
             bounds=FloatVar(lb=[0.0] * dim, ub=[1.0] * dim), minmax="min", log_to=None
         )

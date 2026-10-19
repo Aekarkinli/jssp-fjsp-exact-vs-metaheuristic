@@ -41,6 +41,13 @@ DERIVED = Path("results/derived")
 FIG = Path("paper/figures")
 RNG = np.random.default_rng(20260817)
 
+# Label placement only, in offset points, for labels that would otherwise collide.
+LABEL_OFFSET_NECESSITY = {"mk10": (-8, 10), "ta31": (-6, 12), "swv11": (12, -14),
+                          "ta41": (10, -3), "ta51": (-6, 6), "ta61": (4, 7),
+                          "ta71": (6, 2)}
+LABEL_OFFSET_EFFORT = {"mde": (-4, 6), "rime": (2, 7), "lshade": (5, -10),
+                       "imode": (6, -3), "brkga": (-5, 4)}
+
 
 def _matrix(name: str = "matrix_rpd_300s.csv") -> pd.DataFrame:
     return pd.read_csv(DERIVED / name, index_col=0)
@@ -65,38 +72,49 @@ def _family_handles(families):
 def fig_overview() -> None:
     """Question: how is the comparison organised. Statistic: none, a design schematic.
     Encoding: lanes and connectors. Uncertainty: none. Source: the study design."""
-    fig, ax = plt.subplots(figsize=(WIDTH, 2.05))
+    fig, ax = plt.subplots(figsize=(WIDTH * 2.4, WIDTH * 2.4 * 340 / 1094))
     ax.set_axis_off()
+    ax.grid(False)
     ax.set_xlim(0, 100)
-    ax.set_ylim(-2, 42)
+    ax.set_ylim(0, 31)
+    slate, gold = "#6B7280", "#A9851F"
 
-    def box(x, y, w, h, text, edge, fs=7.0):
+    def box(x, y, w, h, text, edge, face, fs=12.5, weight="normal"):
         ax.add_patch(mpatches.FancyBboxPatch(
-            (x, y), w, h, boxstyle="round,pad=0.5,rounding_size=1.2",
-            linewidth=0.7, edgecolor=edge, facecolor="white"))
-        ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=fs, color=INK)
+            (x, y), w, h, boxstyle="round,pad=0,rounding_size=0.8",
+            linewidth=1.4, edgecolor=edge, facecolor=face))
+        ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=fs,
+                color="#222222", fontweight=weight, linespacing=1.15)
 
     def arrow(x1, y1, x2, y2):
         ax.annotate("", xy=(x2, y2), xytext=(x1, y1),
-                    arrowprops=dict(arrowstyle="-|>", linewidth=0.6, color=MUTED,
-                                    shrinkA=2, shrinkB=2))
+                    arrowprops=dict(arrowstyle="-|>", linewidth=1.2, color=slate,
+                                    shrinkA=0, shrinkB=0, mutation_scale=12))
 
-    box(0, 15, 14, 12, "67 instances\n37 job shop\n30 flexible", GREY)
-    box(20, 30, 24, 8.5, "Exact solver", FAMILY_COLOR["exact"])
-    box(20, 17.5, 24, 8.5, "Problem-specific search", FAMILY_COLOR["problem_specific"])
-    box(20, 3, 24, 11, "Continuous optimisers\nthrough one shared decoder",
-        FAMILY_COLOR["recent"])
-    box(50, 15, 20, 12, "Anytime traces\nwall clock and\nevaluation count", GREY)
-    box(77, 24, 23, 9, "Comparison at\n1, 10, 60, 300 s", GREY)
-    box(77, 9, 23, 9, "Necessity class per\ninstance and budget", GREY)
+    box(1.6, 10.3, 18.7, 9.0, "67 benchmark instances\n37 JSSP · 30 FJSP", slate,
+        "#F0F1F3", fs=11, weight="bold")
+    box(25.1, 21.0, 22.4, 6.2, "Exact search\nCP-SAT", slate, "#F0F1F3")
+    box(25.1, 13.2, 22.4, 6.2, "Problem-specific methods\ndispatching · tabu · annealing",
+        FAMILY_COLOR["problem_specific"], "#EAF2FB")
+    box(25.1, 5.3, 22.4, 6.2, "Population-based optimisers\nshared random-key decoder",
+        FAMILY_COLOR["recent"], "#FDEFF4")
+    box(53.5, 10.3, 20.0, 9.0, "Anytime traces\nwall clock +\nevaluation count", gold,
+        "#FBF5E6", fs=14, weight="bold")
+    box(78.4, 18.6, 19.9, 6.8, "Performance comparison\n1 · 10 · 60 · 300 s\n"
+        "+ equal-effort analysis", slate, "#F0F1F3", fs=11.5)
+    box(78.4, 6.0, 19.9, 6.8, "Instance-budget classification\nrole of heuristic search",
+        slate, "#F0F1F3", fs=10.5)
 
-    for y in (34, 21.5, 8.5):
-        arrow(14, 21, 20, y)
-        arrow(44, y, 50, 21)
-    arrow(70, 22, 77, 28)
-    arrow(70, 20, 77, 14)
-    ax.text(32, -1.5, "20 seeds per stochastic method, one performance core per run",
-            ha="center", fontsize=6.6, color=MUTED)
+    arrow(19.6, 15.6, 25.6, 24.5)
+    arrow(19.6, 14.6, 25.6, 16.3)
+    arrow(19.6, 13.6, 25.6, 8.0)
+    arrow(46.6, 23.4, 54.3, 17.5)
+    arrow(46.6, 16.3, 54.3, 15.0)
+    arrow(46.6, 8.8, 54.3, 12.8)
+    arrow(72.6, 17.4, 78.9, 21.8)
+    arrow(72.6, 12.6, 78.9, 9.8)
+    ax.text(50, 1.5, "20 seeds per stochastic method · one performance core per timed run",
+            ha="center", fontsize=10, color=slate)
     save(fig, FIG / "fig_overview.pdf")
 
 
@@ -317,8 +335,11 @@ def fig_necessity_map() -> None:
         if B == 300:
             nec = s[s["class"] == "HEURISTIC_NECESSARY"].sort_values("n_op")
             for i, (_, r) in enumerate(nec.iterrows()):
+                offset = LABEL_OFFSET_NECESSITY.get(
+                    r.instance_id, (7, 4 if i % 2 == 0 else -10))
                 ax.annotate(r.instance_id, (r.n_op, r.adv), textcoords="offset points",
-                            xytext=(7, 4 if i % 2 == 0 else -10), fontsize=6.0, color=INK,
+                            xytext=offset, fontsize=6.0, color=INK,
+                            ha="right" if offset[0] < 0 else "left",
                             arrowprops=dict(arrowstyle="-", linewidth=0.4, color=GREY,
                                             shrinkA=0, shrinkB=2))
         ax.set_xscale("log")
@@ -515,7 +536,7 @@ def fig_profile() -> None:
     Uncertainty: none. Source: performance_profile.csv."""
     prof = pd.read_csv(DERIVED / "performance_profile.csv", index_col=0)
     order = _order()
-    show = order[:4] + [m for m in order if m in DECODED][:2]
+    show = list(dict.fromkeys(order[:4] + [m for m in order if m in DECODED][:2]))
     fig, ax = plt.subplots(figsize=(WIDTH * 0.66, 2.7))
     for m in prof.columns:
         if m not in show:
@@ -525,15 +546,16 @@ def fig_profile() -> None:
         if m not in prof.columns:
             continue
         ax.step(prof.index, prof[m], where="post", color=color(m), linewidth=1.35,
-                linestyle=LINESTYLE.get(m, "-"), zorder=3)
-        y = float(prof[m][prof.index <= xmax].iloc[-1])
-        ax.text(xmax * 1.004, y, display(m), fontsize=6.6, color=color(m), va="center")
+                linestyle=LINESTYLE.get(m, "-"), zorder=3, label=display(m))
+    # Several curves end at a share of one, so the labels go in a key beside the panel.
+    ax.legend(loc="center left", bbox_to_anchor=(1.03, 0.5), fontsize=6.6,
+              handlelength=2.2, labelspacing=1.2)
     ax.set_xlim(1, xmax)
     ax.set_ylim(0, 1.02)
     ax.set_xlabel(r"performance ratio $\tau$ on the median makespan")
     ax.set_ylabel(r"share of instances within $\tau$")
-    ax.text(0.02, 0.97, "grey: the remaining methods", transform=ax.transAxes, fontsize=6.4,
-            color=MUTED, va="top")
+    ax.text(0.98, 0.03, "grey: the remaining methods", transform=ax.transAxes, fontsize=6.4,
+            color=MUTED, va="bottom", ha="right")
     save(fig, FIG / "fig_profile.pdf")
 
 
@@ -612,9 +634,10 @@ def fig_equal_effort() -> None:
                    marker=MARKER.get(r.method, "o"), edgecolor="white", linewidth=0.6,
                    zorder=3)
         up = r.sched_eval_mean_rank >= r.sched_mean_rank
+        offset = LABEL_OFFSET_EFFORT.get(r.method, (5, 4) if up else (5, -9))
         ax.annotate(display(r.method), (r.sched_mean_rank, r.sched_eval_mean_rank),
-                    textcoords="offset points", xytext=(5, 4) if up else (5, -9),
-                    fontsize=6.4, color=INK)
+                    textcoords="offset points", xytext=offset, fontsize=6.4, color=INK,
+                    ha="right" if offset[0] < 0 else "left")
     ax.set_xlim(lim)
     ax.set_ylim(lim)
     ax.set_aspect("equal")

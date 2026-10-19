@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Median deviation at 300\,s within strata. Small and large split the panel at the median operation count, and the last two columns split it by whether the exact solver proved optimality within the budget.}
+\label{tab:strata}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+Method & Job shop & Flexible & Small & Large & Proved & Unproved \\
+\midrule
+CP-SAT & 0.00 & 0.00 & 0.00 & 1.78 & 0.00 & 1.85 \\
+TS & 1.72 & 1.09 & 0.19 & 3.47 & 0.05 & 5.18 \\
+SA & 5.54 & 7.70 & 4.79 & 7.40 & 3.99 & 8.72 \\
+CMA-ES & 9.90 & 7.96 & 5.20 & 17.26 & 5.37 & 18.18 \\
+GA & 10.37 & 5.44 & 4.94 & 18.42 & 5.32 & 19.13 \\
+MDE & 14.04 & 4.52 & 3.60 & 21.93 & 4.07 & 24.28 \\
+L-SHADE & 13.75 & 9.69 & 4.54 & 22.94 & 4.71 & 23.07 \\
+RIME & 15.35 & 7.80 & 4.34 & 23.82 & 4.51 & 25.22 \\
+IMODE & 15.22 & 12.53 & 6.38 & 22.37 & 6.52 & 22.71 \\
+CSA & 15.93 & 11.56 & 5.13 & 25.09 & 5.30 & 25.48 \\
+BRKGA & 16.21 & 12.37 & 6.70 & 23.70 & 7.61 & 24.30 \\
+DE & 17.74 & 17.97 & 11.25 & 22.55 & 11.33 & 22.70 \\
+PDR & 25.35 & 13.40 & 15.64 & 24.27 & 16.23 & 24.27 \\
+GWO & 18.22 & 15.31 & 6.68 & 26.62 & 6.68 & 27.16 \\
+PSO & 18.26 & 16.51 & 8.50 & 25.65 & 9.12 & 27.80 \\
+ABC & 20.53 & 26.57 & 11.38 & 29.27 & 11.38 & 29.35 \\
+GT & 35.01 & 42.66 & 29.25 & 40.93 & 29.25 & 41.10 \\
+\bottomrule
+\end{tabular}}
+\end{table}

@@ -1,0 +1,9 @@
+{
+ "delta_strict": 16,
+ "tau_low": 0,
+ "tau_high": 2,
+ "best_of_panel": 2,
+ "cheap_hybrid": 7,
+ "no_hybrid": 12,
+ "no_fdr": 0
+}

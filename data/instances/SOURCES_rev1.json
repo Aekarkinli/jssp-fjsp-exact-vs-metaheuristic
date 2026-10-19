@@ -1,0 +1,1738 @@
+{
+  "sources": {
+    "jssp": {
+      "repo": "tamy0612/JSPLIB",
+      "commit": "eea2b60dd7e2f5c907ff7302662c61812eb7efdf",
+      "metadata_url": "https://raw.githubusercontent.com/tamy0612/JSPLIB/eea2b60dd7e2f5c907ff7302662c61812eb7efdf/instances.json"
+    },
+    "jssp_bks": {
+      "repo": "thomasWeise/jsspInstancesAndResults",
+      "commit": "29a50db4b0e9b83469f1d262fe6a1d27f2991135",
+      "url": "https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/29a50db4b0e9b83469f1d262fe6a1d27f2991135/data-raw/instances/instances_with_bks.txt"
+    },
+    "fjsp": {
+      "repo": "ScheduleOpt/benchmarks",
+      "commit": "fff94e1d1735c61c65b231a8ca273431a9be3826",
+      "format": "text_fjsp_old_format (fjsplib)",
+      "bks_url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/solutions/bks.json"
+    }
+  },
+  "retrieved_utc": "2026-10-13T12:36:19Z",
+  "files": {
+    "ext/jssp/ta42.txt": {
+      "url": "https://raw.githubusercontent.com/tamy0612/JSPLIB/eea2b60dd7e2f5c907ff7302662c61812eb7efdf/instances/ta42",
+      "sha256": "3a57630ad165a449c4716ce6891bf3a1065bbe72f2d5720895a38a71cc618eb5",
+      "bytes": 3636
+    },
+    "ext/jssp/ta46.txt": {
+      "url": "https://raw.githubusercontent.com/tamy0612/JSPLIB/eea2b60dd7e2f5c907ff7302662c61812eb7efdf/instances/ta46",
+      "sha256": "80d82ca8f08a1057291e40f72027822533e59ecc9440f428060b87961a11da9e",
+      "bytes": 3636
+    },
+    "ext/jssp/ta52.txt": {
+      "url": "https://raw.githubusercontent.com/tamy0612/JSPLIB/eea2b60dd7e2f5c907ff7302662c61812eb7efdf/instances/ta52",
+      "sha256": "a4e3f57615a48de12f297005178efa6b61fefc6e27bd21541c2ac08019ebbd3e",
+      "bytes": 4556
+    },
+    "ext/jssp/ta56.txt": {
+      "url": "https://raw.githubusercontent.com/tamy0612/JSPLIB/eea2b60dd7e2f5c907ff7302662c61812eb7efdf/instances/ta56",
+      "sha256": "04a8d9b0823b2f997a93277e8aab4ad2d54374d6a445609166aba40ea1b302a2",
+      "bytes": 4556
+    },
+    "ext/jssp/ta62.txt": {
+      "url": "https://raw.githubusercontent.com/tamy0612/JSPLIB/eea2b60dd7e2f5c907ff7302662c61812eb7efdf/instances/ta62",
+      "sha256": "ae8d14978c6dd15bbad2d8fd4430ad8e7819d9969bec6467c365c32754d1c9de",
+      "bytes": 6056
+    },
+    "ext/jssp/ta66.txt": {
+      "url": "https://raw.githubusercontent.com/tamy0612/JSPLIB/eea2b60dd7e2f5c907ff7302662c61812eb7efdf/instances/ta66",
+      "sha256": "2fc49c4f86d46bd1c71463cb626288140d9a3c078e61d4b02fde7ef41d74b1d1",
+      "bytes": 6056
+    },
+    "ext/jssp/ta72.txt": {
+      "url": "https://raw.githubusercontent.com/tamy0612/JSPLIB/eea2b60dd7e2f5c907ff7302662c61812eb7efdf/instances/ta72",
+      "sha256": "5f291f9d6c4da476b3fec04edfa44628b5ba689f87d8657581ebf9dd202d0cc0",
+      "bytes": 12107
+    },
+    "ext/jssp/ta76.txt": {
+      "url": "https://raw.githubusercontent.com/tamy0612/JSPLIB/eea2b60dd7e2f5c907ff7302662c61812eb7efdf/instances/ta76",
+      "sha256": "687e8d2edc8523350d85f601b570d26ae3fac0fab9370c4dddcc31992cda893f",
+      "bytes": 12107
+    },
+    "ext/fjsp/mk11.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/Brandimarte1993/mk11.txt",
+      "sha256": "f1f02c236aa2db35fb9c4841f3367dc8b5c3be560f4abbcd50ac00c08e3aea89",
+      "bytes": 2539
+    },
+    "ext/fjsp/mk12.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/Brandimarte1993/mk12.txt",
+      "sha256": "4cd974c0d63caf0c07c55996ce6833e4c424a7eb5c52163d0497b497dbff43b2",
+      "bytes": 2739
+    },
+    "ext/fjsp/mk13.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/Brandimarte1993/mk13.txt",
+      "sha256": "43a9feab27578eae73846cd79682cc4960664b1fdd070f4275d538db5f153702",
+      "bytes": 6318
+    },
+    "ext/fjsp/mk14.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/Brandimarte1993/mk14.txt",
+      "sha256": "82117f847c16ca93edaad40075f0ebacbbad2d3daa8c8a084e6800dd4a8b0d9e",
+      "bytes": 4203
+    },
+    "ext/fjsp/mk15.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/Brandimarte1993/mk15.txt",
+      "sha256": "f0e124f5ffb8b702268e0010e596021a37d3d976f29bfde20271ed9acad83ded",
+      "bytes": 7312
+    },
+    "ext/fjsp/dp13a.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/DauzerePeresPaulli1994/13a.txt",
+      "sha256": "9066d573e4b765e1ff35f341330268c38699f7e4511daee7b9f871d162c92d19",
+      "bytes": 5805
+    },
+    "ext/fjsp/dp14a.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/DauzerePeresPaulli1994/14a.txt",
+      "sha256": "6bb6867f101d9ce3f2f127831c020fb0261d59211cce38a35087d7ec072ecc22",
+      "bytes": 10909
+    },
+    "ext/fjsp/dp15a.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/DauzerePeresPaulli1994/15a.txt",
+      "sha256": "f811aea517174d4da1a0b4d4fab9d4ff2b7fc46e2c64daffab34f745c4507340",
+      "bytes": 17189
+    },
+    "ext/fjsp/dp16a.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/DauzerePeresPaulli1994/16a.txt",
+      "sha256": "16aa17e48f46da6a01ddaa1e5f81b54984e9574fe95a19a28da6c79a644e68bf",
+      "bytes": 5805
+    },
+    "ext/fjsp/dp17a.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/DauzerePeresPaulli1994/17a.txt",
+      "sha256": "c3c472e5fc43492d8059c5ac6e85e063fb8f709f84ecdff4950180434823a444",
+      "bytes": 10909
+    },
+    "ext/fjsp/dp18a.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/DauzerePeresPaulli1994/18a.txt",
+      "sha256": "e7a1904a2a9191e694a2f2b608f9b5fe5d40c9daeda2c6483a777071e0c01450",
+      "bytes": 17189
+    },
+    "ext/fjsp/behnke01.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke1.txt",
+      "sha256": "aa7fb7e1228dc6e1bcba08aae3ca4c453b43f502165389ec9d69ee445d12568f",
+      "bytes": 1856
+    },
+    "ext/fjsp/behnke02.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke2.txt",
+      "sha256": "793982278c642b28bf92a715ff0566cbe9be40bf652c7b4e553a0989b5ba10e0",
+      "bytes": 2037
+    },
+    "ext/fjsp/behnke03.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke3.txt",
+      "sha256": "7165aa916148fb3736a63694a715b96ab11899ce35003ae05e392a2a3edbf395",
+      "bytes": 1889
+    },
+    "ext/fjsp/behnke04.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke4.txt",
+      "sha256": "d9adbbdd94d44c63d95b956681b0c89e04850f2ebc7eef27b54bbcc008d0f6c5",
+      "bytes": 2003
+    },
+    "ext/fjsp/behnke05.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke5.txt",
+      "sha256": "69daf3ae733fdc04d093c890e802c6f0a4a6894274724e2746bac7ef8a2d7615",
+      "bytes": 1876
+    },
+    "ext/fjsp/behnke06.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke6.txt",
+      "sha256": "d2426d76d44aa995a7f2c1d620f585af325dd612ce88a05190a2a1bcb5e55f19",
+      "bytes": 4008
+    },
+    "ext/fjsp/behnke07.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke7.txt",
+      "sha256": "092b7dc0259aa0359d81d0e3f150bf16af11e56595c0c91a05804eb4e35f9f5a",
+      "bytes": 3951
+    },
+    "ext/fjsp/behnke08.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke8.txt",
+      "sha256": "5ba5e3f3a32e1d2f7fc32d66dbb7ae783deabcc78fe45eaaea9b697c8b07a28f",
+      "bytes": 3891
+    },
+    "ext/fjsp/behnke09.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke9.txt",
+      "sha256": "6314808cf2ed6f46664aafd35441ca0cc54fad97f108c4bcee91d8189ba68eec",
+      "bytes": 3880
+    },
+    "ext/fjsp/behnke10.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke10.txt",
+      "sha256": "f1efb8d4b2ca1c9fa6544b05f3232e08acb7405584bd43e3cd9d85f85d9c2e49",
+      "bytes": 3713
+    },
+    "ext/fjsp/behnke11.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke11.txt",
+      "sha256": "63e9e86a5826fe5234b4bc7d9acd88933d0a1143f5d8d0df7a84d258045239f3",
+      "bytes": 9715
+    },
+    "ext/fjsp/behnke12.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke12.txt",
+      "sha256": "4f59cbd8873ad117f4cbfeb01ea833cc543e1614dd3d003a08e8e1465561bcd8",
+      "bytes": 9852
+    },
+    "ext/fjsp/behnke13.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke13.txt",
+      "sha256": "a34a8bab4fec2b0beef45354422497398d7f653d3c0a41d2185fab26333a8d6b",
+      "bytes": 9701
+    },
+    "ext/fjsp/behnke14.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke14.txt",
+      "sha256": "c10f9775771c5c677d216ebe0b7fc6a4b97e132ed5301798336895b02503fa68",
+      "bytes": 9258
+    },
+    "ext/fjsp/behnke15.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke15.txt",
+      "sha256": "7e007071e4bfdf9a25f160955b2e5339a328bf529db2c06e2956a7b896278c7a",
+      "bytes": 9467
+    },
+    "ext/fjsp/behnke16.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke16.txt",
+      "sha256": "04d050b57b8604a28e9889d4613824032ef1ee93bb1ca172d16df2d7ada006d8",
+      "bytes": 19492
+    },
+    "ext/fjsp/behnke17.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke17.txt",
+      "sha256": "712938351281c50fe25912c5868ce78b19d2d9e451dfdddec24b93bfcda2b489",
+      "bytes": 19304
+    },
+    "ext/fjsp/behnke18.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke18.txt",
+      "sha256": "bc555acc72a4ebe7b96a3983a627674173cadcc739adf864b0c9220b3975b5f4",
+      "bytes": 19137
+    },
+    "ext/fjsp/behnke19.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke19.txt",
+      "sha256": "1a4729e4e00e4fd487f802c36bbbf441004c951fe0f922cb5b81427c7101a62d",
+      "bytes": 19466
+    },
+    "ext/fjsp/behnke20.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke20.txt",
+      "sha256": "8dadc57a48bb51c9d9ab567dc38c60d987bbe47f27d2745539685ab72da9b157",
+      "bytes": 19138
+    },
+    "ext/fjsp/behnke21.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke21.txt",
+      "sha256": "ab5897fab05de72a6b259d0889df7ad1679b3672c2fe3c2d20682b9232681c05",
+      "bytes": 4523
+    },
+    "ext/fjsp/behnke22.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke22.txt",
+      "sha256": "6576a2c93938f04c601ce522e2e4c72eb05f3e8219d0800492c85932333c2d4c",
+      "bytes": 3973
+    },
+    "ext/fjsp/behnke23.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke23.txt",
+      "sha256": "493db63266de1f9a392f39d7f818395086f967144a80d1e3ebb5b0f3938d10b4",
+      "bytes": 4205
+    },
+    "ext/fjsp/behnke24.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke24.txt",
+      "sha256": "94bbb43cae98d166a1497c9b7ce1252b52292b234724cb250ca9151e2d7b960c",
+      "bytes": 3424
+    },
+    "ext/fjsp/behnke25.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke25.txt",
+      "sha256": "935691b2c1d331825deea10f76b4e07763e0255bbc3b36d9e94717bcbbf527cb",
+      "bytes": 3476
+    },
+    "ext/fjsp/behnke26.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke26.txt",
+      "sha256": "05e1f96e35e0e77aabb172e95f50dd1704984a32dbb9f9b2fb5a6b9b3c96109f",
+      "bytes": 7753
+    },
+    "ext/fjsp/behnke27.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke27.txt",
+      "sha256": "ad0951c7ee3b1155667637df0c83436ed6f429d5e88f586334c9a6133983cd0c",
+      "bytes": 7239
+    },
+    "ext/fjsp/behnke28.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke28.txt",
+      "sha256": "2867eff90d089dd6ea0cf4a77737406a3b1a5650246c0345fdf6a0a3e8f2bf8a",
+      "bytes": 8384
+    },
+    "ext/fjsp/behnke29.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke29.txt",
+      "sha256": "0865df479f84b9c10f62a46310bd36b326a985dde8af2fe0d593ef33d30d1b11",
+      "bytes": 8462
+    },
+    "ext/fjsp/behnke30.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke30.txt",
+      "sha256": "0ade31de949c14b418328f02257c41eef512b3c0d1a60333e83d6ac737042d1d",
+      "bytes": 7865
+    },
+    "ext/fjsp/behnke31.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke31.txt",
+      "sha256": "7e3b5f419b980997322254274e777e3a539439eb1cebc5d7d83aa282e80aba1f",
+      "bytes": 19575
+    },
+    "ext/fjsp/behnke32.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke32.txt",
+      "sha256": "06a4c25fb41286b8e9acbedcf0002a14b4edc7a4c735421ff1a42db0e662d6ec",
+      "bytes": 18492
+    },
+    "ext/fjsp/behnke33.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke33.txt",
+      "sha256": "4a52782e05402ce4675dbe8a4e2b3e5ddb8e03107a8877b8826751da59a7f863",
+      "bytes": 18678
+    },
+    "ext/fjsp/behnke34.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke34.txt",
+      "sha256": "ffdd06c88f7a124d40b97e1359af98b64e4aac46633b2af7f6d40e62e7136231",
+      "bytes": 18699
+    },
+    "ext/fjsp/behnke35.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke35.txt",
+      "sha256": "f2783235849336f6d315c844a88705b75ac9367ab3a62b528a06dda73cb7e176",
+      "bytes": 18932
+    },
+    "ext/fjsp/behnke36.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke36.txt",
+      "sha256": "4d384ed72920d3094a075c09077a778f65cde0e1dff3c286c27da71379f8dc59",
+      "bytes": 37747
+    },
+    "ext/fjsp/behnke37.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke37.txt",
+      "sha256": "e17137f846d0af0edf41e0c9a8092406e010f57949c2e2825d0d8dba9d8be1f7",
+      "bytes": 37023
+    },
+    "ext/fjsp/behnke38.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke38.txt",
+      "sha256": "8860349f2239861229353ba698a1dc504d992522161e9198b3613a3483666e93",
+      "bytes": 38499
+    },
+    "ext/fjsp/behnke39.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke39.txt",
+      "sha256": "be8a6c458380bb495ccdb6d35aae94e98960b205a377efb5b24a73994d5932aa",
+      "bytes": 37940
+    },
+    "ext/fjsp/behnke40.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke40.txt",
+      "sha256": "7e701b82640cd977771249a02b459598eb630f494e32d8d2bff9e2e6aa389be8",
+      "bytes": 36500
+    },
+    "ext/fjsp/behnke41.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke41.txt",
+      "sha256": "d16cbdeb4ed5e5044a1ee99ffd429eb1d436cddb730faf6ead4df865802c6c24",
+      "bytes": 6707
+    },
+    "ext/fjsp/behnke42.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke42.txt",
+      "sha256": "81284a9031f3855009003c4f9341e32636aa2bdc1a58b6ce5e1ca12e6e3cd34e",
+      "bytes": 4761
+    },
+    "ext/fjsp/behnke43.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke43.txt",
+      "sha256": "ff98e419ad22cfd09962fe5e7bebfbdf307119a41f1f9d60eebb4285ba606871",
+      "bytes": 5838
+    },
+    "ext/fjsp/behnke44.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke44.txt",
+      "sha256": "97b51688bcf44cf806bd0e84b0320f819ab349f31195e48706a6fa62b8414689",
+      "bytes": 5938
+    },
+    "ext/fjsp/behnke45.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke45.txt",
+      "sha256": "308ab59c38ab87b449aad16dcfc25448b02139f5245506fba8f176dede07431a",
+      "bytes": 6176
+    },
+    "ext/fjsp/behnke46.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke46.txt",
+      "sha256": "05b2189771ed4c8770e5b6dd0d6a7fe6fdd50afee019b41878287ff3b99e97fe",
+      "bytes": 9504
+    },
+    "ext/fjsp/behnke47.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke47.txt",
+      "sha256": "b92b9d36fcce472e6a184cbaafd12846bfff8c1589c8c5cd7f70abae99be0597",
+      "bytes": 11366
+    },
+    "ext/fjsp/behnke48.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke48.txt",
+      "sha256": "b6e73a163af9f245f4cf0719b467dde508aad76b6d3684f43aa924323926859d",
+      "bytes": 10722
+    },
+    "ext/fjsp/behnke49.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke49.txt",
+      "sha256": "cf70c295f15c721bb12b89a48e269f0b8850344880d8f5d760d1a5029a89773f",
+      "bytes": 11023
+    },
+    "ext/fjsp/behnke50.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke50.txt",
+      "sha256": "e2fc9c2b893e3623a5a3f8c30cd1b18149632a1026f2a6a4fbefd5bd82c220c9",
+      "bytes": 12517
+    },
+    "ext/fjsp/behnke51.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke51.txt",
+      "sha256": "6eb63c51993f1c331a40f690202042d0aff82c3dbb7f52da9eae7f138f2d2ea1",
+      "bytes": 28253
+    },
+    "ext/fjsp/behnke52.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke52.txt",
+      "sha256": "642de19b6dfc773048dd04a1bf26b86b0ebe08997c64abd5fd1081b0702b1fe2",
+      "bytes": 27450
+    },
+    "ext/fjsp/behnke53.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke53.txt",
+      "sha256": "41eae9309454c6f8e27ded067038593103e8472597f658b9c044ffc098319e6c",
+      "bytes": 28266
+    },
+    "ext/fjsp/behnke54.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke54.txt",
+      "sha256": "c10b096593378a3ad9f60a51d09fb481288d971acd1c3658cf3adcd8e45c66c1",
+      "bytes": 26611
+    },
+    "ext/fjsp/behnke55.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke55.txt",
+      "sha256": "f8e21fad229270ac109829db6de45a634ac124e5276b24f9554589bf2bf65c31",
+      "bytes": 26545
+    },
+    "ext/fjsp/behnke56.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke56.txt",
+      "sha256": "4b40615c21a3515d42a137c51f934e57a42efaf48fc707398773c4b03440e35e",
+      "bytes": 56015
+    },
+    "ext/fjsp/behnke57.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke57.txt",
+      "sha256": "91e17cb67fd0c6712b92fd2447b23ed21af8de4c676dfb9399ae4adc6a60f379",
+      "bytes": 56519
+    },
+    "ext/fjsp/behnke58.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke58.txt",
+      "sha256": "07e9da0e0eecd06ba0da656b377aa3af196a31fba2cae01f69a1de0de5022a58",
+      "bytes": 58897
+    },
+    "ext/fjsp/behnke59.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke59.txt",
+      "sha256": "02debac9daf6d6b11ed50901cb954a158d9a5d7abc3b89b6a5ac3280c0f85d13",
+      "bytes": 55128
+    },
+    "ext/fjsp/behnke60.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/BehnkeGeiger2012/behnke60.txt",
+      "sha256": "91ce06c2d8af128690f86a1249d9841cdc5d4d2fa9de99078d0c2c1fd0f8479c",
+      "bytes": 53440
+    },
+    "ext/fjsp/hs_sdata_abz5.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/abz5.txt",
+      "sha256": "dd37e7c7757e67478f033854d71cd24efe6614e270bab17d6f43ed9fe4f49ce3",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_abz5.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/abz5.txt",
+      "sha256": "77ee75ba13e799b137337809db73104a95d833d0d6c17db57071af458f637244",
+      "bytes": 1367
+    },
+    "ext/fjsp/hs_rdata_abz5.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/abz5.txt",
+      "sha256": "49823a2b6ac2a10fa1531d5ca3a3b6b7b657d10248c20560e579f04ec3e2a987",
+      "bytes": 2047
+    },
+    "ext/fjsp/hs_vdata_abz5.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/abz5.txt",
+      "sha256": "57dce13d9a8346c9e92a818268e933c64b63955747101c5025def625c0bcf534",
+      "bytes": 4199
+    },
+    "ext/fjsp/hs_sdata_abz6.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/abz6.txt",
+      "sha256": "ca26d0d576b11ee250c344230d00fe5f5100383e7682767ca14027f69ecc1d28",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_abz6.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/abz6.txt",
+      "sha256": "a0ef8bbf3308d2816dbf131e0951d4d86895a7f333663ace372d71fb1318419b",
+      "bytes": 1375
+    },
+    "ext/fjsp/hs_rdata_abz6.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/abz6.txt",
+      "sha256": "7a2b79e7484fa948f32465f228b6b4695169ff0fddbe0345c3a639eef1a6e55c",
+      "bytes": 2015
+    },
+    "ext/fjsp/hs_vdata_abz6.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/abz6.txt",
+      "sha256": "ecb8fb4b30c49fd933e9957ba382822a2b2939f544e675917ebea19c31de6726",
+      "bytes": 3895
+    },
+    "ext/fjsp/hs_sdata_abz7.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/abz7.txt",
+      "sha256": "735e8fb4169a025ef82ce1f4ca4113eb805d1495ee702e77614e16e8bc471cbb",
+      "bytes": 3713
+    },
+    "ext/fjsp/hs_edata_abz7.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/abz7.txt",
+      "sha256": "6b494bc5641e7544e964328c71782c93c700df81d5e0f69ddc4789776a0cb59d",
+      "bytes": 4025
+    },
+    "ext/fjsp/hs_rdata_abz7.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/abz7.txt",
+      "sha256": "6e0a30d8c62096a9220dac7d4deb246156149acaf007900294d936a7bc49645d",
+      "bytes": 6009
+    },
+    "ext/fjsp/hs_vdata_abz7.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/abz7.txt",
+      "sha256": "5e9fa295b79bdbc2f4f738f81fa0be55e7c932e776167dff6af0071357754484",
+      "bytes": 16921
+    },
+    "ext/fjsp/hs_sdata_abz8.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/abz8.txt",
+      "sha256": "ddff43210b9757344ad83012353f7ca53fc5e4194c6834032629f14d20b4ed47",
+      "bytes": 3713
+    },
+    "ext/fjsp/hs_edata_abz8.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/abz8.txt",
+      "sha256": "a8da29114a4078b43f830245842ba0a560f0c7d8d1b8645d85261681112833fb",
+      "bytes": 4033
+    },
+    "ext/fjsp/hs_rdata_abz8.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/abz8.txt",
+      "sha256": "0ea31285b66bfec108a905a0919cd405cd2ae761d2470de1247653e089e89dc1",
+      "bytes": 5945
+    },
+    "ext/fjsp/hs_vdata_abz8.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/abz8.txt",
+      "sha256": "6cd81d46548b2bb3fe21733a348c4e0f131049fa5937c88eb3a4359c42d312aa",
+      "bytes": 17097
+    },
+    "ext/fjsp/hs_sdata_abz9.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/abz9.txt",
+      "sha256": "9c3e58509eca1144f9b8ad63d53770a59bf6d5ebc64971cec160f73bc251e872",
+      "bytes": 3713
+    },
+    "ext/fjsp/hs_edata_abz9.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/abz9.txt",
+      "sha256": "aff832f6d993c71e2a458d735fe26945667cb7a00b5a7404bfba24d4fcf4f1a2",
+      "bytes": 4025
+    },
+    "ext/fjsp/hs_rdata_abz9.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/abz9.txt",
+      "sha256": "370796f33bc1ef7f0938c90b1e792f90406b322c4f152d7deea12d593b2d1e44",
+      "bytes": 5985
+    },
+    "ext/fjsp/hs_vdata_abz9.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/abz9.txt",
+      "sha256": "8fac98269dd0ca027e3bc532e39c30e072090caee7e69ea0a4b3d9ee66feca28",
+      "bytes": 17265
+    },
+    "ext/fjsp/hs_sdata_car1.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/car1.txt",
+      "sha256": "f220801de039073f86be64886f952cab18d92f681086fd5a0f558c964a703d36",
+      "bytes": 728
+    },
+    "ext/fjsp/hs_edata_car1.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/car1.txt",
+      "sha256": "d62b279da05838287c071bcc0905d2f82d7715879cad0a7d576a4b8f79d84f10",
+      "bytes": 816
+    },
+    "ext/fjsp/hs_rdata_car1.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/car1.txt",
+      "sha256": "ac1a3fdd4ded7d3d755a6862075ad57701262a82e6b42e929229a09e2cd71f35",
+      "bytes": 1176
+    },
+    "ext/fjsp/hs_vdata_car1.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/car1.txt",
+      "sha256": "d4257ae8027b6c8c5cf86d9bacff7b5a2c73198f39bb4efb2560fdc6843cb8f4",
+      "bytes": 1496
+    },
+    "ext/fjsp/hs_sdata_car2.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/car2.txt",
+      "sha256": "7cd3b9a7fdfbe3d0926eef96bed0a6bf8fdb75566cc3d7775da7a8f1fc41fe32",
+      "bytes": 702
+    },
+    "ext/fjsp/hs_edata_car2.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/car2.txt",
+      "sha256": "17beeb58cebb934730958bbc704e4804d589fa17233e00f50327de34a6a4fc23",
+      "bytes": 790
+    },
+    "ext/fjsp/hs_rdata_car2.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/car2.txt",
+      "sha256": "8deb30d896061ae920d2494482c240e8c8fa77e66ecf6485d011ec9c2911c105",
+      "bytes": 1086
+    },
+    "ext/fjsp/hs_vdata_car2.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/car2.txt",
+      "sha256": "b0fb8e814afbe5e602e0a1d73b180cb9d264917e34730fb5d207a648227627c7",
+      "bytes": 1238
+    },
+    "ext/fjsp/hs_sdata_car3.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/car3.txt",
+      "sha256": "21a72f0f59311f1cf0b47bc66552633d17cba046d388a3a49785611ca4635b84",
+      "bytes": 793
+    },
+    "ext/fjsp/hs_edata_car3.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/car3.txt",
+      "sha256": "cc18f57a252b9c40220c87b8d62506dde3e2053c8ec3f9370e4f0bb44429198a",
+      "bytes": 881
+    },
+    "ext/fjsp/hs_rdata_car3.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/car3.txt",
+      "sha256": "f6f1243e7f053390dd4e9e384fbacdf913900975fb4e341bd2a57ba1ca02f218",
+      "bytes": 1281
+    },
+    "ext/fjsp/hs_vdata_car3.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/car3.txt",
+      "sha256": "742701c6ce3789f7bbcdf5d13971496334dc7f7f18eda1edb4a57c34f0067f7c",
+      "bytes": 1561
+    },
+    "ext/fjsp/hs_sdata_car4.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/car4.txt",
+      "sha256": "7c3fe70885050d9b85c49c7abf186b6c6f34986bc98f43a120e602ec94f3ec32",
+      "bytes": 755
+    },
+    "ext/fjsp/hs_edata_car4.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/car4.txt",
+      "sha256": "44599c766de426946f53650a17246d9371823dfeb9841583f53fbe27e6a97441",
+      "bytes": 843
+    },
+    "ext/fjsp/hs_rdata_car4.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/car4.txt",
+      "sha256": "17753defcebea91e6457d3ff03b60217d297c1c9a16cd597fb9d1cfc88f705ad",
+      "bytes": 1187
+    },
+    "ext/fjsp/hs_vdata_car4.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/car4.txt",
+      "sha256": "dc225b6840f7414b84b6f94a17d76386725794c7a154cefe7da305ac787b4935",
+      "bytes": 1243
+    },
+    "ext/fjsp/hs_sdata_car5.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/car5.txt",
+      "sha256": "eeb78717ff8268b5cbad1eb304e2a57c9d677100489692576daa1b69ac8fe8f0",
+      "bytes": 783
+    },
+    "ext/fjsp/hs_edata_car5.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/car5.txt",
+      "sha256": "8a5c2c1c3da5953a802f4e4de64b7169517b3ce9b6e439841f23e534f2c8a9b6",
+      "bytes": 863
+    },
+    "ext/fjsp/hs_rdata_car5.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/car5.txt",
+      "sha256": "bf2eeb5e23282397c53c1c408f66f9a3198f8f6304311e8a335d80a776d1e92c",
+      "bytes": 1223
+    },
+    "ext/fjsp/hs_vdata_car5.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/car5.txt",
+      "sha256": "c8057659029d87da76308cb488aa1a616410911f60b3973a8a19a35402297475",
+      "bytes": 1663
+    },
+    "ext/fjsp/hs_sdata_car6.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/car6.txt",
+      "sha256": "01987333736d4a53062f4efcb19e53c6ed6a1733d59f0b2882d0c46c9d83a295",
+      "bytes": 917
+    },
+    "ext/fjsp/hs_edata_car6.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/car6.txt",
+      "sha256": "9dec68359c7fae303c1a468ba09a353f0a66d8e8d9c97985a65337f9e869ac28",
+      "bytes": 1013
+    },
+    "ext/fjsp/hs_rdata_car6.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/car6.txt",
+      "sha256": "eebfb6b8131b12310b59861223cf04649f4c612335046154bb3131d04d7e9d43",
+      "bytes": 1461
+    },
+    "ext/fjsp/hs_vdata_car6.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/car6.txt",
+      "sha256": "058def0bfa491e89dc490e324991cdb2f274284b2af834b193bf046236ccbe51",
+      "bytes": 2693
+    },
+    "ext/fjsp/hs_sdata_car7.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/car7.txt",
+      "sha256": "04e302a0f50e16238b8ae811e88ac4707843eff6dac58568c3d136e7a3f8a51f",
+      "bytes": 636
+    },
+    "ext/fjsp/hs_edata_car7.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/car7.txt",
+      "sha256": "2d9631e016f8a642343875bf9d60725b0525050a3388bffb2517dfa4e58d90e3",
+      "bytes": 708
+    },
+    "ext/fjsp/hs_rdata_car7.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/car7.txt",
+      "sha256": "d60e7fdee213d5e2680ea95c42f8222bf89b0e4a9a4d71292558d8d5894e2851",
+      "bytes": 1060
+    },
+    "ext/fjsp/hs_vdata_car7.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/car7.txt",
+      "sha256": "7329fabcf0094b5d1b242e8703451c8aec2a9867625c9a9d879027b207ad7ae0",
+      "bytes": 1596
+    },
+    "ext/fjsp/hs_sdata_car8.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/car8.txt",
+      "sha256": "ebf6382aa694895af8fc7b6af0b2156563f9b5acc093a9a8bb2d66b6e84582b8",
+      "bytes": 821
+    },
+    "ext/fjsp/hs_edata_car8.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/car8.txt",
+      "sha256": "8af3712c5b57ba113a2e81802c4f25b003ceff06d9ebfd973ee5c329f2116df5",
+      "bytes": 909
+    },
+    "ext/fjsp/hs_rdata_car8.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/car8.txt",
+      "sha256": "4d9641f0ee6c204af715a1df90b37c2a66b2e2780dade73dda3803c580901628",
+      "bytes": 1293
+    },
+    "ext/fjsp/hs_vdata_car8.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/car8.txt",
+      "sha256": "a9fc54394d9e1870df0b0cd5f53b0b5e046e7751c18e14bf4b2dba6fd429c145",
+      "bytes": 2341
+    },
+    "ext/fjsp/hs_sdata_ft06.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/ft06.txt",
+      "sha256": "63bb2d117daedd81a55ceb49b122b981b66112451a298309cdb4782f21cc3e51",
+      "bytes": 475
+    },
+    "ext/fjsp/hs_edata_ft06.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/ft06.txt",
+      "sha256": "b25704767748fe7e10a5565d90549d3a48db9687c8fa0185be14a8d6e43b0dee",
+      "bytes": 523
+    },
+    "ext/fjsp/hs_rdata_ft06.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/ft06.txt",
+      "sha256": "f7b5c2945f36339c2497efc4a7768d698299adb6949c263a650c937bddef9342",
+      "bytes": 779
+    },
+    "ext/fjsp/hs_vdata_ft06.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/ft06.txt",
+      "sha256": "05f3ef78b075b97b41ea1a7cdec8a4b677f2dcaa92ee6f4c738d902353bda18b",
+      "bytes": 1011
+    },
+    "ext/fjsp/hs_sdata_ft10.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/ft10.txt",
+      "sha256": "db4c9d0be49000f3e0a464581fbc5719424e7fe026ccfbfaa67be733e790b005",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_ft10.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/ft10.txt",
+      "sha256": "36e7457dae763029cdcfa662a9c8891c02d8970e107657603418cbe18cebe190",
+      "bytes": 1367
+    },
+    "ext/fjsp/hs_rdata_ft10.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/ft10.txt",
+      "sha256": "1dab82f642e720e9afef976051232390ab25953159d010946d2436ab563dcbce",
+      "bytes": 2031
+    },
+    "ext/fjsp/hs_vdata_ft10.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/ft10.txt",
+      "sha256": "0b8bdf6a0744b0906b2bff211717a2de93db21d80116f92db1ebd31651e0ac3e",
+      "bytes": 4047
+    },
+    "ext/fjsp/hs_sdata_ft20.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/ft20.txt",
+      "sha256": "9faa44425cea4a3f4d4cda360afcbf041f4a945132bf5450d7d66fca5734a964",
+      "bytes": 1313
+    },
+    "ext/fjsp/hs_edata_ft20.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/ft20.txt",
+      "sha256": "6ad2a86ab52d011919ded6bb8aa5a7bd323ef35e02080a8dba612981cc77e251",
+      "bytes": 1417
+    },
+    "ext/fjsp/hs_rdata_ft20.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/ft20.txt",
+      "sha256": "968dbdcb94c4317e75796e77681858c4a3bcb1f7dfa6e0234d67b50e8bb90135",
+      "bytes": 2065
+    },
+    "ext/fjsp/hs_vdata_ft20.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/ft20.txt",
+      "sha256": "a7f06f4007acfdebc812ba278da4c63a7df0fd2aa577768ad2f83a1dbbe13f28",
+      "bytes": 2609
+    },
+    "ext/fjsp/hs_sdata_la01.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la01.txt",
+      "sha256": "a9f67442eab6609cff6e0a1a3ebeff80c6a687ce1ce3e23ce6ed20530b861d94",
+      "bytes": 663
+    },
+    "ext/fjsp/hs_edata_la01.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la01.txt",
+      "sha256": "44207801de179c01f5d60bc59d897f60d60ce045db18f3d79224ac5bbf8aee94",
+      "bytes": 743
+    },
+    "ext/fjsp/hs_rdata_la01.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la01.txt",
+      "sha256": "743655488f35912aee2b67dc610644799c6a7f0b5d55d199d139594e31ec9a48",
+      "bytes": 1031
+    },
+    "ext/fjsp/hs_vdata_la01.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la01.txt",
+      "sha256": "eb27d1038da614c7c760a0568de3d2e9f5489af1f66f88114bb0a879605a6e6b",
+      "bytes": 1399
+    },
+    "ext/fjsp/hs_sdata_la02.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la02.txt",
+      "sha256": "b876760954f0e7ef855c538c4b1bf103f3fac18e50b9c009a485eb39b55412d8",
+      "bytes": 663
+    },
+    "ext/fjsp/hs_edata_la02.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la02.txt",
+      "sha256": "ab628fd8b3bd8f4d6eaed5fe6750c856634d154182850278f01c66e855b560c8",
+      "bytes": 743
+    },
+    "ext/fjsp/hs_rdata_la02.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la02.txt",
+      "sha256": "d53df07a60e1cc30c87bb621161d703cc4c07da9609369c0e4210a8fb758e238",
+      "bytes": 1015
+    },
+    "ext/fjsp/hs_vdata_la02.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la02.txt",
+      "sha256": "d02d7e01ddc42d82e570be1ef3c7edb9bfaf4dd6697094e68692bbd640310d06",
+      "bytes": 1335
+    },
+    "ext/fjsp/hs_sdata_la03.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la03.txt",
+      "sha256": "33b657fc1f59afb2af49ad9a21cf5abda5d4ae8d8ec560d271a2885cf86145e9",
+      "bytes": 663
+    },
+    "ext/fjsp/hs_edata_la03.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la03.txt",
+      "sha256": "7d167f5affe665896ac5d26c5d5a5a0ad511c7c6f3bc6c4cd829e5f8908a40b9",
+      "bytes": 735
+    },
+    "ext/fjsp/hs_rdata_la03.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la03.txt",
+      "sha256": "d339bab08e5919b47bde6b163abd7191539d1449624fdf3a55416775eecfd79f",
+      "bytes": 1055
+    },
+    "ext/fjsp/hs_vdata_la03.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la03.txt",
+      "sha256": "6882df9c2296179d324ac369952b8a894fdea73c93904461b0611cbe3bb42d2a",
+      "bytes": 1287
+    },
+    "ext/fjsp/hs_sdata_la04.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la04.txt",
+      "sha256": "2250cd8117e7409d38c4ec034cb31428cbf8533f9aec875100587d905d05ac89",
+      "bytes": 663
+    },
+    "ext/fjsp/hs_edata_la04.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la04.txt",
+      "sha256": "d9f30dbc92f72d7623e47078eaced4f9d791a5bf01337a38de34e06721c6878b",
+      "bytes": 735
+    },
+    "ext/fjsp/hs_rdata_la04.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la04.txt",
+      "sha256": "7207c575bff1a6d4897875440f46f9b71d394eb901acd08a63a7f56c7560290f",
+      "bytes": 1071
+    },
+    "ext/fjsp/hs_vdata_la04.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la04.txt",
+      "sha256": "7cbd8a3320054570912929487c6091ed623e8db3b452677bd58093b1c09250c3",
+      "bytes": 1215
+    },
+    "ext/fjsp/hs_sdata_la05.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la05.txt",
+      "sha256": "e57f20024e1d6de7094c77dfa6f735aada91e9db563395d41cae4e9e2707c42c",
+      "bytes": 663
+    },
+    "ext/fjsp/hs_edata_la05.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la05.txt",
+      "sha256": "4227f9cdd8960d92b278cbaf312414835fd27658f6220237e22ade6cf9129a1e",
+      "bytes": 743
+    },
+    "ext/fjsp/hs_rdata_la05.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la05.txt",
+      "sha256": "40ca513f3c3f41507ef8e83d3068974b675631952ebd3585f787ec6d57b964ec",
+      "bytes": 1087
+    },
+    "ext/fjsp/hs_vdata_la05.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la05.txt",
+      "sha256": "376e32521ef26021cb8b9b38f3a4530c51f7ceaced1f9925e89cc43818997279",
+      "bytes": 1215
+    },
+    "ext/fjsp/hs_sdata_la06.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la06.txt",
+      "sha256": "68ffef86488b77e809b51a92d96e29b8c85a88f4a805b751107d3396ef109064",
+      "bytes": 988
+    },
+    "ext/fjsp/hs_edata_la06.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la06.txt",
+      "sha256": "30a211abb9c0a9d2f4520108fe80e987ceb96308a65b4fbe1b0fe331c54af4c9",
+      "bytes": 1076
+    },
+    "ext/fjsp/hs_rdata_la06.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la06.txt",
+      "sha256": "42ef0a70948560218f7b01cce3acab5a6be3bb2bf77fd35025b48f8da3030257",
+      "bytes": 1516
+    },
+    "ext/fjsp/hs_vdata_la06.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la06.txt",
+      "sha256": "2c8d188d6382c18b68ee943319d3fd6362d5d48fed2c060b58bf11969933cd47",
+      "bytes": 1844
+    },
+    "ext/fjsp/hs_sdata_la07.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la07.txt",
+      "sha256": "0c80226989da0c16b26c0e454ef931d02ae94e79d307db12c21806cb26c77306",
+      "bytes": 988
+    },
+    "ext/fjsp/hs_edata_la07.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la07.txt",
+      "sha256": "55da245becca5793f968235c4993bc687ec4e202674841ade7833a78d8ccd9c3",
+      "bytes": 1076
+    },
+    "ext/fjsp/hs_rdata_la07.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la07.txt",
+      "sha256": "692599ccfa3c79661076aef18c77b983afcf1aef32557b5ceb883f2e2de0969c",
+      "bytes": 1564
+    },
+    "ext/fjsp/hs_vdata_la07.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la07.txt",
+      "sha256": "39c2ef14eeee020da806fd1218cbb4f57467a365f361dae6489975664da5f38a",
+      "bytes": 1844
+    },
+    "ext/fjsp/hs_sdata_la08.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la08.txt",
+      "sha256": "de39d699aacde6d244c75537aa310ae2abbf393e30bd3b27adccc3e6197d4c02",
+      "bytes": 988
+    },
+    "ext/fjsp/hs_edata_la08.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la08.txt",
+      "sha256": "e1760647f3cb07c3cebace82042a00a4cd8d380ca80ee5f2a37680866a4719d9",
+      "bytes": 1076
+    },
+    "ext/fjsp/hs_rdata_la08.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la08.txt",
+      "sha256": "328564882bb497ee498c56a31a53e9bbeb03ed69a903380a93c086b57e4d9918",
+      "bytes": 1548
+    },
+    "ext/fjsp/hs_vdata_la08.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la08.txt",
+      "sha256": "120a03fa133b38d42af32395a1fc201e4d0f0a4ba989d4ea751b1ef0e0fc9cc0",
+      "bytes": 1940
+    },
+    "ext/fjsp/hs_sdata_la09.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la09.txt",
+      "sha256": "b09c74de409cbf1a2912fc4aef7e9090147f70e56e1d7313e0fe6532044700e0",
+      "bytes": 988
+    },
+    "ext/fjsp/hs_edata_la09.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la09.txt",
+      "sha256": "0ae3fd6f364d2de36eba4d2391efad5692c3a9ef6cceb1a459703684be12779e",
+      "bytes": 1076
+    },
+    "ext/fjsp/hs_rdata_la09.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la09.txt",
+      "sha256": "56bf14d881e52cb09e45aa964979cd3c69b6b620167f120804441803a958cee9",
+      "bytes": 1540
+    },
+    "ext/fjsp/hs_vdata_la09.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la09.txt",
+      "sha256": "2b42209f13de35c1519b9ffbbbec5d848185a2d1f5047210329a0e4bfbd66ea3",
+      "bytes": 1908
+    },
+    "ext/fjsp/hs_sdata_la10.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la10.txt",
+      "sha256": "f93a8ef77e58d5d37cbef0654c7c62549557ee4755a8c4912f74c5f6333b727c",
+      "bytes": 988
+    },
+    "ext/fjsp/hs_edata_la10.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la10.txt",
+      "sha256": "f31f7a98915305c6accf3561ba1720f92a1e545c0ae4de491f2e18a224ac16d0",
+      "bytes": 1084
+    },
+    "ext/fjsp/hs_rdata_la10.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la10.txt",
+      "sha256": "7b840fb399c03ece4aebe1756b2fef861a394bc97f6734a9ee222044c2f8abba",
+      "bytes": 1564
+    },
+    "ext/fjsp/hs_vdata_la10.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la10.txt",
+      "sha256": "7039144134615375c5a64fa658773fe13a687a9f820b103dd95c4dba20c178ba",
+      "bytes": 1988
+    },
+    "ext/fjsp/hs_sdata_la11.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la11.txt",
+      "sha256": "4040690610c98048604f408038d29b7cb37c3d648ea5cd3f0b91ca77fb456a42",
+      "bytes": 1313
+    },
+    "ext/fjsp/hs_edata_la11.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la11.txt",
+      "sha256": "46f34eca61f5094b00a9d6bc3f0c9d34baa36b87153adad8b6a5cda81f27b2e2",
+      "bytes": 1417
+    },
+    "ext/fjsp/hs_rdata_la11.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la11.txt",
+      "sha256": "f91788a5d4972971c7d39ef6ac658dd0c01ab46726966a706ad0a7fe544de325",
+      "bytes": 2137
+    },
+    "ext/fjsp/hs_vdata_la11.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la11.txt",
+      "sha256": "deb25e96e3ee945a29d96786db14105a0bb5904253b853d6dbdd77b73531ae24",
+      "bytes": 2537
+    },
+    "ext/fjsp/hs_sdata_la12.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la12.txt",
+      "sha256": "1c02d64165e9937a627ff2fbb1fe6ab84af500d17976bb2fb34274c0d53b3f7f",
+      "bytes": 1313
+    },
+    "ext/fjsp/hs_edata_la12.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la12.txt",
+      "sha256": "530560fc4ab1f1820556e16d8d7dd832c1dd86dbdc21b8e1bce283f10cfd42e3",
+      "bytes": 1425
+    },
+    "ext/fjsp/hs_rdata_la12.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la12.txt",
+      "sha256": "8eae91b463be3095019c948ed6a8154672b7a475e47e59d1bfdb3fc809abbdd1",
+      "bytes": 2105
+    },
+    "ext/fjsp/hs_vdata_la12.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la12.txt",
+      "sha256": "2bdb70d25b0e283f08ecde91bd5de85a0abec799d328a6a3987302f7b2376c59",
+      "bytes": 2497
+    },
+    "ext/fjsp/hs_sdata_la13.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la13.txt",
+      "sha256": "850feb1cfcb0038d24c3dde823d7de4f29375e5137da5718d026c092e8845532",
+      "bytes": 1313
+    },
+    "ext/fjsp/hs_edata_la13.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la13.txt",
+      "sha256": "81e0a35bd106490ba2ab8a2ffa1a8aa3f839fbceba273e46fb75b2015043479d",
+      "bytes": 1425
+    },
+    "ext/fjsp/hs_rdata_la13.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la13.txt",
+      "sha256": "d5010a9ea1b5e5fca10d1ae3c111faa763b2f46e1fe7aa4acd869eaa6270ebe0",
+      "bytes": 2097
+    },
+    "ext/fjsp/hs_vdata_la13.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la13.txt",
+      "sha256": "d4c057c26eebd7715e41ad99eb2fa3e229f31ae5f80221ca255c823f1e07e9a5",
+      "bytes": 2473
+    },
+    "ext/fjsp/hs_sdata_la14.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la14.txt",
+      "sha256": "d16e594f95620580810def9d24453d0179fb9f7d79dda4e2c0d08c9bbcb7ece8",
+      "bytes": 1313
+    },
+    "ext/fjsp/hs_edata_la14.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la14.txt",
+      "sha256": "b8de7c38a380e93857af60696611f3a0d90f4d7e69064b1a85eb789822b35d64",
+      "bytes": 1417
+    },
+    "ext/fjsp/hs_rdata_la14.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la14.txt",
+      "sha256": "b2e064c41e664c00106194f2f294fee77f654f54ef2326a2ec9597adb8d54ee4",
+      "bytes": 2089
+    },
+    "ext/fjsp/hs_vdata_la14.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la14.txt",
+      "sha256": "5ab0a4ad65bdc0133d41f7f240af522ef1cba5b8307a973ed3a44ec0a5703bad",
+      "bytes": 2465
+    },
+    "ext/fjsp/hs_sdata_la15.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la15.txt",
+      "sha256": "8763ae033daec8604f90e9dba5adfe143006c5e7972397a825da27a21e394a51",
+      "bytes": 1313
+    },
+    "ext/fjsp/hs_edata_la15.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la15.txt",
+      "sha256": "1676e27692adb72e6d433570c2c542338a4b7e043b98878ad4daf07fbbb36a7d",
+      "bytes": 1417
+    },
+    "ext/fjsp/hs_rdata_la15.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la15.txt",
+      "sha256": "9ee1684731e8a78c3402826580a4b5b5f9b1d08ed61e5d01cf78e1b094de4eb1",
+      "bytes": 2097
+    },
+    "ext/fjsp/hs_vdata_la15.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la15.txt",
+      "sha256": "39cc39c6ef669edcbbcaf7eacf6bfb38bcf14e20f70fcefba075579972f1b07f",
+      "bytes": 2617
+    },
+    "ext/fjsp/hs_sdata_la16.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la16.txt",
+      "sha256": "753724e762b4c342d305a9f98e5e6ed4f21b6a48e6d1eb38ef107b79fd175608",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_la16.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la16.txt",
+      "sha256": "be49954b86ee9dc48290780e1fe5159f7015e8aa15ebbadd66bef542fe1d19ad",
+      "bytes": 1367
+    },
+    "ext/fjsp/hs_rdata_la16.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la16.txt",
+      "sha256": "68bc0350c2c120a8b69656bba40007280685bf495f5a33c55f63c12aaa1a0979",
+      "bytes": 2071
+    },
+    "ext/fjsp/hs_vdata_la16.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la16.txt",
+      "sha256": "81e27636917b638402917ea58d3adc7343178e73c46f6067e45e39ef502e0167",
+      "bytes": 4223
+    },
+    "ext/fjsp/hs_sdata_la17.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la17.txt",
+      "sha256": "6e844cb2175efbad3812fc2e340a3f14ae27f1924ca116bb0176355add2ebd82",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_la17.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la17.txt",
+      "sha256": "5fc97c74f79d26d77646a96b0b34d9f10c6128057ff7208ceb54893a96690612",
+      "bytes": 1367
+    },
+    "ext/fjsp/hs_rdata_la17.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la17.txt",
+      "sha256": "36bf80f47456d480caab7c5f67c1e647da936ad41494ca53579c684e706b5c59",
+      "bytes": 2007
+    },
+    "ext/fjsp/hs_vdata_la17.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la17.txt",
+      "sha256": "6c83d780544521e5a23360467c56f0847948023a7df4a17ee2f20c7ae2182c8b",
+      "bytes": 4295
+    },
+    "ext/fjsp/hs_sdata_la18.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la18.txt",
+      "sha256": "ce28dcdfebc8068d18888c3c37d7f3f8d69ec07dc78738756723bdcf1f7561b8",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_la18.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la18.txt",
+      "sha256": "ea4614fe821a9b0f2ad3a9f46c23d4e1228736013d5c917c20b9ef646258ef7c",
+      "bytes": 1367
+    },
+    "ext/fjsp/hs_rdata_la18.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la18.txt",
+      "sha256": "50308c950c3aaefef92a37c9445ac2cc3ef3c375fb5e7e5917ddf7414223b200",
+      "bytes": 2055
+    },
+    "ext/fjsp/hs_vdata_la18.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la18.txt",
+      "sha256": "8a126cd3103168b72dbfc6caf24942a4407ec96023104e0b152e5984daf756dd",
+      "bytes": 4295
+    },
+    "ext/fjsp/hs_sdata_la19.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la19.txt",
+      "sha256": "39a6fb999c0985123dc10b33e5f5c1954c355c58657a1eee2269a1627d24a659",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_la19.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la19.txt",
+      "sha256": "5963b7dba80cc8d33df77aedff0c045865ea1c4d4047de4fd9b3160764408a1b",
+      "bytes": 1367
+    },
+    "ext/fjsp/hs_rdata_la19.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la19.txt",
+      "sha256": "97d68753d4519ee118ef9fa0ca4e35da152762de3376c35da9a2be27e56c5746",
+      "bytes": 2031
+    },
+    "ext/fjsp/hs_vdata_la19.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la19.txt",
+      "sha256": "e886099d09474ad1cafa3b80eb80bb91f47ad58fb2cb08d7aeb811e856542505",
+      "bytes": 4303
+    },
+    "ext/fjsp/hs_sdata_la20.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la20.txt",
+      "sha256": "ebd974c768ca72dd586af126211d5fdad337b7c444eeb4f8fa7d65a40fbcc880",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_la20.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la20.txt",
+      "sha256": "22095e61ffd32784cd07369160a339b6aa0b82df910dc6b404efbedc218d5e76",
+      "bytes": 1367
+    },
+    "ext/fjsp/hs_rdata_la20.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la20.txt",
+      "sha256": "f3749c2152384163488e9fe17d15237af0a78ec78d068e97f7141d2ceda0ce34",
+      "bytes": 2055
+    },
+    "ext/fjsp/hs_vdata_la20.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la20.txt",
+      "sha256": "9610bf26d1761a52a78091d229f2632ecdda15f1a4b8556e56c3ae1a2b8e6241",
+      "bytes": 4359
+    },
+    "ext/fjsp/hs_sdata_la21.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la21.txt",
+      "sha256": "e04b0170cbf7a94e03c87d1270248bcd0a5b7703833bd98c1d3451ed9519617b",
+      "bytes": 1888
+    },
+    "ext/fjsp/hs_edata_la21.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la21.txt",
+      "sha256": "50e224f28302a4ad716347294e04df384137e9b08f6958a82f0376ba6d02427c",
+      "bytes": 2072
+    },
+    "ext/fjsp/hs_rdata_la21.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la21.txt",
+      "sha256": "41ac625560cbe4237af359e319b3144376052741010e9a10e735430a49ede034",
+      "bytes": 3096
+    },
+    "ext/fjsp/hs_vdata_la21.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la21.txt",
+      "sha256": "7a976fc6b811febc149e0536bae2ebe03fb9a3ee04323aa9a8125e8e007543fa",
+      "bytes": 6408
+    },
+    "ext/fjsp/hs_sdata_la22.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la22.txt",
+      "sha256": "02345a4b35a973fbd0c58495e90d6e05a3a2902eb16ab7f6fc143b1e6cc49e3a",
+      "bytes": 1888
+    },
+    "ext/fjsp/hs_edata_la22.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la22.txt",
+      "sha256": "71d8d173a1a58d2bcb84b47d5704dc10c018a07e413d8b00390c7fbdc616e90d",
+      "bytes": 2072
+    },
+    "ext/fjsp/hs_rdata_la22.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la22.txt",
+      "sha256": "56dc9cfcba42b8e143603872a1c62189bc44eb3e546144fd9b6a272a9f55a082",
+      "bytes": 3136
+    },
+    "ext/fjsp/hs_vdata_la22.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la22.txt",
+      "sha256": "6abcac93a03b5c115a30d43d7734ab5e9448fdd1790bc1707fe787c353ae50b7",
+      "bytes": 6104
+    },
+    "ext/fjsp/hs_sdata_la23.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la23.txt",
+      "sha256": "0586fe256749e6760a24c3c7bbad1d072e01599fac50333fcdc4f96d7d10ca40",
+      "bytes": 1888
+    },
+    "ext/fjsp/hs_edata_la23.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la23.txt",
+      "sha256": "cd9a5759acf04fe201581703e24cadb99ff6a82a951efd3be8f0c29bc76c35a9",
+      "bytes": 2056
+    },
+    "ext/fjsp/hs_rdata_la23.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la23.txt",
+      "sha256": "6bac3939a8ccab4d01dd4bfa861d680a4c7871bb20d9f70502ee7218302075d2",
+      "bytes": 3136
+    },
+    "ext/fjsp/hs_vdata_la23.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la23.txt",
+      "sha256": "e88e9dc9e92a9b341170ab23561c6084f1a63ba89b5acc143e5445a865ea02b9",
+      "bytes": 6128
+    },
+    "ext/fjsp/hs_sdata_la24.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la24.txt",
+      "sha256": "4fdccc183fa10ff66bdeba2c4b29bfbea41db6b48d666dfbd642969878c8013b",
+      "bytes": 1888
+    },
+    "ext/fjsp/hs_edata_la24.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la24.txt",
+      "sha256": "90b99fceb5f3f43759b5b41dbdaee27135f00ded7205527ae1352c88b9e37fab",
+      "bytes": 2080
+    },
+    "ext/fjsp/hs_rdata_la24.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la24.txt",
+      "sha256": "2d0b1a0b7d9b9846343610945b9190dd36e55585f92908428c0073d26265282a",
+      "bytes": 3064
+    },
+    "ext/fjsp/hs_vdata_la24.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la24.txt",
+      "sha256": "b6b6e120217b0d8b5559c95fab3f0b0b72d4b2b6e41d1c8a7ef874a9866d63c0",
+      "bytes": 6504
+    },
+    "ext/fjsp/hs_sdata_la25.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la25.txt",
+      "sha256": "057faa78007c136efdcd32fbc2150f1298257bf30337e749a85860210ead3fbe",
+      "bytes": 1888
+    },
+    "ext/fjsp/hs_edata_la25.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la25.txt",
+      "sha256": "0420d65b7c7af065ff39625d8507a574f7d51e07e0cab61334412ab920d252e3",
+      "bytes": 2080
+    },
+    "ext/fjsp/hs_rdata_la25.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la25.txt",
+      "sha256": "59216ae6186ed535f1a64cdb0932068fffb71cc9b68d1cbadddb098d428734a7",
+      "bytes": 3104
+    },
+    "ext/fjsp/hs_vdata_la25.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la25.txt",
+      "sha256": "77c25fa1bcde33cf4ef632e61594e198d326f2769f9c2b6d8802bf5872ce743a",
+      "bytes": 6488
+    },
+    "ext/fjsp/hs_sdata_la26.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la26.txt",
+      "sha256": "c8b2bd13fb6f18814448379c5af605ed71cc8e8848ec774b1340496424932a06",
+      "bytes": 2513
+    },
+    "ext/fjsp/hs_edata_la26.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la26.txt",
+      "sha256": "b565e50f72d73cd240f3588db023dc0e6e72f401b0ee6c4bbc0462d34fbeb5ce",
+      "bytes": 2729
+    },
+    "ext/fjsp/hs_rdata_la26.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la26.txt",
+      "sha256": "60a2ef64f4e27a352028c8ebb0c9e9ee033c3ea2d59faba2ccc8dc0f0e850ad5",
+      "bytes": 4041
+    },
+    "ext/fjsp/hs_vdata_la26.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la26.txt",
+      "sha256": "4a0be4082528b9a43b1e214929f5115174e42d79f750d6a078bc6b848019a95e",
+      "bytes": 8249
+    },
+    "ext/fjsp/hs_sdata_la27.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la27.txt",
+      "sha256": "3370988bd0368968f81f47329becfbecb914cc7718ccb728c98f968d7457918a",
+      "bytes": 2513
+    },
+    "ext/fjsp/hs_edata_la27.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la27.txt",
+      "sha256": "fd77e4d2b258ded81316c5c77d978810b0c11cf5561926148bfce1bf28c3ad11",
+      "bytes": 2729
+    },
+    "ext/fjsp/hs_rdata_la27.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la27.txt",
+      "sha256": "29453088d6e474def03220dc879ee44f3ec634c6ae14ed37c8d8f5c48342e251",
+      "bytes": 4049
+    },
+    "ext/fjsp/hs_vdata_la27.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la27.txt",
+      "sha256": "004129f4b5cbd080b3496bd19f6a5b90b5a52a48589d36b4fd383d14c0c7258f",
+      "bytes": 8233
+    },
+    "ext/fjsp/hs_sdata_la28.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la28.txt",
+      "sha256": "257204bb66c35191d8c42c4918b52bca340bb2434b5c15de30990a70fea3a894",
+      "bytes": 2513
+    },
+    "ext/fjsp/hs_edata_la28.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la28.txt",
+      "sha256": "2d5149b73861e9149e4642389b40c05ab6371094580208dad454c7a0ac726329",
+      "bytes": 2721
+    },
+    "ext/fjsp/hs_rdata_la28.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la28.txt",
+      "sha256": "a541c60c02ddfabcdf7ce1587a28d7f47490d73c10375d91204d3d13772cd91d",
+      "bytes": 4129
+    },
+    "ext/fjsp/hs_vdata_la28.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la28.txt",
+      "sha256": "7739c0e5dd16751f92d139f815d5e7246c7a38fbc560e94b5158ed4f4b78c489",
+      "bytes": 8089
+    },
+    "ext/fjsp/hs_sdata_la29.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la29.txt",
+      "sha256": "cf178f3ed8117b2a45e6edc52863282eeb000c0552258ead575b1021b5e86d85",
+      "bytes": 2513
+    },
+    "ext/fjsp/hs_edata_la29.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la29.txt",
+      "sha256": "4068b4477e85aa89877beb17ccb0c257f4dfe990517837d9b7c16cec4cf4674a",
+      "bytes": 2729
+    },
+    "ext/fjsp/hs_rdata_la29.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la29.txt",
+      "sha256": "f5063dda2c3a21d52748073922da9b27328378bf7d3632b34ad70a25aa211e0b",
+      "bytes": 4105
+    },
+    "ext/fjsp/hs_vdata_la29.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la29.txt",
+      "sha256": "d95dd77d525317d14de3d47e61f9084d5d2809173fdb07dd7a4054a909530fcd",
+      "bytes": 7961
+    },
+    "ext/fjsp/hs_sdata_la30.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la30.txt",
+      "sha256": "b7f1cd401dfe346eb99e3a070515339505807a5075ba56a5bf07c9dce58038f7",
+      "bytes": 2513
+    },
+    "ext/fjsp/hs_edata_la30.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la30.txt",
+      "sha256": "431a87cafededb1258d753833510e7893ac19863645b5fe8a3f782628d54d339",
+      "bytes": 2729
+    },
+    "ext/fjsp/hs_rdata_la30.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la30.txt",
+      "sha256": "2494ff73ab17ecfb40635f420bae145224870524d0e3b30086dab467267a3ab1",
+      "bytes": 4049
+    },
+    "ext/fjsp/hs_vdata_la30.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la30.txt",
+      "sha256": "3ef7c566d051253dfa91cb04e6ca98eaec8b6c381cbe8ba30654450405a24334",
+      "bytes": 8353
+    },
+    "ext/fjsp/hs_sdata_la31.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la31.txt",
+      "sha256": "29af6a3ea96d25a58158a9e2baca3dbbc16f38c86da609be886d02271a2b2ead",
+      "bytes": 3763
+    },
+    "ext/fjsp/hs_edata_la31.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la31.txt",
+      "sha256": "2a718ee8d613e8df02d5b82b9cd9524d0ae9fbb8550059395f488ddc752cac0b",
+      "bytes": 4091
+    },
+    "ext/fjsp/hs_rdata_la31.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la31.txt",
+      "sha256": "93d03d65025c565980f235db235c7073d11e60b9b26408b1c6a7d93b6c1900ab",
+      "bytes": 5971
+    },
+    "ext/fjsp/hs_vdata_la31.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la31.txt",
+      "sha256": "8a07782707586bd148e164129dd10a7ebec5850b73256f43b311df271de5c074",
+      "bytes": 12403
+    },
+    "ext/fjsp/hs_sdata_la32.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la32.txt",
+      "sha256": "3c7241474a9db4afb17577fb3c51aaee76906aa8758b97b306c3093049e80d67",
+      "bytes": 3763
+    },
+    "ext/fjsp/hs_edata_la32.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la32.txt",
+      "sha256": "ea9ddb0f5dd61998de50d2f00141be3a40e5c129e5b02ffd9ea1b25e89dda082",
+      "bytes": 4091
+    },
+    "ext/fjsp/hs_rdata_la32.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la32.txt",
+      "sha256": "e3a60381dd1a9c808bb9788daf8d29fdd4e70d4a3db7065cd70131116b8dcb90",
+      "bytes": 6043
+    },
+    "ext/fjsp/hs_vdata_la32.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la32.txt",
+      "sha256": "9663eb1d423ea8c9bb8ec2efe40ba3c72a3107a981169c6d1f0b103e1b392542",
+      "bytes": 12259
+    },
+    "ext/fjsp/hs_sdata_la33.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la33.txt",
+      "sha256": "e40a3486bc1142ea035d6bc2bf62a3171bc55d7167f79db706dfaf95c3809788",
+      "bytes": 3763
+    },
+    "ext/fjsp/hs_edata_la33.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la33.txt",
+      "sha256": "6f2f841295e0f9d0506ef2b420e39d88f8b5f0d9c0a1df1c16b6c1ddcad6ed53",
+      "bytes": 4075
+    },
+    "ext/fjsp/hs_rdata_la33.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la33.txt",
+      "sha256": "da6030817f90c510c4e5f880fcbe85fdf8793af0262a72cd6dc0802ada0124f2",
+      "bytes": 6011
+    },
+    "ext/fjsp/hs_vdata_la33.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la33.txt",
+      "sha256": "ec8413a7d1d4d48f1d68cc6e470ec283d427a8ca1a1ca9f1d76c15250eba127f",
+      "bytes": 12195
+    },
+    "ext/fjsp/hs_sdata_la34.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la34.txt",
+      "sha256": "e4862c1eeb848916cf5ff80322895fdd95906a828507dd1bf41f059ad2616ed2",
+      "bytes": 3763
+    },
+    "ext/fjsp/hs_edata_la34.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la34.txt",
+      "sha256": "815d84651828a3b286ad90de0ffed8d44f680b9f8b0f629e69938eb12289d123",
+      "bytes": 4075
+    },
+    "ext/fjsp/hs_rdata_la34.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la34.txt",
+      "sha256": "7277f439a99cac0e2db02580de2599a31ad6ab9bed133276f98a59367f63a632",
+      "bytes": 6035
+    },
+    "ext/fjsp/hs_vdata_la34.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la34.txt",
+      "sha256": "fd38cece1a821aca2eabb7b1fa94a7f4ec54a65cca9484ba3330079b934c330f",
+      "bytes": 12459
+    },
+    "ext/fjsp/hs_sdata_la35.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la35.txt",
+      "sha256": "655e4c3220000b1e8826ebf5ed12f85c8d90f9842378cdc3397e9eaaeda238df",
+      "bytes": 3763
+    },
+    "ext/fjsp/hs_edata_la35.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la35.txt",
+      "sha256": "2203bf978728d724beaaa9fffef2fc801054e21ecb301b26d6498d3d3e50128e",
+      "bytes": 4075
+    },
+    "ext/fjsp/hs_rdata_la35.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la35.txt",
+      "sha256": "0afda1e47f4105ffc2965708fa863d20a64e476241f4d4b4602e932f8bc9279b",
+      "bytes": 6099
+    },
+    "ext/fjsp/hs_vdata_la35.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la35.txt",
+      "sha256": "470c17afac519aeec21cce6b699259f1021750d4e1b8a5c1d1923e6ddb8af524",
+      "bytes": 12515
+    },
+    "ext/fjsp/hs_sdata_la36.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la36.txt",
+      "sha256": "8c3e3b0746fd5f4e8bbce57c82d116181108dafb3681ad845c720de93a1c0160",
+      "bytes": 2788
+    },
+    "ext/fjsp/hs_edata_la36.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la36.txt",
+      "sha256": "26f5a69c74b9e6767834bf886deccd165dca4f820bb05d48f41d9b74952d9eaa",
+      "bytes": 3052
+    },
+    "ext/fjsp/hs_rdata_la36.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la36.txt",
+      "sha256": "f9b754f4aa3b1faa0d73c45986a0172b9e10c2b6f2796bcd0ffd74d92a45106c",
+      "bytes": 4500
+    },
+    "ext/fjsp/hs_vdata_la36.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la36.txt",
+      "sha256": "2d0588f4885361c2c5c79604fd0b0b323f773b1eb391eb7ddad2b6e5e737c5ac",
+      "bytes": 13044
+    },
+    "ext/fjsp/hs_sdata_la37.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la37.txt",
+      "sha256": "c56687e91eb9c35c736cd5dfa0e8ba44bae83b1eaff2d3f8b9eaf72cead73b72",
+      "bytes": 2788
+    },
+    "ext/fjsp/hs_edata_la37.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la37.txt",
+      "sha256": "89000fbf444ba62b399eca9d03989a4fadd63f0d0618d5fb5a042224bb1437bb",
+      "bytes": 3052
+    },
+    "ext/fjsp/hs_rdata_la37.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la37.txt",
+      "sha256": "cda9715a635b3b418a901bb0d915416f26fdbdfd6d4cb858a8ae9371e0b0a14f",
+      "bytes": 4484
+    },
+    "ext/fjsp/hs_vdata_la37.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la37.txt",
+      "sha256": "e2a64226104c27adc18445084b74f4106dfdd545fafde8a5ef7d8eb100c3dbab",
+      "bytes": 12924
+    },
+    "ext/fjsp/hs_sdata_la38.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la38.txt",
+      "sha256": "e20bfe5958052391a4b42574e357a740555f9f3a81df23cb9595ff34af6f5578",
+      "bytes": 2788
+    },
+    "ext/fjsp/hs_edata_la38.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la38.txt",
+      "sha256": "347c31cea058b95897b0a7422d88554442b792d1f6e55100b93fe983c28399ad",
+      "bytes": 3044
+    },
+    "ext/fjsp/hs_rdata_la38.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la38.txt",
+      "sha256": "b204c1c07fdea9af1438d342737a06c084be3eec5324279a27be2d49e7a3e676",
+      "bytes": 4540
+    },
+    "ext/fjsp/hs_vdata_la38.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la38.txt",
+      "sha256": "6d8fa676dd9424b07176ed5abc4cd211b9c316dcc88aae3f263bd3ab7feecc1b",
+      "bytes": 12820
+    },
+    "ext/fjsp/hs_sdata_la39.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la39.txt",
+      "sha256": "883066ab8f696b1b6b271ade9cdc7d09336363a0a82c45440cf7e4d6189b7428",
+      "bytes": 2788
+    },
+    "ext/fjsp/hs_edata_la39.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la39.txt",
+      "sha256": "3c6a39f402ce16169803ed7fe8faea739dbf9d99f33015f4ca2127089e45a0a5",
+      "bytes": 3044
+    },
+    "ext/fjsp/hs_rdata_la39.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la39.txt",
+      "sha256": "ef71b4986f56fe5019bcf0c0e7bff2855073cb309042b6eab991307d14295d06",
+      "bytes": 4476
+    },
+    "ext/fjsp/hs_vdata_la39.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la39.txt",
+      "sha256": "59d6fc337979b594daa6a6cd23c4c813735aff206890ad704dea6bc3d15ee57a",
+      "bytes": 12748
+    },
+    "ext/fjsp/hs_sdata_la40.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/la40.txt",
+      "sha256": "796dde7b3556e51e95c144474bd283663594b3e5be05f0b498798e9031289d94",
+      "bytes": 2788
+    },
+    "ext/fjsp/hs_edata_la40.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/la40.txt",
+      "sha256": "cb20a54de8b375e5d6030bbeaadfe29011253b1bcf25067d73958256fbd29153",
+      "bytes": 3052
+    },
+    "ext/fjsp/hs_rdata_la40.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/la40.txt",
+      "sha256": "d99d0269e32042ac60aa2e7fa0518dd3a99e6f92012a4e61e0187f9d0a784742",
+      "bytes": 4516
+    },
+    "ext/fjsp/hs_vdata_la40.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/la40.txt",
+      "sha256": "5553392aee80dd68a59d60a8f26e1a6623b96ec565c2fab40470f8b6cbcc4fca",
+      "bytes": 12652
+    },
+    "ext/fjsp/hs_sdata_orb1.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/orb1.txt",
+      "sha256": "de7d72440a0ace24d53a4488f4d16dec6d3699b7e2a2e0f297fe610b21a5e1d8",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_orb1.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/orb1.txt",
+      "sha256": "3879031aecdd03e75195f426af71b05fc1fcb9a2bd5de7db5ef0521c2939882f",
+      "bytes": 1375
+    },
+    "ext/fjsp/hs_rdata_orb1.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/orb1.txt",
+      "sha256": "c4c066c16122051645b205fce6050652749cc169c2fe7b0a8b847a44f9c7ac66",
+      "bytes": 2031
+    },
+    "ext/fjsp/hs_vdata_orb1.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/orb1.txt",
+      "sha256": "52db93c97aa543760bc51ce4c319e6153cc97056905581b90eeb2fe536acce9d",
+      "bytes": 4031
+    },
+    "ext/fjsp/hs_sdata_orb2.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/orb2.txt",
+      "sha256": "09d1e6a3c8df603a166e457d26ed4cb801fc41180170d7addcd0aae37706a74f",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_orb2.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/orb2.txt",
+      "sha256": "6aa221e695e4243e2b7b63c2a710a85ba690ab771e0dc4cff86a2efafe15f326",
+      "bytes": 1367
+    },
+    "ext/fjsp/hs_rdata_orb2.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/orb2.txt",
+      "sha256": "cafad7a51caeef0d021d5c611306fb2e9efca868f7dee1f1dfcf0ac6febdee8f",
+      "bytes": 2039
+    },
+    "ext/fjsp/hs_vdata_orb2.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/orb2.txt",
+      "sha256": "722d101fef75faa2c5eeee63cc145a6e42568b67e33a534114d55ae6b660f7a0",
+      "bytes": 3983
+    },
+    "ext/fjsp/hs_sdata_orb3.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/orb3.txt",
+      "sha256": "6917613d80db1aab22652271abd4e993e59b71469be0aac31526431cbd645fff",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_orb3.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/orb3.txt",
+      "sha256": "803b7e1facef441732e997b40c19574a8612b1faf807f54021e211aa1409b8fc",
+      "bytes": 1375
+    },
+    "ext/fjsp/hs_rdata_orb3.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/orb3.txt",
+      "sha256": "4bd3828eb1517ea6ad491aadfab2d818d61c84ce5ed72bb62347d2b9f919604f",
+      "bytes": 2023
+    },
+    "ext/fjsp/hs_vdata_orb3.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/orb3.txt",
+      "sha256": "744081822a12af88693cb4b6ce58240e4cb2434a2a5296f16aa85787dffc47ad",
+      "bytes": 4199
+    },
+    "ext/fjsp/hs_sdata_orb4.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/orb4.txt",
+      "sha256": "30d0e0f81b3ae2d535db214ba2cc334df48b411988d2c4796c53e6efcdf618cb",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_orb4.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/orb4.txt",
+      "sha256": "4c75b611a12f4f0d0f4f7a42ab2e681110421a328b1ba7ef4d0e6d0c9d060ced",
+      "bytes": 1375
+    },
+    "ext/fjsp/hs_rdata_orb4.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/orb4.txt",
+      "sha256": "03367aeb27e520b8e87a9563c1ed6e1bcdcd8ba49b3e037f7e0d09c84552b719",
+      "bytes": 2015
+    },
+    "ext/fjsp/hs_vdata_orb4.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/orb4.txt",
+      "sha256": "ab36040d3efb900a754bd3ca230e087fc3449406adb442de32b5116170bf0c4f",
+      "bytes": 4231
+    },
+    "ext/fjsp/hs_sdata_orb5.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/orb5.txt",
+      "sha256": "b776cd93e71457ac7af0d265127b6e80d8f28d97f43f383bb11ab3b4ba5072a5",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_orb5.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/orb5.txt",
+      "sha256": "f779c079117ee3491a182d5f2c9ea5160bd3b8402415d71e92ea2457ea0bf61c",
+      "bytes": 1375
+    },
+    "ext/fjsp/hs_rdata_orb5.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/orb5.txt",
+      "sha256": "5e9bc02598457b7593d6b02162e2dec554adf07a16b98fdf6155a5d93d984cf3",
+      "bytes": 2047
+    },
+    "ext/fjsp/hs_vdata_orb5.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/orb5.txt",
+      "sha256": "4045e1d353857f6f4c71e9822f5261aad5f15dc6e09203ca1f43f9239d9f0556",
+      "bytes": 4279
+    },
+    "ext/fjsp/hs_sdata_orb6.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/orb6.txt",
+      "sha256": "cad8e27e162b835454478d6b73dfbf6747131520a72ce95f3204261bb7649727",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_orb6.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/orb6.txt",
+      "sha256": "3f32055fa07d3d41d3f49bf575ce9069788423ff8f57553169879a0cf1014f84",
+      "bytes": 1375
+    },
+    "ext/fjsp/hs_rdata_orb6.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/orb6.txt",
+      "sha256": "a3d73cde5fbe312993d2336448ee18576bd59e9091deffb6381de4e9d4e43230",
+      "bytes": 2031
+    },
+    "ext/fjsp/hs_vdata_orb6.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/orb6.txt",
+      "sha256": "fdbe7ea56648869f565435e56b3b8f88d87473668ad0159f4ad9080581a0d26d",
+      "bytes": 4287
+    },
+    "ext/fjsp/hs_sdata_orb7.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/orb7.txt",
+      "sha256": "22e7ea4b3ad707069187321176aa31062a51d34ce063fe2425367a7d536a013b",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_orb7.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/orb7.txt",
+      "sha256": "56f57f0e7599f490e7f81c9082420bf1a845762dadefedb29df817223609589c",
+      "bytes": 1367
+    },
+    "ext/fjsp/hs_rdata_orb7.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/orb7.txt",
+      "sha256": "19713991dd82191df12b047ebe9bacc0f26ff2711a79983b4377a9975d679e21",
+      "bytes": 2039
+    },
+    "ext/fjsp/hs_vdata_orb7.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/orb7.txt",
+      "sha256": "9074db53172444b99b9b01cc1b53790e92cf03204e621b656efee93aba87e125",
+      "bytes": 4111
+    },
+    "ext/fjsp/hs_sdata_orb8.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/orb8.txt",
+      "sha256": "d4e13e8399b7a0618aeb2f6c49ad7f32f908f139e13c949c6ce413ebdc009b77",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_orb8.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/orb8.txt",
+      "sha256": "890b5c070ddfd168c72435ec088bd6f83a9e9b76f6cfcf47764b4391534c4472",
+      "bytes": 1375
+    },
+    "ext/fjsp/hs_rdata_orb8.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/orb8.txt",
+      "sha256": "e600976ec981b0466e7f24f0b5fc2ff28eb8e248fd4efb5ae7c89470e3797823",
+      "bytes": 2023
+    },
+    "ext/fjsp/hs_vdata_orb8.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/orb8.txt",
+      "sha256": "f06a7337cc172742c7759fb1619f54c504bcdf32e1b1bddcf3abda4899581a9a",
+      "bytes": 4103
+    },
+    "ext/fjsp/hs_sdata_orb9.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/orb9.txt",
+      "sha256": "bdbcdac57ea53975e424c40d726bbe668f2e2af9b1b4d21f667bb7f137c4234d",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_orb9.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/orb9.txt",
+      "sha256": "f87c4ef7dbc36446d23f47575f47d0edcce9f088cfaf72480e6d6087ea80773a",
+      "bytes": 1375
+    },
+    "ext/fjsp/hs_rdata_orb9.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/orb9.txt",
+      "sha256": "cde72cedf486d7533f3ba3cf87482982c5d1a6032159013bc09e81b4534f6ffa",
+      "bytes": 2015
+    },
+    "ext/fjsp/hs_vdata_orb9.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/orb9.txt",
+      "sha256": "b67f851a3e6bf136f2f1f872eeb42b3489d41fb443e6ded621a1e69a74577e4f",
+      "bytes": 4039
+    },
+    "ext/fjsp/hs_sdata_orb10.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/sdata/orb10.txt",
+      "sha256": "f8f1fc1a0766c5f1987beef6ea001200b9cc2775dab8858da27175660ac40421",
+      "bytes": 1263
+    },
+    "ext/fjsp/hs_edata_orb10.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/edata/orb10.txt",
+      "sha256": "600adfb8d463ea1b36c4bf1628064dca40ec1f94d9d2e4dc05e10c48ac7865f4",
+      "bytes": 1375
+    },
+    "ext/fjsp/hs_rdata_orb10.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/rdata/orb10.txt",
+      "sha256": "7d7b1d093ae83c20c50c4ed29ed1434e2393c9152b18edf190442c58d0a4d512",
+      "bytes": 2047
+    },
+    "ext/fjsp/hs_vdata_orb10.txt": {
+      "url": "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/fff94e1d1735c61c65b231a8ca273431a9be3826/flexible%20jobshop/instances/text_fjsp_old_format/HurinkJurischThole1994/vdata/orb10.txt",
+      "sha256": "0e153d611e193dcead6562e0533824de9952009a6de35faf5d110fb5ffe0a596",
+      "bytes": 4071
+    }
+  }
+}

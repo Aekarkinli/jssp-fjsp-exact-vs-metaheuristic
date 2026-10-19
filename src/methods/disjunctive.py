@@ -188,7 +188,7 @@ def swap_positions(seq, a, b):
 
 def random_start(instance: Instance, rng: random.Random, mapping: str = DEFAULT_MAPPING):
     """A diversified feasible start: decode a random key vector into machine sequences."""
-    vec = np.array([rng.random() for _ in range(vector_length(instance))], dtype=float)
+    vec = np.array([rng.random() for _ in range(vector_length(instance, mapping))], dtype=float)
     schedule = decode_vector(instance, vec, mapping=mapping).schedule
     assignment, seqs = state_from_schedule(schedule)
     dur = [

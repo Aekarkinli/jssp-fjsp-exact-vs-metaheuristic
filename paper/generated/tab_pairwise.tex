@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Paired comparison of every method with the tabu search at the 300\,s budget over the 67 instances. The omnibus Friedman test rejects equality ($\chi^2=728.9$, $p<10^{-4}$). $p$ values are Holm-corrected within the family of 16 comparisons. A positive rank-biserial correlation means the method deviates more than the tabu search. The median paired difference is the median over instances of the per-instance difference, which is not the difference of the two medians. Superiority is the share of instances on which the method is strictly better, with a 95\,\% Wilson interval.}
+\label{tab:pairwise}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrl}
+\toprule
+Method & Median (\%) & Median paired & $W$ & $p_{\text{Holm}}$ & $r_{rb}$ ($n_{\text{eff}}$) & Superiority [95\,\% CI] \\
+ & & difference & & & & \\
+\midrule
+CP-SAT & 0.00 & -0.68 & 264 & 0.0004 & -0.57 (49) & 0.61 [0.49, 0.72] \\
+SA & 6.56 & 4.07 & 0 & $<10^{-4}$ & 1.00 (56) & 0.00 [0.00, 0.05] \\
+MDE & 7.69 & 4.67 & 68 & $<10^{-4}$ & 0.92 (58) & 0.06 [0.02, 0.14] \\
+GA & 8.17 & 5.67 & 28 & $<10^{-4}$ & 0.97 (57) & 0.04 [0.02, 0.12] \\
+CMA-ES & 9.23 & 6.27 & 4 & $<10^{-4}$ & 1.00 (59) & 0.01 [0.00, 0.08] \\
+RIME & 10.70 & 8.09 & 0 & $<10^{-4}$ & 1.00 (60) & 0.00 [0.00, 0.05] \\
+L-SHADE & 12.20 & 9.41 & 0 & $<10^{-4}$ & 1.00 (60) & 0.00 [0.00, 0.05] \\
+CSA & 13.86 & 11.23 & 0 & $<10^{-4}$ & 1.00 (60) & 0.00 [0.00, 0.05] \\
+IMODE & 15.06 & 12.15 & 0 & $<10^{-4}$ & 1.00 (60) & 0.00 [0.00, 0.05] \\
+BRKGA & 15.93 & 11.94 & 0 & $<10^{-4}$ & 1.00 (60) & 0.00 [0.00, 0.05] \\
+DE & 17.74 & 14.34 & 0 & $<10^{-4}$ & 1.00 (63) & 0.00 [0.00, 0.05] \\
+GWO & 18.18 & 15.30 & 0 & $<10^{-4}$ & 1.00 (61) & 0.00 [0.00, 0.05] \\
+PSO & 18.26 & 15.22 & 0 & $<10^{-4}$ & 1.00 (61) & 0.00 [0.00, 0.05] \\
+PDR & 20.08 & 16.26 & 0 & $<10^{-4}$ & 1.00 (63) & 0.00 [0.00, 0.05] \\
+ABC & 21.53 & 19.07 & 0 & $<10^{-4}$ & 1.00 (62) & 0.00 [0.00, 0.05] \\
+GT & 37.88 & 33.11 & 0 & $<10^{-4}$ & 1.00 (67) & 0.00 [0.00, 0.05] \\
+\bottomrule
+\end{tabular}}
+\end{table}

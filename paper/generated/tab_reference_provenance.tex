@@ -1,0 +1,81 @@
+{\footnotesize\setlength{\tabcolsep}{5pt}
+\begin{longtable}{lrrrrcl}
+\caption{Reference values and their provenance. BKS is the best-known makespan used as the denominator of every deviation reported in this study, LB is the best lower bound recorded by the same source, and Certified states whether the source records the value as a proven optimum. Collections were accessed at the pinned revisions given in the repository.}\label{tab:reference-provenance}\\
+\toprule
+Instance & $n\times m$ & Ops & BKS & LB & Certified & Source \\
+\midrule
+\endfirsthead
+\toprule
+Instance & $n\times m$ & Ops & BKS & LB & Certified & Source \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+mk01 & 10$\times$6 & 55 & 40 & 40 & yes & ScheduleOpt bks.json \\
+mk02 & 10$\times$6 & 58 & 26 & 26 & yes & ScheduleOpt bks.json \\
+mk04 & 15$\times$8 & 90 & 60 & 60 & yes & ScheduleOpt bks.json \\
+mk07 & 20$\times$5 & 100 & 139 & 139 & yes & ScheduleOpt bks.json \\
+mk05 & 15$\times$4 & 106 & 172 & 172 & yes & ScheduleOpt bks.json \\
+mk03 & 15$\times$8 & 150 & 204 & 204 & yes & ScheduleOpt bks.json \\
+mk06 & 10$\times$15 & 150 & 57 & 57 & yes & ScheduleOpt bks.json \\
+mk08 & 20$\times$10 & 225 & 523 & 523 & yes & ScheduleOpt bks.json \\
+mk09 & 20$\times$10 & 240 & 307 & 307 & yes & ScheduleOpt bks.json \\
+mk10 & 20$\times$15 & 240 & 193 & 189 & no & ScheduleOpt bks.json \\
+fattahi01 & 2$\times$2 & 4 & 66 & 66 & yes & ScheduleOpt bks.json \\
+fattahi05 & 3$\times$2 & 6 & 119 & 119 & yes & ScheduleOpt bks.json \\
+fattahi10 & 4$\times$5 & 12 & 516 & 516 & yes & ScheduleOpt bks.json \\
+fattahi15 & 7$\times$7 & 21 & 514 & 514 & yes & ScheduleOpt bks.json \\
+fattahi20 & 12$\times$8 & 48 & 1196 & 1196 & yes & ScheduleOpt bks.json \\
+edata\_la01 & 10$\times$5 & 50 & 609 & 609 & yes & ScheduleOpt bks.json \\
+edata\_la06 & 15$\times$5 & 75 & 833 & 833 & yes & ScheduleOpt bks.json \\
+edata\_la16 & 10$\times$10 & 100 & 892 & 892 & yes & ScheduleOpt bks.json \\
+edata\_la21 & 15$\times$10 & 150 & 1009 & 1009 & yes & ScheduleOpt bks.json \\
+edata\_la26 & 20$\times$10 & 200 & 1106 & 1106 & yes & ScheduleOpt bks.json \\
+rdata\_la01 & 10$\times$5 & 50 & 570 & 570 & yes & ScheduleOpt bks.json \\
+rdata\_la06 & 15$\times$5 & 75 & 799 & 799 & yes & ScheduleOpt bks.json \\
+rdata\_la16 & 10$\times$10 & 100 & 717 & 717 & yes & ScheduleOpt bks.json \\
+rdata\_la21 & 15$\times$10 & 150 & 825 & 809 & no & ScheduleOpt bks.json \\
+rdata\_la26 & 20$\times$10 & 200 & 1057 & 1056 & no & ScheduleOpt bks.json \\
+vdata\_la01 & 10$\times$5 & 50 & 570 & 570 & yes & ScheduleOpt bks.json \\
+vdata\_la06 & 15$\times$5 & 75 & 799 & 799 & yes & ScheduleOpt bks.json \\
+vdata\_la16 & 10$\times$10 & 100 & 717 & 717 & yes & ScheduleOpt bks.json \\
+vdata\_la21 & 15$\times$10 & 150 & 800 & 800 & yes & ScheduleOpt bks.json \\
+vdata\_la26 & 20$\times$10 & 200 & 1052 & 1052 & yes & ScheduleOpt bks.json \\
+abz5 & 10$\times$10 & 100 & 1234 & 1234 & yes & JSPLIB \\
+abz6 & 10$\times$10 & 100 & 943 & 943 & yes & JSPLIB \\
+abz7 & 20$\times$15 & 300 & 656 & 656 & yes & JSPLIB \\
+abz8 & 20$\times$15 & 300 & 667 & 667 & yes & JSPLib \\
+abz9 & 20$\times$15 & 300 & 678 & 678 & yes & Weise collection \\
+orb01 & 10$\times$10 & 100 & 1059 & 1059 & yes & JSPLIB \\
+orb02 & 10$\times$10 & 100 & 888 & 888 & yes & JSPLIB \\
+orb03 & 10$\times$10 & 100 & 1005 & 1005 & yes & JSPLIB \\
+orb04 & 10$\times$10 & 100 & 1005 & 1005 & yes & JSPLIB \\
+orb05 & 10$\times$10 & 100 & 887 & 887 & yes & JSPLIB \\
+ft06 & 6$\times$6 & 36 & 55 & 55 & yes & JSPLIB \\
+ft10 & 10$\times$10 & 100 & 930 & 930 & yes & JSPLIB \\
+ft20 & 20$\times$5 & 100 & 1165 & 1165 & yes & JSPLIB \\
+la01 & 10$\times$5 & 50 & 666 & 666 & yes & JSPLIB \\
+la06 & 15$\times$5 & 75 & 926 & 926 & yes & JSPLIB \\
+la11 & 20$\times$5 & 100 & 1222 & 1222 & yes & JSPLIB \\
+la16 & 10$\times$10 & 100 & 945 & 945 & yes & JSPLIB \\
+la19 & 10$\times$10 & 100 & 842 & 842 & yes & JSPLIB \\
+la21 & 15$\times$10 & 150 & 1046 & 1046 & yes & JSPLIB \\
+la24 & 15$\times$10 & 150 & 935 & 935 & yes & JSPLIB \\
+la26 & 20$\times$10 & 200 & 1218 & 1218 & yes & JSPLIB \\
+la29 & 20$\times$10 & 200 & 1152 & 1152 & yes & JSPLIB \\
+la36 & 15$\times$15 & 225 & 1268 & 1268 & yes & JSPLIB \\
+la38 & 15$\times$15 & 225 & 1196 & 1196 & yes & JSPLIB \\
+la40 & 15$\times$15 & 225 & 1222 & 1222 & yes & JSPLIB \\
+la31 & 30$\times$10 & 300 & 1784 & 1784 & yes & JSPLIB \\
+swv01 & 20$\times$10 & 200 & 1407 & 1407 & yes & JSPLIB \\
+swv06 & 20$\times$15 & 300 & 1667 & 1667 & yes & JSPLib \\
+swv11 & 50$\times$10 & 500 & 2983 & 2983 & yes & Weise collection \\
+ta01 & 15$\times$15 & 225 & 1231 & 1231 & yes & JSPLIB \\
+ta11 & 20$\times$15 & 300 & 1357 & 1357 & yes & Weise collection \\
+ta21 & 20$\times$20 & 400 & 1642 & 1642 & yes & Weise collection \\
+ta31 & 30$\times$15 & 450 & 1764 & 1764 & yes & JSPLIB \\
+ta41 & 30$\times$20 & 600 & 2005 & 1926 & no & JSPLib \\
+ta51 & 50$\times$15 & 750 & 2760 & 2760 & yes & JSPLIB \\
+ta61 & 50$\times$20 & 1000 & 2868 & 2868 & yes & JSPLIB \\
+ta71 & 100$\times$20 & 2000 & 5464 & 5464 & yes & Weise collection \\
+\end{longtable}}

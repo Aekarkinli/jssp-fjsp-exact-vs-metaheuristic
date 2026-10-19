@@ -74,11 +74,11 @@ def panel_label(ax, text: str, title: str = "", dx: float = -0.02,
                 dy: float = 1.04) -> None:
     """Panel letter in the upper-left corner, aligned the same way in every figure.
 
-    When a title is given the letter is set as part of the title, which keeps the two from
-    colliding and matches the convention of the journal.
+    When a title is given the letter alone is set in the title position. The panel content
+    itself is stated in the caption, which is the convention of the journal.
     """
     if title:
-        ax.set_title(f"{text} {title}", fontsize=8, loc="left")
+        ax.set_title(text, fontsize=8, loc="left")
         return
     ax.text(dx, dy, text, transform=ax.transAxes, fontsize=8.5, fontweight="bold",
             va="bottom", ha="left", color=INK)

@@ -1,0 +1,57 @@
+{
+ "params": {
+  "Intercept": -0.7014925373134382,
+  "C(family, Treatment(reference='problem_specific'))[T.adaptive]": -0.7393034825870588,
+  "C(family, Treatment(reference='problem_specific'))[T.general]": -1.8059701492537263,
+  "C(family, Treatment(reference='problem_specific'))[T.random_key]": -0.8268656716417753,
+  "C(family, Treatment(reference='problem_specific'))[T.recent]": -0.8268656716417868,
+  "Group Var": 0.0
+ },
+ "pvalues": {
+  "Intercept": NaN,
+  "C(family, Treatment(reference='problem_specific'))[T.adaptive]": NaN,
+  "C(family, Treatment(reference='problem_specific'))[T.general]": NaN,
+  "C(family, Treatment(reference='problem_specific'))[T.random_key]": NaN,
+  "C(family, Treatment(reference='problem_specific'))[T.recent]": NaN,
+  "Group Var": NaN
+ },
+ "n_obs": 1072,
+ "n_groups": 16,
+ "member_medians": [
+  {
+   "family": "adaptive",
+   "count": 3,
+   "median": 12.203626220362622,
+   "min": 9.227129337539433,
+   "max": 15.063091482649842
+  },
+  {
+   "family": "general",
+   "count": 4,
+   "median": 18.000788643533124,
+   "min": 8.172043010752688,
+   "max": 21.529968454258675
+  },
+  {
+   "family": "problem_specific",
+   "count": 4,
+   "median": 13.32098898624688,
+   "min": 1.6634980988593155,
+   "max": 37.878787878787875
+  },
+  {
+   "family": "random_key",
+   "count": 1,
+   "median": 15.92809364548495,
+   "min": 15.92809364548495,
+   "max": 15.92809364548495
+  },
+  {
+   "family": "recent",
+   "count": 4,
+   "median": 12.282336916554225,
+   "min": 7.6923076923076925,
+   "max": 18.18181818181818
+  }
+ ]
+}

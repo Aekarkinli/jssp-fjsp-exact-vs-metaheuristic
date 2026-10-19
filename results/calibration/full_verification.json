@@ -1,0 +1,458 @@
+{
+  "run": "full",
+  "expected_jobs": 14941,
+  "present_files": 14941,
+  "n_checked": 14941,
+  "n_missing": 0,
+  "n_extra": 0,
+  "missing_sample": [],
+  "extra_sample": [],
+  "n_crashed": 0,
+  "n_infeasible": 0,
+  "provenance": {
+    "git_commits": {
+      "d31861e4d07ac527d3997ab91fe3d2d7aa870750": 35,
+      "978e73cecf7e37a66b2e2bb9bba7807066919ce1": 446,
+      "9d17380702b1fdcc4c6aece5e7ff5ded702fa33d": 2965,
+      "065f3fc1fbbcde545988e124c385d17c25b89977": 11495
+    },
+    "hostnames": {
+      "Administrator": 14941
+    },
+    "distinct_version_sets": 1,
+    "run_names": {
+      "full": 14941
+    },
+    "affinity_cores_used": {
+      "0": 1837,
+      "2": 1869,
+      "4": 1856,
+      "6": 1848,
+      "8": 1898,
+      "10": 1917,
+      "12": 1870,
+      "14": 1846
+    }
+  },
+  "timing": {
+    "wall_min": 0.0,
+    "wall_max": 326.98,
+    "budget_s": 300.0,
+    "stochastic_jobs_over_1p5x_budget": 0
+  },
+  "status_by_method": {
+    "cpsat": {
+      "OPTIMAL": 35,
+      "FEASIBLE": 32
+    },
+    "dispatching": {
+      "FEASIBLE": 67
+    },
+    "greedy": {
+      "FEASIBLE": 67
+    },
+    "tabu": {
+      "FEASIBLE": 1340
+    },
+    "ga": {
+      "FEASIBLE": 1340
+    },
+    "de": {
+      "FEASIBLE": 1340
+    },
+    "pso": {
+      "FEASIBLE": 1340
+    },
+    "abc": {
+      "FEASIBLE": 1340
+    },
+    "lshade": {
+      "FEASIBLE": 1340
+    },
+    "imode": {
+      "FEASIBLE": 1340
+    },
+    "gwo": {
+      "FEASIBLE": 1340
+    },
+    "mde": {
+      "FEASIBLE": 1340
+    },
+    "csa": {
+      "FEASIBLE": 1340
+    },
+    "rime": {
+      "FEASIBLE": 1340
+    }
+  },
+  "calibration_instances": 57,
+  "calibration": {
+    "ft06": {
+      "cpsat": 55.0,
+      "bks": 55,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "ft10": {
+      "cpsat": 930.0,
+      "bks": 930,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "ft20": {
+      "cpsat": 1165.0,
+      "bks": 1165,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "la01": {
+      "cpsat": 666.0,
+      "bks": 666,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "la06": {
+      "cpsat": 926.0,
+      "bks": 926,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "la11": {
+      "cpsat": 1222.0,
+      "bks": 1222,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "la16": {
+      "cpsat": 945.0,
+      "bks": 945,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "la19": {
+      "cpsat": 842.0,
+      "bks": 842,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "la21": {
+      "cpsat": 1046.0,
+      "bks": 1046,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "la24": {
+      "cpsat": 935.0,
+      "bks": 935,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "la26": {
+      "cpsat": 1218.0,
+      "bks": 1218,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "la29": {
+      "cpsat": 1185.0,
+      "bks": 1152,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "la31": {
+      "cpsat": 1784.0,
+      "bks": 1784,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "la36": {
+      "cpsat": 1268.0,
+      "bks": 1268,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "la38": {
+      "cpsat": 1198.0,
+      "bks": 1196,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "la40": {
+      "cpsat": 1222.0,
+      "bks": 1222,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "abz5": {
+      "cpsat": 1234.0,
+      "bks": 1234,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "abz6": {
+      "cpsat": 943.0,
+      "bks": 943,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "abz7": {
+      "cpsat": 679.0,
+      "bks": 656,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "orb01": {
+      "cpsat": 1059.0,
+      "bks": 1059,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "orb02": {
+      "cpsat": 888.0,
+      "bks": 888,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "orb03": {
+      "cpsat": 1005.0,
+      "bks": 1005,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "orb04": {
+      "cpsat": 1005.0,
+      "bks": 1005,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "orb05": {
+      "cpsat": 887.0,
+      "bks": 887,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "swv01": {
+      "cpsat": 1431.0,
+      "bks": 1407,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "ta01": {
+      "cpsat": 1231.0,
+      "bks": 1231,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "ta31": {
+      "cpsat": 1903.0,
+      "bks": 1764,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "ta51": {
+      "cpsat": 3003.0,
+      "bks": 2760,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "ta61": {
+      "cpsat": 3350.0,
+      "bks": 2868,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "ta71": {
+      "cpsat": 5977.0,
+      "bks": 5464,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "mk01": {
+      "cpsat": 40.0,
+      "bks": 40,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "mk02": {
+      "cpsat": 26.0,
+      "bks": 26,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "mk03": {
+      "cpsat": 204.0,
+      "bks": 204,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "mk04": {
+      "cpsat": 60.0,
+      "bks": 60,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "mk05": {
+      "cpsat": 173.0,
+      "bks": 172,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "mk06": {
+      "cpsat": 57.0,
+      "bks": 57,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "mk07": {
+      "cpsat": 139.0,
+      "bks": 139,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "mk08": {
+      "cpsat": 523.0,
+      "bks": 523,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "mk09": {
+      "cpsat": 307.0,
+      "bks": 307,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "edata_la01": {
+      "cpsat": 609.0,
+      "bks": 609,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "edata_la06": {
+      "cpsat": 833.0,
+      "bks": 833,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "edata_la16": {
+      "cpsat": 892.0,
+      "bks": 892,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "edata_la21": {
+      "cpsat": 1009.0,
+      "bks": 1009,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "edata_la26": {
+      "cpsat": 1118.0,
+      "bks": 1106,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "rdata_la01": {
+      "cpsat": 570.0,
+      "bks": 570,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "rdata_la06": {
+      "cpsat": 799.0,
+      "bks": 799,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "rdata_la16": {
+      "cpsat": 717.0,
+      "bks": 717,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "vdata_la01": {
+      "cpsat": 570.0,
+      "bks": 570,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "vdata_la06": {
+      "cpsat": 799.0,
+      "bks": 799,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "vdata_la16": {
+      "cpsat": 717.0,
+      "bks": 717,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "vdata_la21": {
+      "cpsat": 812.0,
+      "bks": 800,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "vdata_la26": {
+      "cpsat": 1071.0,
+      "bks": 1052,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    },
+    "fattahi01": {
+      "cpsat": 66.0,
+      "bks": 66,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "fattahi05": {
+      "cpsat": 119.0,
+      "bks": 119,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "fattahi10": {
+      "cpsat": 516.0,
+      "bks": 516,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "fattahi15": {
+      "cpsat": 514.0,
+      "bks": 514,
+      "status": "OPTIMAL",
+      "proved_within_budget": true
+    },
+    "fattahi20": {
+      "cpsat": 1196.0,
+      "bks": 1196,
+      "status": "FEASIBLE",
+      "proved_within_budget": false
+    }
+  },
+  "n_warnings": 400,
+  "warnings_sample": [
+    "fattahi01__ga__seed011.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed023.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed037.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed041.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed053.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed067.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed079.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed083.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed097.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed101.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed113.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed127.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed131.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed149.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed157.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed167.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed173.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed181.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed191.json: FJSP decoder run recorded zero repairs",
+    "fattahi01__ga__seed199.json: FJSP decoder run recorded zero repairs"
+  ],
+  "n_errors": 0,
+  "errors_sample": []
+}

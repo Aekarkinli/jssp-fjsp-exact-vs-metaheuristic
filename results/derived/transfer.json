@@ -1,0 +1,44 @@
+{
+ "n_methods": 12,
+ "n_functions": 29,
+ "rho_wallclock": 0.7062937062937064,
+ "p_wallclock": 0.010245193941127854,
+ "ci_wallclock": [
+  0.22262468357848805,
+  0.9109506384612247
+ ],
+ "rho_equal_evals": 0.6433566433566434,
+ "p_equal_evals": 0.024003191200713644,
+ "ci_equal_evals": [
+  0.11009848423797801,
+  0.8890161317977197
+ ],
+ "cec_best": [
+  "lshade",
+  "imode",
+  "mde",
+  "cmaes",
+  "csa",
+  "rime",
+  "ga",
+  "pso",
+  "brkga",
+  "gwo",
+  "abc",
+  "de"
+ ],
+ "sched_best": [
+  "cmaes",
+  "ga",
+  "mde",
+  "lshade",
+  "rime",
+  "imode",
+  "csa",
+  "brkga",
+  "de",
+  "gwo",
+  "pso",
+  "abc"
+ ]
+}

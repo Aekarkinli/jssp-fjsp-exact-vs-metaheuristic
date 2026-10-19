@@ -1,0 +1,18 @@
+{
+ "python": "3.11.15",
+ "versions": {
+  "ortools": "9.14.6206",
+  "pyjobshop": "0.0.9",
+  "mealpy": "3.0.3",
+  "numpy": "1.26.0",
+  "scipy": "1.16.3",
+  "opfunu": "1.0.4",
+  "cma": "4.4.4",
+  "statsmodels": "0.14.6"
+ },
+ "git_commit": "532fe93a83663c32492100f141429ea763ff2d2c",
+ "cpu_id": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+ "cpu_model": "Intel i9-13900HX (8 P-cores + 16 E-cores, hybrid)",
+ "workers": 8,
+ "os": "Windows-10-10.0.19045-SP0"
+}

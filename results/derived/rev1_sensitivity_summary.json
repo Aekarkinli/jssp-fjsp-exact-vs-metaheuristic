@@ -1,0 +1,130 @@
+{
+ "1": {
+  "changed": [
+   0,
+   20
+  ],
+  "n_EXACT_SUFFICIENT": [
+   13,
+   13
+  ],
+  "n_HEURISTIC_NECESSARY": [
+   23,
+   36
+  ],
+  "n_HYBRID_RECOMMENDED": [
+   1,
+   8
+  ],
+  "n_INCONCLUSIVE": [
+   9,
+   19
+  ],
+  "n_HEURISTIC_USEFUL": [
+   0,
+   13
+  ]
+ },
+ "10": {
+  "changed": [
+   0,
+   16
+  ],
+  "n_EXACT_SUFFICIENT": [
+   25,
+   25
+  ],
+  "n_HEURISTIC_NECESSARY": [
+   7,
+   18
+  ],
+  "n_HYBRID_RECOMMENDED": [
+   0,
+   3
+  ],
+  "n_INCONCLUSIVE": [
+   18,
+   30
+  ],
+  "n_HEURISTIC_USEFUL": [
+   0,
+   8
+  ]
+ },
+ "60": {
+  "changed": [
+   0,
+   5
+  ],
+  "n_EXACT_SUFFICIENT": [
+   31,
+   31
+  ],
+  "n_HEURISTIC_NECESSARY": [
+   5,
+   8
+  ],
+  "n_HYBRID_RECOMMENDED": [
+   0,
+   1
+  ],
+  "n_INCONCLUSIVE": [
+   26,
+   28
+  ],
+  "n_HEURISTIC_USEFUL": [
+   1,
+   3
+  ]
+ },
+ "300": {
+  "changed": [
+   0,
+   4
+  ],
+  "n_EXACT_SUFFICIENT": [
+   36,
+   36
+  ],
+  "n_HEURISTIC_NECESSARY": [
+   4,
+   7
+  ],
+  "n_HYBRID_RECOMMENDED": [
+   0,
+   1
+  ],
+  "n_INCONCLUSIVE": [
+   23,
+   25
+  ],
+  "n_HEURISTIC_USEFUL": [
+   0,
+   2
+  ]
+ },
+ "instances_with_one_class_across_grid": {
+  "1": 44,
+  "10": 49,
+  "60": 62,
+  "300": 62
+ },
+ "mean_changed_by_delta": {
+  "0.005": 1.8125,
+  "0.01": 0.125,
+  "0.02": 4.1875,
+  "0.05": 10.6875
+ },
+ "mean_changed_by_tau": {
+  "2.0": 4.1875,
+  "5.0": 4.0625,
+  "10.0": 4.0625,
+  "20.0": 4.5
+ },
+ "mean_changed_by_budget": {
+  "1": 6.625,
+  "10": 6.9375,
+  "60": 2.0,
+  "300": 1.25
+ }
+}

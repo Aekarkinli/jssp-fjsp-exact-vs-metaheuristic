@@ -39,7 +39,7 @@ def solve_cmaes(
     mapping: str = DEFAULT_MAPPING,
     separable: bool = True,
 ) -> MethodResult:
-    dim = vector_length(instance)
+    dim = vector_length(instance, mapping)
     recorder = RunRecorder()
 
     def objective(x) -> float:

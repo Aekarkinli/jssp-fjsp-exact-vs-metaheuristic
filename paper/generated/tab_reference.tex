@@ -1,0 +1,45 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Multi-thread exact reference on the hardest subset, eight search workers and a 900\,s budget, run alone. This run is a reference for the attainable quality of the exact solver on this hardware and is not part of the timed comparison.}
+\label{tab:reference}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+Instance & Objective & Bound & Gap (\%) & Deviation (\%) & Single thread (\%) & Tabu (\%) \\
+\midrule
+abz7 & 668 & 656 & 1.80 & 1.83 & 2.06 & 4.34 \\
+abz8 & 670 & 633 & 5.52 & 0.45 & 3.75 & 5.55 \\
+abz9 & 683 & 658 & 3.66 & 0.74 & 1.92 & 6.19 \\
+edata\_la21 & 1009 & 1009 & 0.00 & 0.00 & 0.00 & 4.66 \\
+edata\_la26 & 1111 & 1106 & 0.45 & 0.45 & 1.85 & 7.78 \\
+fattahi20 & 1196 & 1143 & 4.43 & 0.00 & 0.00 & 5.18 \\
+la21 & 1046 & 1046 & 0.00 & 0.00 & 0.00 & 1.39 \\
+la29 & 1153 & 1130 & 1.99 & 0.09 & 1.30 & 3.47 \\
+la38 & 1196 & 1190 & 0.50 & 0.00 & 0.00 & 3.26 \\
+mk02 & 26 & 26 & 0.00 & 0.00 & 0.00 & 11.54 \\
+mk05 & 172 & 172 & 0.00 & 0.00 & 0.29 & 4.65 \\
+mk06 & 58 & 54 & 6.90 & 1.75 & 1.75 & 14.04 \\
+mk07 & 139 & 133 & 4.32 & 0.00 & 1.44 & 7.55 \\
+mk10 & 201 & 183 & 8.96 & 4.15 & 16.84 & 12.95 \\
+rdata\_la06 & 799 & 799 & 0.00 & 0.00 & 0.00 & 0.19 \\
+rdata\_la21 & 835 & 805 & 3.59 & 1.21 & 2.73 & 11.94 \\
+rdata\_la26 & 1066 & 1055 & 1.03 & 0.85 & 3.07 & 6.62 \\
+swv01 & 1415 & 1403 & 0.85 & 0.57 & 1.78 & 7.53 \\
+swv06 & 1704 & 1604 & 5.87 & 2.22 & 7.38 & 10.38 \\
+swv11 & 3088 & 2983 & 3.40 & 3.52 & 11.97 & 9.17 \\
+ta11 & 1366 & 1311 & 4.03 & 0.66 & 2.76 & 5.49 \\
+ta21 & 1658 & 1590 & 4.10 & 0.97 & 2.50 & 6.33 \\
+ta31 & 1775 & 1764 & 0.62 & 0.62 & 7.88 & 2.32 \\
+ta41 & 2126 & 1893 & 10.96 & 6.03 & 12.37 & 8.80 \\
+ta51 & 2760 & 2760 & 0.00 & 0.00 & 9.67 & 0.00 \\
+ta61 & 2991 & 2868 & 4.11 & 4.29 & 16.81 & 0.70 \\
+ta71 & 5867 & 5464 & 6.87 & 7.38 & 9.39 & 0.00 \\
+vdata\_la01 & 570 & 570 & 0.00 & 0.00 & 0.00 & 0.53 \\
+vdata\_la06 & 799 & 799 & 0.00 & 0.00 & 0.00 & 0.13 \\
+vdata\_la21 & 803 & 800 & 0.37 & 0.38 & 1.69 & 5.00 \\
+vdata\_la26 & 1053 & 1052 & 0.09 & 0.10 & 1.71 & 1.66 \\
+\bottomrule
+\end{tabular}}
+\end{table}

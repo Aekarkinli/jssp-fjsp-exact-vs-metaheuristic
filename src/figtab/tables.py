@@ -94,11 +94,11 @@ def tab_instances() -> None:
     rows.sort(key=lambda r: (r[0] != "JSSP", r[1]))
     lines = [
         r"\begin{table}[htbp]", r"\centering", r"\small",
-        r"\caption{Benchmark composition. Flexibility is the mean number of eligible "
+        r"\caption{Benchmark composition. Eligible is the mean number of eligible "
         r"machines per operation, which equals one for every job-shop instance.}",
         r"\label{tab:instances}",
         r"\begin{tabular}{llrccccl}", r"\toprule",
-        r"Problem & Family & $n$ & Jobs & Machines & Operations & Flexibility & Source \\",
+        r"Problem & Family & $n$ & Jobs & Machines & Operations & Eligible & Source \\",
         r"\midrule",
     ]
     for typ, fam, n, j, m, o, flex in rows:
@@ -199,10 +199,9 @@ def tab_configuration() -> None:
     lines = [
         r"\begin{table}[htbp]", r"\centering", r"\small",
         r"\caption{Implementation and parameter provenance. Every population-based method "
-        r"uses the same population of 50, which is a comparability choice of this study and "
-        r"is examined separately in Table~\ref{tab:robustness}. The last column states how "
-        r"each optimiser treats a candidate that leaves the unit box, which differs between "
-        r"implementations and is therefore not controlled by the shared decoder.}",
+        r"uses a population of 50 in the main comparison; alternative population policies "
+        r"are examined in Table~\ref{tab:robustness}. The last column records the "
+        r"box-handling policy of each optimiser.}",
         r"\label{tab:configuration}",
         r"\begin{tabular}{lllll}", r"\toprule",
         r"Method & Implementation & Parameters & Values from & Box handling \\",
@@ -230,13 +229,18 @@ def tab_environment() -> None:
         ("Benchmark function library", f"opfunu {v['opfunu']}"),
         ("Numerical libraries", f"numpy {v['numpy']}, scipy {v['scipy']}, "
                                 f"statsmodels {v['statsmodels']}"),
-        ("Code revision", env["git_commit"][:10]),
     ]
+    commits = [env["git_commit"][:10]]
+    # the further experiments record their own versions; the experiment code is identical
+    # across them and only the analysis and monitoring code differs
+    vfile = DERIVED / "rev1_code_versions.json"
+    if vfile.exists():
+        vers = json.loads(vfile.read_text(encoding="utf-8"))
+        commits += sorted({c for stage in vers.values() for c in stage} - set(commits))
+    rows.append(("Code revisions", ", ".join(commits)))
     lines = [
         r"\begin{table}[htbp]", r"\centering", r"\small",
-        r"\caption{Execution environment. Every timed result in this study refers to this "
-        r"machine and these versions, which is part of the definition of the necessity "
-        r"classification rather than an incidental detail.}",
+        r"\caption{Execution environment for the timed experiments.}",
         r"\label{tab:environment}",
         r"\begin{tabular}{ll}", r"\toprule", r"Item & Value \\", r"\midrule",
     ]
@@ -401,7 +405,9 @@ def tab_proof() -> None:
         rf"\caption{{Logistic model of proof of optimality within 300\,s, fitted on one "
         rf"binary response per instance ($n={m['n_instances']}$, "
         rf"{m['n_proved']} proved). McFadden $R^2={m['pseudo_r2']:.2f}$, likelihood-ratio "
-        rf"$p<10^{{-4}}$.}}",
+        rf"$p<10^{{-4}}$. \Rthree{{The flexibility ratio is the mean share of the machines "
+        rf"on which an operation may be processed, which is $1/m$ for a job-shop "
+        rf"instance.}}}}",
         r"\label{tab:proof}",
         r"\begin{tabular}{lrrr}", r"\toprule",
         r"Term & Coefficient & 95\,\% CI & $p$ \\", r"\midrule",

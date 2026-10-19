@@ -1,0 +1,122 @@
+{
+  "cases": [
+    {
+      "instance": "ft06",
+      "status": "OPTIMAL",
+      "objective": 55.0,
+      "bound": 55.0,
+      "expected_optimum": 55,
+      "value_match": true,
+      "proved_within_budget": true,
+      "schedule_feasible": true,
+      "time_limit_s": 30,
+      "wall_time_s": 0.02,
+      "n_incumbents": 6
+    },
+    {
+      "instance": "ft10",
+      "status": "OPTIMAL",
+      "objective": 930.0,
+      "bound": 930.0,
+      "expected_optimum": 930,
+      "value_match": true,
+      "proved_within_budget": true,
+      "schedule_feasible": true,
+      "time_limit_s": 60,
+      "wall_time_s": 11.68,
+      "n_incumbents": 57
+    },
+    {
+      "instance": "la01",
+      "status": "OPTIMAL",
+      "objective": 666.0,
+      "bound": 666.0,
+      "expected_optimum": 666,
+      "value_match": true,
+      "proved_within_budget": true,
+      "schedule_feasible": true,
+      "time_limit_s": 30,
+      "wall_time_s": 0.05,
+      "n_incumbents": 21
+    },
+    {
+      "instance": "abz5",
+      "status": "OPTIMAL",
+      "objective": 1234.0,
+      "bound": 1234.0,
+      "expected_optimum": 1234,
+      "value_match": true,
+      "proved_within_budget": true,
+      "schedule_feasible": true,
+      "time_limit_s": 60,
+      "wall_time_s": 4.53,
+      "n_incumbents": 57
+    },
+    {
+      "instance": "orb01",
+      "status": "FEASIBLE",
+      "objective": 1059.0,
+      "bound": 937.0,
+      "expected_optimum": 1059,
+      "value_match": true,
+      "proved_within_budget": false,
+      "schedule_feasible": true,
+      "time_limit_s": 60,
+      "wall_time_s": 60.03,
+      "n_incumbents": 101
+    },
+    {
+      "instance": "mk01",
+      "status": "OPTIMAL",
+      "objective": 40.0,
+      "bound": 40.0,
+      "expected_optimum": 40,
+      "value_match": true,
+      "proved_within_budget": true,
+      "schedule_feasible": true,
+      "time_limit_s": 30,
+      "wall_time_s": 0.1,
+      "n_incumbents": 16
+    },
+    {
+      "instance": "mk02",
+      "status": "FEASIBLE",
+      "objective": 26.0,
+      "bound": 25.0,
+      "expected_optimum": 26,
+      "value_match": true,
+      "proved_within_budget": false,
+      "schedule_feasible": true,
+      "time_limit_s": 60,
+      "wall_time_s": 60.04,
+      "n_incumbents": 19
+    },
+    {
+      "instance": "edata_la01",
+      "status": "OPTIMAL",
+      "objective": 609.0,
+      "bound": 609.0,
+      "expected_optimum": 609,
+      "value_match": true,
+      "proved_within_budget": true,
+      "schedule_feasible": true,
+      "time_limit_s": 30,
+      "wall_time_s": 0.12,
+      "n_incumbents": 59
+    },
+    {
+      "instance": "fattahi10",
+      "status": "OPTIMAL",
+      "objective": 516.0,
+      "bound": 516.0,
+      "expected_optimum": 516,
+      "value_match": true,
+      "proved_within_budget": true,
+      "schedule_feasible": true,
+      "time_limit_s": 30,
+      "wall_time_s": 0.01,
+      "n_incumbents": 5
+    }
+  ],
+  "failures": []
+}

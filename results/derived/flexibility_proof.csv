@@ -1,0 +1,16 @@
+instance_id,proved,base,level,flex_ratio
+edata_la01,1.0,la01,edata,0.24
+edata_la06,1.0,la06,edata,0.22933333333333333
+edata_la16,1.0,la16,edata,0.11299999999999999
+edata_la21,0.0,la21,edata,0.11533333333333333
+edata_la26,0.0,la26,edata,0.1135
+rdata_la01,1.0,la01,rdata,0.384
+rdata_la06,0.0,la06,rdata,0.376
+rdata_la16,1.0,la16,rdata,0.20099999999999998
+rdata_la21,0.0,la21,rdata,0.2006666666666667
+rdata_la26,0.0,la26,rdata,0.1955
+vdata_la01,0.0,la01,vdata,0.568
+vdata_la06,0.0,la06,vdata,0.48533333333333334
+vdata_la16,1.0,la16,vdata,0.47000000000000003
+vdata_la21,0.0,la21,vdata,0.4766666666666667
+vdata_la26,0.0,la26,vdata,0.4585

@@ -1,0 +1,56 @@
+{
+ "best_heuristic": {
+  "cells": 268,
+  "tabu_alone": 206,
+  "tabu_tied": 46,
+  "tabu_alone_or_tied": 252
+ },
+ "hn_final": [
+  [
+   "mk10",
+   240
+  ],
+  [
+   "ta31",
+   450
+  ],
+  [
+   "swv11",
+   500
+  ],
+  [
+   "ta41",
+   600
+  ],
+  [
+   "ta51",
+   750
+  ],
+  [
+   "ta61",
+   1000
+  ],
+  [
+   "ta71",
+   2000
+  ]
+ ],
+ "transfer": {
+  "rho": 0.7062937062937064,
+  "boot_ci95": [
+   0.5314685314685316,
+   0.7320501594135719
+  ],
+  "n_boot": 2000,
+  "perm_p_two_sided": 0.013145,
+  "n_perm": 200000
+ },
+ "clusters": {
+  "n_units": 52,
+  "n_instances": 67,
+  "n_significant_holm": 15,
+  "n_comparisons": 15,
+  "max_p_holm": 3.2623574952594936e-09,
+  "transfer_rho": 0.6783216783216784
+ }
+}

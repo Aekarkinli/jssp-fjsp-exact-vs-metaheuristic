@@ -29,6 +29,8 @@ FAMILY = {
     "ga": "general", "de": "general", "pso": "general", "abc": "general",
     "lshade": "adaptive", "imode": "adaptive", "cmaes": "adaptive",
     "gwo": "recent", "rime": "recent", "mde": "recent", "csa": "recent",
+    # improved variants of the further experiments, in the family of their base method
+    "jade": "adaptive", "shade": "adaptive", "clpso": "general", "igwo": "recent",
 }
 
 FAMILY_LABEL = {
@@ -46,6 +48,7 @@ DISPLAY = {
     "brkga": "BRKGA", "ga": "GA", "de": "DE", "pso": "PSO", "abc": "ABC",
     "lshade": "L-SHADE", "imode": "IMODE", "cmaes": "CMA-ES",
     "gwo": "GWO", "rime": "RIME", "mde": "MDE", "csa": "CSA",
+    "jade": "JADE", "shade": "SHADE", "clpso": "CL-PSO", "igwo": "I-GWO",
     "hyb_cheap": "CP-SAT+PDR", "hyb_tabu": "CP-SAT+TS", "hyb_oracle": "CP-SAT+oracle",
 }
 

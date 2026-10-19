@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{The four optimisers with (LS) and without the critical-block descent in the decoder on the evaluation subset, ten seeds, at the four budgets. Better counts the instances on which the descent lowers the median deviation, Closed is the share of the median paired distance to the tabu search that the descent removes, and $p$ is the Wilcoxon signed-rank test, unadjusted and Holm-adjusted over the four optimisers at the same budget.}
+\label{tab:rev-memetic}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rlrrrrrrr}
+\toprule
+Budget (s) & Optimiser & Plain & LS & Diff. & Better & Closed (\%) & $p$ & $p_{\mathrm{Holm}}$ \\
+\midrule
+1 & GA & 25.85 & 28.89 & 1.57 & 6/20 & -70 & 0.0955 & 0.2865 \\
+1 & BRKGA & 26.18 & 29.48 & -0.54 & 11/20 & -35 & 0.5412 & 1 \\
+1 & L-SHADE & 29.76 & 29.48 & -1.76 & 16/20 & 9 & 0.0401 & 0.1605 \\
+1 & CMA-ES & 27.25 & 28.59 & -1.20 & 12/20 & -19 & 0.768 & 1 \\
+\addlinespace
+10 & GA & 14.74 & 18.62 & 2.51 & 8/20 & -22 & 0.3955 & 0.7909 \\
+10 & BRKGA & 21.68 & 21.70 & -0.38 & 11/20 & 12 & 0.6397 & 0.7909 \\
+10 & L-SHADE & 22.70 & 22.55 & -1.98 & 15/20 & -12 & 0.0599 & 0.1798 \\
+10 & CMA-ES & 14.56 & 19.06 & 0.87 & 5/20 & -70 & 0.0446 & 0.1782 \\
+\addlinespace
+60 & GA & 11.45 & 10.16 & -0.38 & 11/20 & 25 & 0.4171 & 0.8342 \\
+60 & BRKGA & 19.05 & 13.68 & -2.18 & 13/20 & 27 & 0.1964 & 0.7856 \\
+60 & L-SHADE & 17.01 & 16.74 & -0.78 & 12/20 & 10 & 0.4171 & 0.8342 \\
+60 & CMA-ES & 12.77 & 12.24 & 0.81 & 8/20 & -18 & 0.2753 & 0.826 \\
+\addlinespace
+300 & GA & 9.91 & 7.02 & -2.80 & 14/20 & 60 & 0.0124 & 0.0371 \\
+300 & BRKGA & 17.90 & 11.80 & -3.08 & 14/20 & 26 & 0.0028 & 0.0112 \\
+300 & L-SHADE & 14.48 & 11.94 & -0.79 & 11/20 & 30 & 0.2837 & 0.5675 \\
+300 & CMA-ES & 11.44 & 7.09 & -1.14 & 12/20 & 48 & 0.5678 & 0.5678 \\
+\bottomrule
+\end{tabular}}
+\end{table}

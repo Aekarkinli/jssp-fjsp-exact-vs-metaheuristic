@@ -1,0 +1,76 @@
+{
+ "stages": {
+  "ablation_legacy": {
+   "runs": 800,
+   "core_hours": 66.6
+  },
+  "cec": {
+   "runs": 17748,
+   "core_hours": 695.8
+  },
+  "cec_variants": {
+   "runs": 5916,
+   "core_hours": 423.8
+  },
+  "full": {
+   "runs": 20234,
+   "core_hours": 1605.2
+  },
+  "hybrid": {
+   "runs": 16080,
+   "core_hours": 247.3
+  },
+  "reference": {
+   "runs": 31,
+   "core_hours": 6.4
+  },
+  "rev_hurink": {
+   "runs": 1584,
+   "core_hours": 85.8
+  },
+  "rev_large": {
+   "runs": 2432,
+   "core_hours": 197.2
+  },
+  "rev_memetic": {
+   "runs": 800,
+   "core_hours": 67.0
+  },
+  "rev_opperm": {
+   "runs": 2400,
+   "core_hours": 200.0
+  },
+  "rev_variants": {
+   "runs": 800,
+   "core_hours": 66.7
+  },
+  "sens_pop100": {
+   "runs": 1200,
+   "core_hours": 20.0
+  },
+  "sens_pop20": {
+   "runs": 1200,
+   "core_hours": 20.0
+  },
+  "sens_recommended": {
+   "runs": 1200,
+   "core_hours": 20.0
+  }
+ },
+ "main": {
+  "runs": 40745,
+  "core_hours": 1985.6
+ },
+ "further": {
+  "runs": 8016,
+  "core_hours": 616.7
+ },
+ "cec_main": {
+  "runs": 17748,
+  "core_hours": 695.8
+ },
+ "cec_further": {
+  "runs": 5916,
+  "core_hours": 423.8
+ }
+}

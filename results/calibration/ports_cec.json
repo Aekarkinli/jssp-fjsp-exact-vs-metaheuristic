@@ -1,0 +1,54 @@
+[
+  {
+    "method": "MDE",
+    "function": "F12013",
+    "note": "CEC2013 F1 sphere",
+    "ndim": 20,
+    "optimum": -1400,
+    "best": -1400.0,
+    "gap": 0.0,
+    "cycles": 3000,
+    "seed": 11,
+    "tolerance": 1.0,
+    "converged": true
+  },
+  {
+    "method": "MDE",
+    "function": "F52013",
+    "note": "CEC2013 F5",
+    "ndim": 20,
+    "optimum": -1000,
+    "best": -1000.0,
+    "gap": 0.0,
+    "cycles": 3000,
+    "seed": 11,
+    "tolerance": 1.0,
+    "converged": true
+  },
+  {
+    "method": "CSA",
+    "function": "F12013",
+    "note": "CEC2013 F1 sphere (anchor)",
+    "ndim": 20,
+    "optimum": -1400,
+    "best": -1400.0,
+    "gap": 0.0,
+    "cycles": 3000,
+    "seed": 11,
+    "tolerance": 1.0,
+    "converged": true
+  },
+  {
+    "method": "CSA",
+    "function": "F12017",
+    "note": "CEC2017 F1 Bent Cigar",
+    "ndim": 30,
+    "optimum": 100,
+    "best": 100.0,
+    "gap": 0.0,
+    "cycles": 15000,
+    "seed": 11,
+    "tolerance": 1.0,
+    "converged": true
+  }
+]

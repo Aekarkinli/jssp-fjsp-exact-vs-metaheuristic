@@ -1,0 +1,36 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Base methods against their improved variants. On CEC2017 the counts are the functions on which the variant has the lower or higher median error over 51 runs. On scheduling they are the instances of the evaluation subset on which the variant has the lower or higher median deviation at 300 s, with the median paired difference, variant minus base. Every $p$ is a Wilcoxon signed-rank test, Holm-adjusted over the nine pairs within each domain, and the unadjusted value is given for scheduling.}
+\label{tab:rev-variants}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{llrrrrrrr}
+\toprule
+ & & \multicolumn{3}{c}{CEC2017} & \multicolumn{4}{c}{Scheduling, 300 s} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-9}
+Base & Variant & Better/worse & $p_{\mathrm{Holm}}$ & & Better/worse & Diff. & $p$ & $p_{\mathrm{Holm}}$ \\
+\midrule
+DE & JADE & 28/1 & $<10^{-4}$ & & 12/7 & -4.95 & 0.0401 & 0.2007 \\
+JADE & SHADE & 14/9 & 0.1604 & & 7/11 & 0.69 & 0.7019 & 1 \\
+SHADE & L-SHADE & 15/8 & 0.5202 & & 8/10 & 0.09 & 0.4951 & 1 \\
+DE & L-SHADE & 29/0 & $<10^{-4}$ & & 14/5 & -4.63 & 0.0024 & 0.0216 \\
+PSO & CL-PSO & 10/19 & 0.0224 & & 13/5 & -1.39 & 0.0208 & 0.1249 \\
+GWO & I-GWO & 3/26 & $<10^{-4}$ & & 7/10 & 0.06 & 0.3778 & 1 \\
+DE & IMODE & 29/0 & $<10^{-4}$ & & 13/6 & -2.92 & 0.0446 & 0.2007 \\
+DE & MDE & 29/0 & $<10^{-4}$ & & 13/6 & -5.94 & 0.0095 & 0.0662 \\
+GA & BRKGA & 3/26 & 0.0003 & & 5/14 & 2.77 & 0.0062 & 0.0494 \\
+\midrule
+\multicolumn{9}{l}{One second, scheduling, Holm over the eight pairs below} \\
+\midrule
+DE & L-SHADE & & & & 6/13 & 1.18 & 0.0663 & 0.1806 \\
+DE & IMODE & & & & 1/17 & 2.06 & 0.0008 & 0.0055 \\
+DE & MDE & & & & 3/15 & 2.18 & 0.0237 & 0.1149 \\
+GA & BRKGA & & & & 2/17 & 0.92 & 0.0008 & 0.0055 \\
+DE & JADE & & & & 5/14 & 1.44 & 0.0602 & 0.1806 \\
+DE & SHADE & & & & 5/14 & 2.08 & 0.023 & 0.1149 \\
+PSO & CL-PSO & & & & 1/18 & 1.54 & $<10^{-4}$ & 0.0002 \\
+GWO & I-GWO & & & & 9/10 & 0.03 & 0.6794 & 0.6794 \\
+\bottomrule
+\end{tabular}}
+\end{table}

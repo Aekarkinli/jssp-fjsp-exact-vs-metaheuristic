@@ -1,8 +1,8 @@
 # =============================================================================
-# PILOT CONFIGURATION  (Phase 5 end-to-end validation)
+# PILOT CONFIGURATION  (end-to-end validation)
 # A small balanced subset at a short budget across all methods and a few seeds.
 # Purpose: crash-free run, every log field populated, feasibility checker active,
-# seed-repeatability, calibration held. Passing the pilot gate LOCKS the design.
+# seed-repeatability and calibration checked before the design is fixed.
 # Methods, thresholds, seeds list, and parallelism inherit the full-run semantics;
 # only the instance subset, budget, and seed count differ.
 # =============================================================================

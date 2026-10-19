@@ -1,0 +1,21 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Robustness of the evaluation choices. The upper panel compares the eligible-set machine mapping with a machine-index mapping repaired to the nearest eligible machine, on 10 flexible instances and 8 decoded optimisers with 10 seeds each. The lower panel compares three alternative population policies with the common setting of 50, on 10 instances and 12 optimisers at a 60\,s budget.}
+\label{tab:robustness}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+Comparison & Median (\%) & Median paired difference & $r_{rb}$ & $p$ \\
+\midrule
+Index mapping & 8.56 & 0.14 & 0.46 & 0.001 \\
+Eligible-set mapping & 8.31 & -- & -- & -- \\
+\multicolumn{5}{l}{Repairs per flexible operation and evaluation: 0.69 under index mapping, 0.00 under eligible-set mapping} \\
+\addlinespace
+population 20 vs population 50 & -- & 0.54 & 0.45 & $<10^{-4}$ \\
+population 100 vs population 50 & -- & 0.00 & -0.17 & 0.1271 \\
+author-recommended rule vs population 50 & -- & 0.00 & 0.22 & 0.1104 \\
+\bottomrule
+\end{tabular}}
+\end{table}

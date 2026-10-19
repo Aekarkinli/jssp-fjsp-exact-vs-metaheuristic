@@ -90,7 +90,7 @@ def build() -> Macros:
     M.add("Budget", 300)
     M.add("NMainRuns", len(runs))
     M.add("NHybridRuns", len(pd.read_parquet(DERIVED / "hybrid_runs.parquet")))
-    M.add("NCecCells", len(cec))
+    M.add("NCecCells", int(cec.method.isin(DECODED).sum()))  # panel optimisers only
     M.add("NCecFunctions", int(cec.function.nunique()))
     M.add("NCecRuns", int(cec.runs.max()))
     M.add("NCecDim", int(cec.dim.max()))
@@ -171,6 +171,10 @@ def build() -> Macros:
         M.add(f"MedianTabuAt{b}", float(sb.loc["tabu", "median"]), 2)
         M.add(f"MedianExactAt{b}", float(sb.loc["cpsat", "median"]), 2)
         M.add(f"MedianCmaesAt{b}", float(sb.loc["cmaes", "median"]), 2)
+        # lowest median deviation among the decoded optimisers at this budget
+        low = sb.loc[DECODED, "median"].idxmin()
+        M.add(f"LowestDecodedAt{b}Name", display(low))
+        M.add(f"LowestDecodedAt{b}", float(sb.loc[low, "median"]), 2)
     M.add("NInstancesAtOne", int(summ[summ.budget_s == 1]["n_instances"].iloc[0]))
     best_dec = fin.loc[DECODED, "median"].idxmin()
     M.add("BestDecodedName", display(best_dec))

@@ -138,6 +138,62 @@ def all_specs() -> list:
     return list(JSSP_INSTANCES) + list(FJSP_INSTANCES)
 
 
+# --- Targeted experiments: instance sets outside the locked main panel ---------
+# None of these enters the main comparison. Each set is fixed by a rule stated here, before
+# any of its runs, so the selection cannot follow the results.
+#
+# Large-scale set: larger and more complex instances. Job shop: the
+# second and the sixth instance of every Taillard size class from 600 operations upward, the
+# classes whose first instance is already in the main panel. Flexible job shop: candidates
+# are the pinned collection's Brandimarte extension (mk11-mk15), the six largest
+# Dauzere-Peres and Paulli instances and the Behnke and Geiger set, whose largest members have
+# 500 operations. The rule takes the first instance of every Behnke and Geiger block with at
+# least 250 operations (50 or 100 jobs on 20, 40 or 60 machines, six instances) and the two
+# 387-operation Dauzere-Peres and Paulli instances with the highest routing flexibility, so
+# the set spans both the largest flexible instances available and the most flexible ones.
+LARGE_JSSP_IDS = ["ta42", "ta46", "ta52", "ta56", "ta62", "ta66", "ta72", "ta76"]
+LARGE_JSSP: list[JsspSpec] = _jssp(LARGE_JSSP_IDS, "taillard")
+
+
+def _fjsp_candidates() -> list[FjspSpec]:
+    out = [FjspSpec(id=f"mk{i:02d}", family="brandimarte",
+                    repo_path=f"{_FJSP_BASE}/Brandimarte1993/mk{i:02d}.txt")
+           for i in range(11, 16)]
+    out += [FjspSpec(id=f"dp{i:02d}a", family="dauzere_peres_paulli",
+                     repo_path=f"{_FJSP_BASE}/DauzerePeresPaulli1994/{i:02d}a.txt")
+            for i in range(13, 19)]
+    out += [FjspSpec(id=f"behnke{i:02d}", family="behnke_geiger",
+                     repo_path=f"{_FJSP_BASE}/BehnkeGeiger2012/behnke{i}.txt")
+            for i in range(1, 61)]
+    return out
+
+
+LARGE_FJSP_CANDIDATES: list[FjspSpec] = _fjsp_candidates()
+LARGE_FJSP_IDS = ["behnke11", "behnke31", "behnke51", "behnke16", "behnke36", "behnke56",
+                  "dp15a", "dp18a"]
+LARGE_FJSP: list[FjspSpec] = [s for s in LARGE_FJSP_CANDIDATES if s.id in LARGE_FJSP_IDS]
+
+# Hurink natural experiment (separates machine flexibility from problem
+# class). Every base problem of the Hurink collection in all four variants: sdata is the
+# classical job shop (one eligible machine per operation), and edata, rdata and vdata add
+# routing freedom to the same jobs and processing times.
+HURINK_BASES = (["abz5", "abz6", "abz7", "abz8", "abz9"]
+                + [f"car{i}" for i in range(1, 9)]
+                + ["ft06", "ft10", "ft20"]
+                + [f"la{i:02d}" for i in range(1, 41)]
+                + [f"orb{i}" for i in range(1, 11)])
+HURINK_VARIANTS = ["sdata", "edata", "rdata", "vdata"]
+HURINK_STUDY: list[FjspSpec] = [
+    FjspSpec(id=f"hs_{v}_{b}", family=f"hurink_{v}",
+             repo_path=f"{_FJSP_BASE}/HurinkJurischThole1994/{v}/{b}.txt")
+    for b in HURINK_BASES for v in HURINK_VARIANTS
+]
+
+
+def extension_specs() -> list:
+    return list(LARGE_JSSP) + list(LARGE_FJSP_CANDIDATES) + list(HURINK_STUDY)
+
+
 SOURCES = {
     "jssp": {"repo": JSPLIB_REPO, "commit": JSPLIB_COMMIT, "metadata_url": JSPLIB_METADATA_URL},
     "jssp_bks": {"repo": JSSP_BKS_REPO, "commit": JSSP_BKS_COMMIT, "url": JSSP_BKS_URL},

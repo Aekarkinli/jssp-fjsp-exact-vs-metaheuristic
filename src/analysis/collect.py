@@ -27,7 +27,15 @@ EVAL_CHECKPOINTS = (1_000, 10_000, 100_000)
 # --------------------------------------------------------------------------- helpers
 def reference_table() -> dict[str, dict]:
     with Path("data/reference_values.csv").open(encoding="utf-8") as fh:
-        return {r["id"]: r for r in csv.DictReader(fh)}
+        out = {r["id"]: r for r in csv.DictReader(fh)}
+    # revision-round instance sets; their identifiers never collide with the main panel
+    ext = Path("data/reference_values_rev1.csv")
+    if ext.exists():
+        with ext.open(encoding="utf-8") as fh:
+            for r in csv.DictReader(fh):
+                if r["id"] not in out and r.get("mapping_ok") == "True":
+                    out[r["id"]] = r
+    return out
 
 
 def best_at_time(anytime, t: float):

@@ -12,6 +12,14 @@ seeds per stochastic method under a single-thread budget of 300 seconds, and the
 10 and 60 seconds are read from the same anytime traces. A deterministic decision rule then
 assigns every instance and budget to one of five roles for heuristic search.
 
+Five targeted experiments use the same software and protocol. The 260 Hurink instances built
+from 65 classical job-shop problems at four levels of machine flexibility separate the effect
+of flexibility from that of problem class. The twelve decoded optimisers are run under a second
+representation, an operation-based permutation, and four of them with a critical-block descent
+inside the decoder. Four improved variants (JADE, SHADE, CL-PSO and I-GWO) are run on the
+scheduling instances and on CEC2017. The full panel is run on sixteen larger Taillard,
+Behnke–Geiger and Dauzère-Pérès–Paulli instances.
+
 ## Repository layout
 
 ```
@@ -20,6 +28,7 @@ data/
   instances/       benchmark instance files with their source manifest
   instance_manifest.csv   parsed dimensions of every instance, checked against the sources
   reference_values.csv    best-known value, lower bound, certified status and source
+  reference_values_rev1.csv   the same for the instances of the targeted experiments
 src/
   core/            instance model, shared decoder, feasibility checker, schedule object
   methods/         one module per method behind a common solve interface
@@ -30,9 +39,9 @@ results/
   raw/             one compressed archive per experimental stage, one record per run inside
   derived/         tidy tables produced from the raw records
 paper/
-  generated/       LaTeX tables and the macro file, as used in the manuscript
+  generated/       LaTeX tables and the two macro files, as used in the manuscript
   figures/         figure files, as used in the manuscript
-tools/             environment check, result unpacking, manuscript checks
+tools/             environment check, result unpacking, manuscript checks, run queues
 tests/             unit tests for the decoder, the feasibility checker, the methods and the
                    reference values
 ```
@@ -42,6 +51,14 @@ tests/             unit tests for the decoder, the feasibility checker, the meth
 Python 3.11. Pinned versions are in `pyproject.toml`, `uv.lock` and `requirements.txt`. The
 versions actually used for every run are recorded inside each raw record and are collected in
 `results/derived/environment.json`.
+
+The environment table of the manuscript lists four code revisions. The main comparison ran at
+`532fe93a83`. The targeted experiments ran at `d6339a3f80` (matched flexibility study, local
+search in the decoder, part of the improved variants), `c48cf13179` (the rest of the improved
+variants and part of their CEC2017 runs) and `5cda5b917d` (alternative encoding, larger
+instances and the remaining CEC2017 runs). The experiment code is identical across these
+revisions, which differ in analysis and monitoring code only, and
+`results/derived/rev1_code_versions.json` counts the records written at each.
 
 ```bash
 uv sync                      # or: python -m venv .venv && pip install -r requirements.txt
@@ -65,22 +82,20 @@ python -m src.figtab.build_all
 ```
 
 The second command runs the full chain, which collects the raw records, computes the
-comparative statistics, the necessity classification and the supporting analyses, and then
-writes the figures, tables and macros. Every number quoted in the manuscript comes from
-`paper/generated/numbers.tex`, which this chain writes, and no value is entered by hand.
-Rebuilding from the raw records reproduces all 293 macros exactly, with one exception. The
-Bayesian comparison estimates its posterior probabilities by Monte Carlo sampling, so those
-three values can move in the third decimal from one run to the next.
+comparative statistics, the necessity classification, the supporting analyses and the
+analyses of the targeted experiments, and then writes the figures, tables and macros. Every
+number quoted in the manuscript comes from `paper/generated/numbers.tex` or
+`paper/generated/numbers_rev1.tex`, which this chain writes, and no value is entered by hand.
+Rebuilding from the raw records reproduces every macro in both files exactly, with one
+exception. The Bayesian comparison estimates its
+posterior probabilities by Monte Carlo sampling, so those three values can move in the third
+decimal from one run to the next.
 
 The figure files under `paper/figures/` are the versions used in the manuscript. Running the
 figure step overwrites them with freshly rendered files, which are identical in content and
 can differ in small details of layout.
 
-`tools/style_check.py` and `tools/check_macros.py` are the two checks that were applied to
-the manuscript sources during preparation. The first enforces the writing rules used
-throughout the text and the second verifies that every macro appearing in the text is defined
-by the generated macro file. The manuscript sources themselves are not part of this
-repository.
+The manuscript sources themselves are not part of this repository.
 
 ## Repeating the experiments
 
@@ -95,7 +110,20 @@ python -m src.run.run_reference                                  # multi-thread 
 python -m src.run.run_cec                                        # continuous benchmark stage
 ```
 
-The complete study consumed about 1986 core-hours over 40745 recorded runs. Wall-clock
+The targeted experiments are driven by one resumable queue, which runs its stages in order and
+records its progress under `results/run_state_rev1/`. On Windows it can be registered as a
+scheduled task that restarts after a reboot, with an hourly health check.
+
+```bash
+python -m tools.queue_rev1 --status     # progress and remaining-time estimate per stage
+python -m tools.queue_rev1              # run or resume every stage
+powershell -File tools/install_rev1_tasks.ps1   # optional: queue and watchdog as tasks
+```
+
+The main comparison and its supporting stages consumed about 1986 core-hours over 40745
+timed runs, and the targeted experiments about 617 core-hours over 8016 timed runs. The
+CEC2017 stage adds 17748 runs for the twelve panel optimisers and 5916 for the four
+improved variants. `tools/count_runs.py` recomputes these figures from the raw records. Wall-clock
 results depend on the machine, which is described in `results/derived/environment.json` and
 in the manuscript.
 
@@ -118,6 +146,14 @@ Stages:
 | `cec` | continuous benchmark stage, 12 optimisers on 29 functions |
 | `ablation_legacy` | decoder-mapping ablation on flexible instances |
 | `sens_pop20`, `sens_pop100`, `sens_recommended` | population-size sensitivity |
+| `rev_hurink` | exact solver and tabu search on 264 Hurink instances, 3 seeds; the four orb7 instances, which contain an operation of zero length, are excluded from the analysis |
+| `rev_opperm` | 12 decoded optimisers under the operation-based permutation, 20 instances, 10 seeds |
+| `rev_memetic` | 4 decoded optimisers with critical-block descent in the decoder, 20 instances, 10 seeds |
+| `rev_variants` | JADE, SHADE, CL-PSO and I-GWO through the shared decoder, 20 instances, 10 seeds |
+| `rev_large` | full panel on 16 large instances, 10 seeds |
+
+The CEC2017 records of the four improved variants are stored in the `cec` stage next to those
+of the other optimisers.
 
 ## Benchmark instances and reference values
 
@@ -127,7 +163,9 @@ every instance, the best-known value used as the denominator of all reported dev
 matching lower bound, whether the source records the value as a proven optimum, and the
 collection the value came from. The collection was re-checked instance by instance on
 17 August 2026. Three entries had moved since the pinned snapshots, and the current values
-are used throughout.
+are used throughout. The instances of the targeted experiments are listed with their origin in
+`data/instances/SOURCES_rev1.json`, and their reference values in
+`data/reference_values_rev1.csv` were checked on 13 October 2026.
 
 ## Tests
 
