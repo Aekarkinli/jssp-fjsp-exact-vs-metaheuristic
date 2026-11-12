@@ -217,11 +217,24 @@ def build() -> Macros:
     M.add("NHeuristicFasterAtFinal", int((sub.subclass == "1b_heuristic_faster").sum()))
     M.add("NStrongNecessary", int((sub.subclass == "3_strong_near_bks").sum()))
     M.add("NExactBetterAtFinal", int((sub.reason == "exact_incumbent_better").sum()))
-    M.add("NExactBestObserved", int((sub["class"] == "EXACT_SUFFICIENT").sum()
-                                    + (sub.reason == "exact_incumbent_better").sum()))
-    M.add("ShareExactBestObserved",
-          float(((sub["class"] == "EXACT_SUFFICIENT").sum()
-                 + (sub.reason == "exact_incumbent_better").sum()) / len(sub) * 100), 0)
+    # best observed result: lowest per-instance median makespan among the panel methods at the
+    # final budget, alone or tied, a seed without a schedule counting as infinite
+    fin_obj = runs["obj_at_300s"].fillna(np.inf)
+    med = runs.assign(z=fin_obj).groupby(["instance_id", "method"])["z"].median().unstack()
+    lowest = med.min(axis=1)
+    at_low = med.eq(lowest, axis=0)
+    exact_low = at_low["cpsat"]
+    M.add("NExactBestObserved", int(exact_low.sum()))
+    M.add("ShareExactBestObserved", float(exact_low.mean() * 100), 0)
+    M.add("NExactLowestAlone", int((exact_low & (at_low.sum(axis=1) == 1)).sum()))
+    # inconclusive cells inside the objective margin, split by the direction of the difference
+    within = sub[sub.reason == "matched_but_not_faster"]
+    M.add("NWithinMarginCells", len(within))
+    M.add("NWithinMarginExactLower", int((within.z_exact < within.z_heuristic).sum()))
+    M.add("NWithinMarginHeurLower", int((within.z_heuristic < within.z_exact).sum()))
+    # main-panel annealing runs on flexible instances that never restarted
+    sa_f = runs[(runs.method == "sa") & (runs.type == "FJSP")]
+    M.add("SaFjspNoRestartShare", float((sa_f.n_restarts == 0).mean() * 100), 0)
     M.add("NNecessityCells", len(nec))
     panel = pd.read_csv(DERIVED / "necessity_best_of_panel.csv")
     M.add("NTabuIsBestHeuristic", int((panel.reference_heuristic == "tabu").sum()))
@@ -256,6 +269,11 @@ def build() -> Macros:
             M.add(f"Hybrid{tag}Median{b}", float(r.median_hybrid), 2)
             M.add(f"Hybrid{tag}VsExactRbc{b}", float(r.rank_biserial), 2)
             M.add(f"Hybrid{tag}VsExactP{b}", float(r.p_holm), 4)
+        r1 = hyb[(hyb.variant == v) & (hyb.budget_s == 1) & (hyb.reference == "cpsat")].iloc[0]
+        M.add(f"Hybrid{tag}VsExactBetterOne", int(r1.n_better))
+        M.add(f"Hybrid{tag}VsExactWorseOne", int(r1.n_worse))
+        M.add(f"Hybrid{tag}VsExactEqualOne", int(r1.n_equal))
+        M.add(f"Hybrid{tag}VsExactMedDiffOne", float(r1.median_difference), 2)
         c = hybc[(hybc.method == v) & (hybc.budget_s == 300)].iloc[0]
         M.add(f"Hybrid{tag}SeedTime", float(c.seed_time_median), 2)
     M.add("OraclePremiumAtOne",

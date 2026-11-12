@@ -199,6 +199,10 @@ def block_design(M: Macros) -> None:
     M.add("RevHurinkInstances", (len(HURINK_BASES) - len(HURINK_EXCLUDED))
           * len(HURINK_VARIANTS))
     M.add("RevHurinkSeeds", HURINK_SEEDS)
+    # runs recorded on the excluded base problems, kept in the archive but not analysed
+    hr = pd.read_parquet(DERIVED / "rev_hurink_runs.parquet")
+    excl = hr.instance_id.str.split("_").str[-1].isin(HURINK_EXCLUDED)
+    M.add("RevHurinkExcludedRuns", int(excl.sum()))
     large = large_set()
     insts = [_load(i) for i in large]
     M.add("RevLargeN", len(large))

@@ -1,13 +1,13 @@
-\begin{table}[htbp]
+\begin{table}[pos=htbp]
 \centering
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\caption{Multi-thread exact reference on the hardest subset, eight search workers and a 900\,s budget, run alone. This run is a reference for the attainable quality of the exact solver on this hardware and is not part of the timed comparison.}
+\caption{Multi-thread exact reference on the hardest subset, eight search workers and a 900\,s budget, run alone. This run is a reference for the attainable quality of the exact solver on this hardware and is not part of the timed comparison. The solver gap is $100\,(z-\underline{z})/z$ for the final incumbent $z$ and the dual bound $\underline{z}$ of this run, and the deviation is taken from the best-known value.}
 \label{tab:reference}
 \resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
 \begin{tabular}{lrrrrrr}
 \toprule
-Instance & Objective & Bound & Gap (\%) & Deviation (\%) & Single thread (\%) & Tabu (\%) \\
+Instance & Objective & Dual bound & Solver gap (\%) & Deviation (\%) & Single thread (\%) & Tabu (\%) \\
 \midrule
 abz7 & 668 & 656 & 1.80 & 1.83 & 2.06 & 4.34 \\
 abz8 & 670 & 633 & 5.52 & 0.45 & 3.75 & 5.55 \\

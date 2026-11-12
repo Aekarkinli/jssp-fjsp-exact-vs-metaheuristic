@@ -20,7 +20,7 @@ import numpy as np
 import pandas as pd
 
 from src.analysis.panel import display
-from src.figtab.tables import _num, _p, _write
+from src.figtab.tables import _num, _p, _write, source_label
 
 DERIVED = Path("results/derived")
 LEVELS = ["sdata", "edata", "rdata", "vdata"]
@@ -31,12 +31,7 @@ def _id(x: str) -> str:
 
 
 def _src(x: str) -> str:
-    s = str(x)
-    for key, short in (("JSPLIB", "JSPLIB"), ("Weise", "Weise collection"),
-                       ("ScheduleOpt", "ScheduleOpt")):
-        if key in s:
-            return short
-    return s.split("(")[0].strip()[:24]
+    return source_label(x)
 
 
 def tab_rev_instances() -> None:
@@ -78,7 +73,7 @@ def tab_rev_instances() -> None:
 def tab_rev_representation() -> None:
     t = pd.read_csv(DERIVED / "rev1_representation.csv")
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         r"\caption{The twelve decoded optimisers under the random-key active-schedule "
         r"configuration (RK) and the operation-based configuration (OB) on the evaluation "
         r"subset, ten seeds. Medians are over instances of the per-instance median deviation "
@@ -110,7 +105,7 @@ def tab_rev_representation() -> None:
 def tab_rev_memetic() -> None:
     t = pd.read_csv(DERIVED / "rev1_memetic.csv")
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         r"\caption{The four optimisers with (LS) and without the critical-block descent in "
         r"the decoder on the evaluation subset, ten seeds, at the four budgets. Better counts "
         r"the instances on which the descent lowers the median deviation, Closed is the share "
@@ -140,7 +135,7 @@ def tab_rev_variants() -> None:
     t = pd.read_csv(DERIVED / "rev1_variant_lineage.csv")
     one = pd.read_csv(DERIVED / "rev1_variants_one_second.csv")
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         r"\caption{Base methods against their improved variants. On CEC2017 the counts are "
         r"the functions on which the variant has the lower or higher median error over 51 "
         r"runs. On scheduling they are the instances of the evaluation subset on which the "
@@ -178,7 +173,7 @@ def tab_rev_hurink() -> None:
     d = pd.read_csv(DERIVED / "rev1_hurink_instances.csv")
     h = json.loads((DERIVED / "rev1_hurink.json").read_text(encoding="utf-8"))
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         r"\caption{Matched flexibility study by dataset level, on the base problems of the "
         r"Hurink collection with three seeds each. An instance counts as proved when at "
         r"least two of its three exact runs prove optimality within 300 s, and the duality "

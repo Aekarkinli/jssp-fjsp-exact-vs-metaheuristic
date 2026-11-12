@@ -45,12 +45,33 @@ def _num(x, d=2):
     return f"{x:.{d}f}"
 
 
+def _med(x) -> str:
+    """A median of integer makespans, printed with its half unit when it has one."""
+    if x is None or not np.isfinite(x):
+        return "--"
+    return f"{x:.0f}" if float(x).is_integer() else f"{x:.1f}"
+
+
 def _p(x):
     if x is None or not np.isfinite(x):
         return "--"
     if x < 1e-4:
         return "$<10^{-4}$"
     return f"{x:.4f}".rstrip("0").rstrip(".")
+
+
+def source_label(x: str) -> str:
+    """Short name of a reference-value source, the same in every table."""
+    s = str(x)
+    if s.startswith("JSPLib (scheduleopt"):
+        return "ScheduleOpt JSPLib table"
+    if s.startswith("ScheduleOpt"):
+        return "ScheduleOpt collection"
+    if s.startswith("JSPLIB"):
+        return "JSPLIB repository"
+    if s.startswith("Weise"):
+        return "Weise collection"
+    return s.split("(")[0].strip()[:28]
 
 
 # ------------------------------------------------------------------ 1. instances
@@ -93,7 +114,7 @@ def tab_instances() -> None:
                      g.mean_eligible.mean()))
     rows.sort(key=lambda r: (r[0] != "JSSP", r[1]))
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         r"\caption{Benchmark composition. Eligible is the mean number of eligible "
         r"machines per operation, which equals one for every job-shop instance.}",
         r"\label{tab:instances}",
@@ -146,7 +167,7 @@ METHOD_ROWS = [
 
 def tab_methods() -> None:
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         r"\caption{Method panel. Every population-based method uses the same population "
         r"size and the same wall-clock budget, and no parameter is tuned per instance.}",
         r"\label{tab:methods}",
@@ -168,7 +189,7 @@ CONFIG_ROWS = [
     ("cpsat", "OR-Tools CP-SAT via PyJobShop", "one search worker",
      "library values", "not applicable"),
     ("dispatching", "this study", "three priority rules", "source", "not applicable"),
-    ("greedy", "this study", "no parameters", "source", "not applicable"),
+    ("greedy", "this study", "earliest-completion priority", "source", "not applicable"),
     ("tabu", "this study", r"tenure $\sim U[8,16]$, restart after $\max(200,2N)$",
      "moves from source, tenure set here", "not applicable"),
     ("sa", "this study", r"$\delta_c=0.1$, $\chi_0=0.9$, chain $\max(100,N)$",
@@ -185,8 +206,10 @@ CONFIG_ROWS = [
     ("cmaes", "cma", r"$\sigma_0=0.3$, diagonal covariance", "library", "library transform, then clipping"),
     ("gwo", "mealpy", "no free parameters", "library", "clipped to the box"),
     ("rime", "mealpy", "soft-rime parameter 5", "library", "clipped to the box"),
-    ("mde", "port of the author code", "three subpopulations", "author code", "resample towards the bound"),
-    ("csa", "port of the author code", "clan drawn from the colony", "author code", "resample towards the bound"),
+    ("mde", "port of the author code", "three subpopulations of 50, working population 50",
+     "author code", "resample towards the bound"),
+    ("csa", "port of the author code", "colony of 100, clan of 50", "author code",
+     "resample towards the bound"),
 ]
 
 
@@ -197,10 +220,11 @@ def tab_configuration() -> None:
                     "OR-Tools CP-SAT via PyJobShop":
                         f"OR-Tools {v['ortools']}, PyJobShop {v['pyjobshop']}"}
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         r"\caption{Implementation and parameter provenance. Every population-based method "
-        r"uses a population of 50 in the main comparison; alternative population policies "
-        r"are examined in Table~\ref{tab:robustness}. The last column records the "
+        r"uses a population of 50 in the main comparison, and MDE and CSA draw their working "
+        r"population of 50 from a larger store as their authors specify. Alternative "
+        r"population policies are examined in Section~\ref{sec:results-robustness}. The last column records the "
         r"box-handling policy of each optimiser.}",
         r"\label{tab:configuration}",
         r"\begin{tabular}{lllll}", r"\toprule",
@@ -214,6 +238,14 @@ def tab_configuration() -> None:
     _write("tab_configuration.tex", "\n".join(lines))
 
 
+def _os_name(s: str) -> str:
+    """Readable operating system name from the platform string recorded with the runs."""
+    parts = s.split("-")
+    if len(parts) >= 3 and parts[0] == "Windows":
+        return f"Windows {parts[1]} (build {parts[2].split('.')[-1]})"
+    return s.replace("_", " ")
+
+
 def tab_environment() -> None:
     env = json.loads((DERIVED / "environment.json").read_text(encoding="utf-8"))
     v = env["versions"]
@@ -221,7 +253,7 @@ def tab_environment() -> None:
         ("Processor", env["cpu_model"]),
         ("Timed workers", f"{env['workers']} performance cores, one job per core, "
                           "no simultaneous-multithreading sibling in use"),
-        ("Operating system", env["os"].replace("_", " ")),
+        ("Operating system", _os_name(env["os"])),
         ("Python", env["python"]),
         ("Exact solver", f"OR-Tools CP-SAT {v['ortools']} through PyJobShop {v['pyjobshop']}"),
         ("Metaheuristic library", f"mealpy {v['mealpy']}"),
@@ -237,9 +269,9 @@ def tab_environment() -> None:
     if vfile.exists():
         vers = json.loads(vfile.read_text(encoding="utf-8"))
         commits += sorted({c for stage in vers.values() for c in stage} - set(commits))
-    rows.append(("Code revisions", ", ".join(commits)))
+    rows.append(("Repository revisions", ", ".join(commits)))
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         r"\caption{Execution environment for the timed experiments.}",
         r"\label{tab:environment}",
         r"\begin{tabular}{ll}", r"\toprule", r"Item & Value \\", r"\midrule",
@@ -252,15 +284,7 @@ def tab_environment() -> None:
 
 def tab_reference_provenance() -> None:
     t = pd.read_csv(DERIVED / "reference_provenance.csv")
-    short = {"JSPLIB instances.json (tamy0612/JSPLIB@eea2b60)": "JSPLIB",
-             "Weise instances_with_bks (thomasWeise/jsspInstancesAndResults@29a50db)":
-                 "Weise collection"}
-
-    def src(x: str) -> str:
-        for k, v in short.items():
-            if str(x).startswith(k[:20]):
-                return v
-        return str(x).split("(")[0].strip()[:28]
+    src = source_label
 
     head = (r"Instance & $n\times m$ & Ops & BKS & LB & Certified & Source \\")
     lines = [
@@ -270,8 +294,11 @@ def tab_reference_provenance() -> None:
         r"used as the denominator of every deviation reported in this study, LB is the best "
         r"lower bound recorded by the same source, and Certified states whether the source "
         r"records the value as a proven optimum. Collections were accessed at the pinned "
-        r"revisions given in the repository.}\label{tab:reference-provenance}\\",
+        r"revisions given in the repository. The ScheduleOpt JSPLib table is the separately "
+        r"maintained table of job-shop values against which the collections were checked "
+        r"again after the runs.}\label{tab:reference-provenance}\\",
         r"\toprule", head, r"\midrule", r"\endfirsthead",
+        r"\caption[]{(continued)}\\",
         r"\toprule", head, r"\midrule", r"\endhead",
         r"\bottomrule", r"\endfoot",
     ]
@@ -290,13 +317,13 @@ def tab_summary() -> None:
     fin = s[s.budget_s == 300].sort_values("mean_rank")
     piv = s.pivot(index="method", columns="budget_s", values="median")
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         r"\caption{Objective quality over the 67 instances. Each entry summarises the "
         r"per-instance median over seeds of the relative deviation from the best-known "
         r"solution. Columns 1--300\,s give that median across instances at four budgets, "
         r"and the remaining columns describe the 300\,s distribution. The 1\,s column "
-        r"covers 66 instances because the exact solver holds no feasible schedule on one "
-        r"instance at that budget. $n_{\mathrm{bks}}$ counts instances whose median matches "
+        r"covers, for every method, the 66 instances on which the exact solver holds a "
+        r"feasible schedule at that budget. $n_{\mathrm{bks}}$ counts instances whose median matches "
         r"the best-known solution, and Rank is the mean rank across instances.}",
         r"\label{tab:summary}",
         r"\begin{tabular}{llrrrrrrrrr}", r"\toprule",
@@ -325,14 +352,16 @@ def tab_pairwise() -> None:
     p = pd.read_csv(DERIVED / "pairwise_vs_tabu_300s.csv")
     cd = json.loads((DERIVED / "stats_summary.json").read_text(encoding="utf-8"))["cd_panel"]
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         rf"\caption{{Paired comparison of every method with the tabu search at the 300\,s "
         rf"budget over the 67 instances. The omnibus Friedman test rejects equality "
         rf"($\chi^2={cd['friedman_stat']:.1f}$, $p<10^{{-4}}$). $p$ values are "
         rf"Holm-corrected within the family of 16 comparisons. A positive rank-biserial "
         rf"correlation means the method deviates more than the tabu search. The median "
         rf"paired difference is the median over instances of the per-instance difference, "
-        rf"which is not the difference of the two medians. Superiority is "
+        rf"which can differ from the difference of the two medians. $n_{{\text{{eff}}}}$ is "
+        rf"the number of non-zero differences, so the number of ties is $67-n_{{\text{{eff}}}}$. "
+        rf"Superiority is "
         rf"the share of instances on which the method is strictly better, with a 95\,\% "
         rf"Wilson interval.}}",
         r"\label{tab:pairwise}",
@@ -358,7 +387,7 @@ def tab_necessity() -> None:
               .reindex(columns=CLASS_ORDER, fill_value=0))
     sens = json.loads((DERIVED / "necessity_sensitivity.json").read_text(encoding="utf-8"))
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         r"\caption{Necessity classification of the 67 instances at four budgets, and its "
         r"dependence on the decision rule. The main panel uses the pre-specified thresholds "
         r"$\delta=0.01$, $\tau=10$ and $\varepsilon=0.02$, the tabu search as the reference "
@@ -401,13 +430,13 @@ def tab_proof() -> None:
               "n_machines": "Machines", "flex_ratio": "Flexibility ratio",
               "cv_duration": "Duration dispersion"}
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         rf"\caption{{Logistic model of proof of optimality within 300\,s, fitted on one "
         rf"binary response per instance ($n={m['n_instances']}$, "
         rf"{m['n_proved']} proved). McFadden $R^2={m['pseudo_r2']:.2f}$, likelihood-ratio "
-        rf"$p<10^{{-4}}$. \Rthree{{The flexibility ratio is the mean share of the machines "
+        rf"$p<10^{{-4}}$. The flexibility ratio is the mean share of the machines "
         rf"on which an operation may be processed, which is $1/m$ for a job-shop "
-        rf"instance.}}}}",
+        rf"instance.}}",
         r"\label{tab:proof}",
         r"\begin{tabular}{lrrr}", r"\toprule",
         r"Term & Coefficient & 95\,\% CI & $p$ \\", r"\midrule",
@@ -425,13 +454,13 @@ def tab_hybrid() -> None:
     h = pd.read_csv(DERIVED / "hybrid_vs_pure.csv")
     c = pd.read_csv(DERIVED / "hybrid_cost.csv")
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         r"\caption{Warm-started exact search under one end-to-end budget, so the seeding "
         r"phase is charged to the same clock. Each variant is compared with pure exact "
         r"search and with the tabu search at the same total budget, paired over instances "
-        r"and Holm-corrected. The oracle variant is seeded with the best heuristic schedule "
-        r"found anywhere in the study and is an unattainable bound rather than a usable "
-        r"method.}",
+        r"and Holm-corrected over all 24 comparisons of the table. The oracle variant is seeded with the best heuristic schedule "
+        r"found anywhere in the study, selected with hindsight, and serves as a reference "
+        r"for what seeding could achieve.}",
         r"\label{tab:hybrid}",
         r"\begin{tabular}{llrrrrrl}", r"\toprule",
         r"Variant & Budget & Seeding (s) & Median (\%) & Reference & Median paired & "
@@ -465,7 +494,7 @@ def tab_transfer() -> None:
     s = s[s.budget_s == 300].set_index("method")
     tr = tr.sort_values("cec_mean_rank")
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         rf"\caption{{Continuous-benchmark standing against scheduling standing for the "
         rf"twelve optimisers that search through the shared decoder. Continuous ranks are "
         rf"mean ranks of the median error over {info['n_functions']} CEC2017 functions at "
@@ -495,12 +524,13 @@ def tab_transfer() -> None:
 def tab_bayes() -> None:
     b = pd.read_csv(DERIVED / "bayesian_vs_tabu.csv")
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         r"\caption{Bayesian signed-rank comparison against the tabu search on per-instance "
-        r"median deviation, with a region of practical equivalence of one deviation point. "
+        r"median deviation, with a region of practical equivalence of one percentage point, for "
+        r"the contrasts specified before the run. "
         r"Entries are posterior probabilities that the tabu search is practically better, "
         r"that the two are practically equivalent, and that the other method is practically "
-        r"better.}",
+        r"better, estimated from 50{,}000 posterior samples and rounded to three decimals.}",
         r"\label{tab:bayes}",
         r"\begin{tabular}{lrrr}", r"\toprule",
         r"Comparison & P(tabu better) & P(equivalent) & P(other better) \\", r"\midrule",
@@ -517,7 +547,7 @@ def tab_robustness() -> None:
     ab = json.loads((DERIVED / "ablation_decoder.json").read_text(encoding="utf-8"))
     se = pd.read_csv(DERIVED / "sensitivity_population.csv")
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         r"\caption{Robustness of the evaluation choices. The upper panel compares the "
         r"eligible-set machine mapping with a machine-index mapping repaired to the nearest "
         r"eligible machine, on 10 flexible instances and 8 decoded optimisers with 10 seeds "
@@ -558,7 +588,7 @@ def tab_strata() -> None:
              "proved": "Proved", "unproved": "Unproved"}
     counts = {name: len(pd.read_csv(DERIVED / f"matrix_rpd_300s.csv")) for name in frames}
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         r"\caption{Median deviation at 300\,s within strata. Small and large split the "
         r"panel at the median operation count, and the last two columns split it by whether "
         r"the exact solver proved optimality within the budget.}",
@@ -598,13 +628,16 @@ def tab_instance_detail() -> None:
         r"{\footnotesize\setlength{\tabcolsep}{4pt}",
         r"\begin{longtable}{llrrrrcrrl}",
         r"\caption{Per-instance results at the 300\,s budget. Exact, tabu (TS) and decoded "
-        r"entries are medians over 20 seeds, and the decoded column gives the best of the "
+        r"entries are medians over 20 seeds, printed with their half unit where the median of "
+        r"an even number of makespans has one, and deviations and ranks are computed from "
+        r"these unrounded medians. The decoded column gives the best of the "
         r"twelve decoded optimisers with the method attaining it. T is the problem class, J "
         r"for job shop and F for flexible, and Pr states whether the exact solver proved "
         r"optimality. Classes are ES for exact-sufficient, HN for heuristic-necessary, HU "
         r"for heuristic-useful, HY for hybrid-recommended and IN for inconclusive.}"
         r"\label{tab:instance-detail}\\",
         r"\toprule", head, r"\midrule", r"\endfirsthead",
+        r"\caption[]{(continued)}\\",
         r"\toprule", head, r"\midrule", r"\endhead",
         r"\bottomrule", r"\endfoot",
     ]
@@ -620,10 +653,10 @@ def tab_instance_detail() -> None:
         lines.append(
             f"{iid.replace('_', chr(92) + '_')} & {r['type'][0]} & "
             f"{r.n_jobs}$\\times${r.n_machines} & "
-            f"{r.n_op} & {r.bks:.0f} & {e.obj:.0f} & "
+            f"{r.n_op} & {r.bks:.0f} & {_med(e.obj)} & "
             f"{'y' if e.proved >= 0.999 else ('p' if e.proved > 0 else 'n')} & "
-            f"{tabu.get(iid, float('nan')):.0f} & "
-            f"{bd.best_obj:.0f}\\,{display(bd.method)} & {cls} \\\\")
+            f"{_med(tabu.get(iid, float('nan')))} & "
+            f"{_med(bd.best_obj)}\\,{display(bd.method)} & {cls} \\\\")
     lines.append(r"\end{longtable}}")
     _write("tab_instance_detail.tex", "\n".join(lines))
 
@@ -632,14 +665,16 @@ def tab_instance_detail() -> None:
 def tab_reference() -> None:
     t = pd.read_csv(DERIVED / "reference_multithread.csv")
     lines = [
-        r"\begin{table}[htbp]", r"\centering", r"\small",
+        r"\begin{table}[pos=htbp]", r"\centering", r"\small",
         r"\caption{Multi-thread exact reference on the hardest subset, eight search workers "
         r"and a 900\,s budget, run alone. This run is a reference for the attainable "
         r"quality of the exact solver on this hardware and is not part of the timed "
-        r"comparison.}",
+        r"comparison. The solver gap is $100\,(z-\underline{z})/z$ for the final incumbent "
+        r"$z$ and the dual bound $\underline{z}$ of this run, and the deviation is taken "
+        r"from the best-known value.}",
         r"\label{tab:reference}",
         r"\begin{tabular}{lrrrrrr}", r"\toprule",
-        r"Instance & Objective & Bound & Gap (\%) & Deviation (\%) & "
+        r"Instance & Objective & Dual bound & Solver gap (\%) & Deviation (\%) & "
         r"Single thread (\%) & Tabu (\%) \\", r"\midrule",
     ]
     for _, r in t.sort_values("instance_id").iterrows():
